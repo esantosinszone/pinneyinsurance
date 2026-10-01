@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '../ui/Button.astro';
+import { links } from '../../data/site';
+
+const ways = [
+  {
+    n: '1',
+    kicker: 'The ongoing way',
+    title: 'Register for our submission portal',
+    body: 'Insureio is our CRM, free to partners. Set your team up once and submit, track, and check status on every case yourself.',
+    items: ['Submit cases any time, no email or form needed', 'See exactly where each case sits', 'Quoting tools and carrier access built in'],
+    cta: { href: links.portalSignup, label: 'Register for our CRM', variant: 'primary' as const },
+  },
+  {
+    n: '2',
+    kicker: 'Need someone submitted today',
+    title: 'Use the form below',
+    body: 'No setup, no account. Six fields and the case is in our hands — the fastest route if a client is sitting in front of you right now.',
+    items: ['About two minutes', 'First call goes out within 24 hours', 'Works before your portal is set up'],
+    cta: { href: '#form', label: 'Jump to the form', variant: 'outline' as const, arrow: 'down' as const },
+  },
+];
+---
+<section class="section bg-mist" id="two-ways" aria-labelledby="ways-title">
+  <div class="container-site">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Two ways to submit a client</p>
+      <h2 id="ways-title" class="h2 mt-5">Set your team up once, <strong>or send one right now.</strong></h2>
+      <p class="lead mt-6">Either way a licensed advisor and a case manager pick it up and call within 24 hours.</p>
+    </div>
+
+    <div class="relative mt-14 grid gap-12 md:grid-cols-2 md:gap-0">
+      <span class="absolute top-0 bottom-0 left-1/2 hidden w-px bg-line-strong md:block" aria-hidden="true"></span>
+      <span class="absolute top-1/2 left-1/2 hidden size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-mist text-[0.75rem] font-bold tracking-[0.1em] text-muted uppercase ring-1 ring-line-strong md:inline-flex" aria-hidden="true">or</span>
+      {ways.map((w, i) => (
+        <article class:list={['flex flex-col', i === 0 ? 'md:pr-14' : 'md:pl-14']} data-reveal style={`--reveal-delay:${i * 90}ms`}>
+          <p class="flex items-center gap-3">
+            <span class="inline-flex size-9 items-center justify-center rounded-full bg-navy text-[0.875rem] font-bold text-white">{w.n}</span>
+            <span class="label !text-navy">{w.kicker}</span>
+          </p>
+          <h3 class="mt-6 text-[1.75rem] leading-tight font-semibold text-navy">{w.title}</h3>
+          <p class="mt-3 max-w-[48ch]">{w.body}</p>
+          <ul class="mt-6 space-y-2.5 text-[0.9375rem]">
+            {w.items.map((t) => <li class="flex gap-3"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-blue-600" aria-hidden="true" />{t}</li>)}
+          </ul>
+          <div class="mt-8">
+            <Button href={w.cta.href} variant={w.cta.variant} arrow={w.cta.arrow ?? true}>{w.cta.label}</Button>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

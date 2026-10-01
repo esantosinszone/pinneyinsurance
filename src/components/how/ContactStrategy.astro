@@ -1,0 +1,119 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { cadence, cadenceTable, statusStyle } from '../../data/how';
+
+// Light column tint per lead temperature.
+const tint: Record<string, string> = { hot: 'bg-hot/8', warm: 'bg-warm/12', cool: 'bg-sky-50', closed: 'bg-mist' };
+// Icon colour per lead temperature.
+const ink: Record<string, string> = { hot: 'text-hot', warm: 'text-[#b88a00]', cool: 'text-blue-600', closed: 'text-muted' };
+const total = cadence.reduce((n, d) => n + d.c + d.t + d.e, 0);
+const notes = [
+  { icon: 'hugeicons:call-outgoing-01', title: 'First call within 24 hours', body: 'Then twenty-plus calls, texts, and emails across fourteen days before anyone gives up on a name you sent.' },
+  { icon: 'hugeicons:bubble-chat', title: 'They engage, cadence stops', body: 'The moment your client responds, the case moves to discovery and a real conversation.' },
+  { icon: 'hugeicons:message-notification-01', title: 'You always hear back', body: 'Placed, declined, or withdrawn — you are never left wondering what happened to a name you sent.' },
+];
+---
+<section class="section bg-mist" id="contact-strategy" aria-labelledby="cs-title">
+  <div class="container-site">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <SectionHeader class="lg:col-span-7" id="cs-title" eyebrow="Contact strategy" title="Referrals go cold because <strong>nobody calls twice.</strong>" />
+      <p class="lead lg:col-span-5" data-reveal>
+        Here is the exact schedule your client is worked on, and the status your referral carries while it runs.
+      </p>
+    </div>
+
+    <!-- day-by-day cadence -->
+    <figure class="mt-14 rounded-[1.75rem] bg-white p-6 sm:p-10" data-reveal>
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <p class="flex items-baseline gap-3">
+          <span class="numeral text-[3.5rem] text-navy">{total}</span>
+          <span class="font-semibold text-navy">touches over 14 days<br class="hidden sm:block" /><span class="font-normal text-muted"> before we stop</span></span>
+        </p>
+        <ul class="flex flex-wrap gap-x-5 gap-y-2 text-[0.8125rem] text-muted" aria-label="Legend">
+          <li class="inline-flex items-center gap-2"><Icon name="hugeicons:call-02" class="size-4 text-navy" aria-hidden="true" />Call</li>
+          <li class="inline-flex items-center gap-2"><Icon name="hugeicons:message-01" class="size-4 text-navy" aria-hidden="true" />Text</li>
+          <li class="inline-flex items-center gap-2"><Icon name="hugeicons:mail-01" class="size-4 text-navy" aria-hidden="true" />Email</li>
+        </ul>
+      </div>
+
+      <div class="mt-10 overflow-x-auto pb-2">
+        <ol class="grid min-w-[40rem] grid-cols-14 gap-1.5" aria-label="Contact attempts by day">
+          {cadence.map((d) => {
+            const st = statusStyle[d.status];
+            const label = `Day ${d.day}: ${d.c} call${d.c === 1 ? '' : 's'}, ${d.t} text${d.t === 1 ? '' : 's'}, ${d.e} email${d.e === 1 ? '' : 's'} — ${st.label}`;
+            return (
+              <li class="flex flex-col" aria-label={label}>
+                <div class:list={["flex h-28 flex-col-reverse items-center gap-1.5 rounded-lg px-1 py-2", tint[d.status]]} aria-hidden="true">
+                  {Array.from({ length: d.c }, () => <Icon name="hugeicons:call-02" class:list={["size-4", ink[d.status]]} />)}
+                  {Array.from({ length: d.t }, () => <Icon name="hugeicons:message-01" class:list={["size-4", ink[d.status]]} />)}
+                  {Array.from({ length: d.e }, () => <Icon name="hugeicons:mail-01" class:list={["size-4", ink[d.status]]} />)}
+                </div>
+                <span class:list={['mt-2 h-1.5 rounded-full', st.dot]} aria-hidden="true"></span>
+                <span class="mt-2 text-center text-[0.75rem] font-semibold text-muted" aria-hidden="true">{d.day}</span>
+              </li>
+            );
+          })}
+        </ol>
+        <div class="mt-3 grid min-w-[40rem] grid-cols-14 gap-1.5 text-[0.6875rem] font-bold tracking-[0.12em] uppercase" aria-hidden="true">
+          <span class="col-span-3 text-hot">Hot</span>
+          <span class="col-span-1 text-warm-ink">Warm</span>
+          <span class="col-span-9 text-center text-blue-600">Cool</span>
+          <span class="col-span-1 text-muted">Closed</span>
+        </div>
+      </div>
+      <figcaption class="caption mt-6">Heavy at the front, tapering after. If your client engages at any point the cadence stops and the case moves to a real conversation.</figcaption>
+    </figure>
+
+    <!-- the schedule as a table -->
+    <div class="mt-12 overflow-x-auto" data-reveal>
+      <table class="w-full min-w-[42rem] border-collapse text-left text-[0.9375rem]">
+        <caption class="sr-only">14-day contact schedule</caption>
+        <thead>
+          <tr class="border-b-2 border-navy text-[0.75rem] tracking-[0.08em] text-muted uppercase">
+            <th scope="col" class="w-[14%] py-3 pr-4 font-bold">Day</th>
+            <th scope="col" class="w-[34%] py-3 pr-4 font-bold">Attempts</th>
+            <th scope="col" class="py-3 pr-4 font-bold">Message pattern</th>
+            <th scope="col" class="py-3 font-bold">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cadenceTable.map((r) => {
+            const st = statusStyle[r.status];
+            return (
+              <tr class="border-b border-line align-top">
+                <th scope="row" class="py-4 pr-4 font-semibold whitespace-nowrap text-navy">{r.day}</th>
+                <td class="py-4 pr-4">{r.attempts}</td>
+                <td class="py-4 pr-4 text-muted">{r.pattern}</td>
+                <td class="py-4">
+                  <span class:list={['inline-flex items-center gap-2 text-[0.8125rem] font-semibold', st.text]}>
+                    <span class:list={['size-2 rounded-full', st.dot]}></span>{st.label}
+                  </span>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="mt-14 grid gap-10 md:grid-cols-3">
+      {notes.map((n, i) => (
+        <li class="flex gap-4" data-reveal style={`--reveal-delay:${i * 70}ms`}>
+          <Icon name={n.icon} class="mt-0.5 size-6 shrink-0 text-blue-600" aria-hidden="true" />
+          <div>
+            <h3 class="h4">{n.title}</h3>
+            <p class="mt-1.5 text-[0.9375rem] text-muted">{n.body}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <aside class="mt-14 grid gap-4 border-l-2 border-blue pl-6 sm:grid-cols-[10rem_1fr] sm:gap-8" data-reveal>
+      <p class="font-semibold text-navy">After the sale</p>
+      <p class="max-w-[70ch]">
+        Application processing, exam scheduling, medical records, and requirement chasing run daily by a named case manager, typically four to six weeks to approval. Then delivery, placement, and a note back to you.
+      </p>
+    </aside>
+  </div>
+</section>

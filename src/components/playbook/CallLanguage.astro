@@ -1,0 +1,41 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import { beats } from '../../data/playbook';
+
+// Escape text, then turn [bracketed] fields into highlighted slots.
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const withSlots = (s: string) => esc(s).replace(/\[([^\]]+)\]/g, '<span class="slot">[$1]</span>');
+---
+<section class="section" id="on-the-call" aria-labelledby="call-title">
+  <div class="container-site grid gap-14 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-40">
+        <SectionHeader
+          id="call-title"
+          eyebrow="Our language on the call"
+          title="What gets said <strong>with your name on it.</strong>"
+          lead="You're lending us a relationship you built. You should know, sentence by sentence, what gets said."
+        />
+        <p class="mt-6 flex items-center gap-2 text-[0.875rem] text-muted" data-reveal>
+          <span class="slot">[Bracketed]</span> fields are set at your kickoff.
+        </p>
+      </div>
+    </div>
+
+    <ol class="relative lg:col-span-8">
+      <span class="absolute top-2 bottom-2 left-[1.1875rem] w-px bg-line" aria-hidden="true"></span>
+      {beats.map((b, i) => (
+        <li class="relative grid grid-cols-[2.5rem_1fr] gap-5 pb-12 last:pb-0 sm:gap-7" data-reveal>
+          <span class="relative z-10 inline-flex size-10 items-center justify-center rounded-full bg-white text-[0.8125rem] font-bold text-blue-600 ring-1 ring-line">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <div class="pt-1.5">
+            <h3 class="label !text-navy">{b.title}</h3>
+            <blockquote class="mt-3 text-[1.125rem] leading-relaxed text-navy italic sm:text-[1.1875rem]" set:html={`“${withSlots(b.quote)}”`} />
+            <p class="mt-3 max-w-[60ch] text-[0.9375rem] text-muted">{b.note}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

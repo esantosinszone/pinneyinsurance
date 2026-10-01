@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components';
+import { img, links } from '../../data/site';
+---
+<section class="section bg-mist" id="training" aria-labelledby="training-title">
+  <div class="container-site grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="eyebrow">Partner training</p>
+      <h2 id="training-title" class="h2 mt-5">We train <strong>your producers.</strong></h2>
+      <p class="mt-6">
+        We train your licensed P&amp;C advisors on this process directly — how the referral gets generated, what we do with it, and where their case sits at every stage.
+      </p>
+      <p class="mt-4 text-muted">Run it for a producer meeting or send it to a new hire.</p>
+    </div>
+
+    <div class="lg:col-span-8" data-reveal style="--reveal-delay:100ms">
+      <div class="relative aspect-video overflow-hidden rounded-[1.75rem] bg-navy-950" data-video={links.trainingVideoId}>
+        <button type="button" class="group absolute inset-0 flex size-full flex-col justify-end text-left" aria-label="Play the P&C advisor training video">
+          <img src={img.meeting.src} alt="" loading="lazy" class="absolute inset-0 size-full object-cover opacity-70 transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
+          <span class="absolute inset-0 bg-[linear-gradient(to_top,rgb(10_22_60/0.92),rgb(10_22_60/0.15)_65%)]" aria-hidden="true"></span>
+          <span class="absolute top-1/2 left-1/2 inline-flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy shadow-2xl transition-transform duration-200 ease-out group-hover:scale-105 group-active:scale-95">
+            <Icon name="hugeicons:play" class="ml-1 size-8" aria-hidden="true" />
+          </span>
+          <span class="relative p-6 text-white sm:p-9">
+            <span class="label block !text-sky">Partner training · Video</span>
+            <span class="mt-2 block text-[clamp(1.125rem,2vw,1.5rem)] leading-snug font-semibold">Training licensed P&amp;C advisors on our process</span>
+            <span class="mt-1 hidden max-w-[56ch] text-[0.9375rem] text-white/75 sm:block">The full walkthrough — spotting the opportunity, handing it off, and what happens on our side after.</span>
+          </span>
+        </button>
+      </div>
+      <p class="caption mt-4">
+        Trouble playing it here? <a class="link" href={`https://youtu.be/${links.trainingVideoId}`} target="_blank" rel="noopener">Watch on YouTube<span class="sr-only"> (opens in a new tab)</span></a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { onPage } from '../../scripts/lifecycle';
+
+  // Re-initialised on every page load / client-side navigation (ClientRouter).
+  onPage(() => {
+    // Load the embed only on demand (privacy-enhanced domain).
+    document.querySelectorAll<HTMLElement>('[data-video]').forEach((box) => {
+      box.querySelector('button')?.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${box.dataset.video}?autoplay=1&rel=0`;
+        iframe.title = 'Partner training video';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.className = 'absolute inset-0 size-full';
+        box.replaceChildren(iframe);
+        iframe.focus();
+      });
+    });
+  });
+</script>

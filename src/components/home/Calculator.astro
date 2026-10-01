@@ -1,0 +1,110 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const inputs = [
+  { id: 'refs', label: 'Referrals sent per month', min: 1, max: 60, step: 1, value: 20, fmt: 'n' },
+  { id: 'prem', label: 'Average annual premium per placed case', min: 600, max: 12000, step: 100, value: 1800, fmt: '$' },
+  { id: 'place', label: 'Share of referrals that place', min: 5, max: 70, step: 1, value: 35, fmt: '%' },
+  { id: 'comm', label: 'Commission rate', min: 5, max: 120, step: 5, value: 20, fmt: '%' },
+];
+const rows = [
+  { id: 'sent', label: 'Referrals sent per year' },
+  { id: 'placed', label: 'Cases placed' },
+  { id: 'total', label: 'Total commission generated' },
+  { id: 'per', label: 'Your share per referral sent' },
+];
+---
+<section class="section" id="the-math" aria-labelledby="math-title">
+  <div class="container-site">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <SectionHeader class="lg:col-span-7" id="math-title" eyebrow="The math" title="What this is worth <strong>to your agency.</strong>" />
+      <p class="lead lg:col-span-5" data-reveal>
+        Move the inputs to your own book. The output is your half of the commission on business that actually places — an illustration built on your assumptions, not a quote.
+      </p>
+    </div>
+
+    <div class="mt-14 grid overflow-hidden rounded-[1.75rem] border border-line lg:grid-cols-12" data-calc data-reveal>
+      <form class="flex flex-col gap-9 p-7 sm:p-10 lg:col-span-6" onsubmit="return false" aria-label="Commission illustration inputs">
+        {inputs.map((f) => (
+          <div>
+            <div class="flex items-baseline justify-between gap-4">
+              <label for={`r-${f.id}`} class="text-[0.9375rem] font-semibold text-navy">{f.label}</label>
+              <output for={`r-${f.id}`} id={`v-${f.id}`} class="numeral shrink-0 text-[1.5rem] text-blue-600"></output>
+            </div>
+            <input class="mt-3" type="range" id={`r-${f.id}`} name={f.id} min={f.min} max={f.max} step={f.step} value={f.value} data-fmt={f.fmt} />
+          </div>
+        ))}
+        <p class="caption">Commission rates vary widely by carrier and product. Set this to whatever your grid actually pays.</p>
+      </form>
+
+      <div class="on-dark flex flex-col bg-navy p-7 sm:p-10 lg:col-span-6" aria-live="polite">
+        <p class="label !text-sky">Your share, first twelve months</p>
+        <p class="numeral mt-3 text-[clamp(3rem,7vw,4.75rem)] text-white" id="out-year">$15,120</p>
+
+        <!-- cumulative month-by-month bars -->
+        <div class="mt-8" aria-hidden="true">
+          <div class="flex h-36 items-end gap-1.5" id="calc-bars">
+            {Array.from({ length: 12 }, (_, i) => (
+              <span class="flex-1 rounded-t-[3px] bg-sky/35 transition-[height] duration-300 ease-out last:bg-sky" style={`height:${((i + 1) / 12) * 100}%`}></span>
+            ))}
+          </div>
+          <div class="mt-2 flex justify-between text-[0.6875rem] font-semibold tracking-[0.08em] text-white/45 uppercase">
+            <span>Month 1</span><span>Cumulative</span><span>Month 12</span>
+          </div>
+        </div>
+
+        <dl class="mt-8 divide-y divide-white/12 border-t border-white/12">
+          {rows.map((r) => (
+            <div class="flex items-baseline justify-between gap-4 py-3 text-[0.9375rem]">
+              <dt>{r.label}</dt>
+              <dd class="font-semibold text-white tabular-nums" id={`out-${r.id}`}></dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-auto pt-6 text-[0.75rem] text-white/50">
+          Illustration only. Actual compensation depends on carrier, product, issue age, rate class, and the terms in your partner agreement.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { onPage } from '../../scripts/lifecycle';
+
+  // Re-initialised on every page load / client-side navigation (ClientRouter).
+  onPage(() => {
+    const root = document.querySelector<HTMLElement>('[data-calc]');
+    if (root) {
+      const $ = (id: string) => document.getElementById(id)!;
+      const money = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+      const ranges = Array.from(root.querySelectorAll<HTMLInputElement>('input[type=range]'));
+      const bars = Array.from($('calc-bars').children) as HTMLElement[];
+
+      const recalc = () => {
+        const v = Object.fromEntries(ranges.map((r) => [r.name, Number(r.value)]));
+        ranges.forEach((r) => {
+          const pct = ((Number(r.value) - Number(r.min)) / (Number(r.max) - Number(r.min))) * 100;
+          r.style.setProperty('--fill', `${pct}%`);
+          const fmt = r.dataset.fmt;
+          $(`v-${r.name}`).textContent = fmt === '$' ? money(Number(r.value)) : fmt === '%' ? `${r.value}%` : r.value;
+        });
+        const sentYear = v.refs * 12;
+        const placed = sentYear * (v.place / 100);
+        const total = placed * v.prem * (v.comm / 100);
+        const share = total * 0.5;
+
+        $('out-year').textContent = money(share);
+        $('out-sent').textContent = sentYear.toLocaleString('en-US');
+        $('out-placed').textContent = Math.round(placed).toLocaleString('en-US');
+        $('out-total').textContent = money(total);
+        $('out-per').textContent = money(sentYear ? share / sentYear : 0);
+        // bars are cumulative, so the shape is constant; height encodes share relative to the slider maximum
+        const scale = Math.max(0.12, Math.min(1, Math.sqrt(share / 120000)));
+        bars.forEach((b, i) => (b.style.height = `${((i + 1) / 12) * scale * 100}%`));
+      };
+      ranges.forEach((r) => r.addEventListener('input', recalc));
+      recalc();
+    }
+  });
+</script>

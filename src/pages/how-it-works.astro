@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import SubNav from '../components/SubNav.astro';
+import Button from '../components/ui/Button.astro';
+import CasePath from '../components/how/CasePath.astro';
+import Underwriting from '../components/how/Underwriting.astro';
+import Benefits from '../components/how/Benefits.astro';
+import ContactStrategy from '../components/how/ContactStrategy.astro';
+import WhiteLabel from '../components/how/WhiteLabel.astro';
+import Carriers from '../components/how/Carriers.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { img } from '../data/site';
+
+const sections = [
+  { href: '#case-path', label: 'The case path' },
+  { href: '#inside-pinney', label: 'Inside Pinney' },
+  { href: '#underwriting', label: 'Underwriting' },
+  { href: '#what-you-get', label: 'What you get' },
+  { href: '#contact-strategy', label: 'Contact strategy' },
+  { href: '#white-label', label: 'White label & cost' },
+  { href: '#carriers', label: 'Carriers' },
+];
+---
+<Base
+  title="How it works"
+  description="What happens to a referral after you send it: the case path, in-house underwriting, the 14-day contact strategy, white-label calling, and the 60+ carriers Pinney shops."
+>
+  <PageHero
+    eyebrow="How it works"
+    title="Your lane has two boxes. <strong>Everything between them is ours.</strong>"
+    lead="The call, the sale, the application, the underwriting, and the placement run on our side — under your agency's name, without pulling you back in."
+    image={img.signing}
+  >
+    <Fragment slot="actions">
+      <Button variant="light" arrow data-get-started>Get started</Button>
+      <Button variant="ghost-dark" href="/submit">Submit a client</Button>
+    </Fragment>
+  </PageHero>
+  <SubNav label="On this page" items={sections} />
+  <CasePath />
+  <Underwriting />
+  <Benefits />
+  <ContactStrategy />
+  <WhiteLabel />
+  <Carriers />
+  <CtaBand title="Ready to put a name <strong>through this?</strong>" body="Partner with us, email the client information over, or submit it on the form. A licensed advisor and a case manager pick it up and call within 24 hours." />
+</Base>

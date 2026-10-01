@@ -1,0 +1,127 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './ui/Logo.astro';
+import { nav, contact } from '../data/site';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<header id="site-header" class="site-header group/header fixed inset-x-0 top-0 z-50" data-scrolled="false" transition:name="site-header" transition:animate="none">
+  <div class="header-bg absolute inset-0 -z-10 border-b border-transparent transition-[background-color,border-color,box-shadow] duration-300 ease-out"></div>
+  <div class="container-site flex h-[var(--header-h)] items-center justify-between gap-6">
+    <span class="logo-light"><Logo tone="light" /></span>
+    <span class="logo-dark hidden"><Logo tone="dark" /></span>
+
+    <nav aria-label="Primary" class="hidden lg:block">
+      <ul class="flex items-center gap-1">
+        {nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class="nav-link relative rounded-full px-4 py-2 text-[0.875rem] font-semibold transition-colors duration-200"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href={contact.phone.href} class="nav-phone hidden items-center gap-2 rounded-full px-3 py-2 text-[0.875rem] font-semibold transition-colors xl:inline-flex">
+        <Icon name="hugeicons:call-02" class="size-4" aria-hidden="true" />
+        {contact.phone.label}
+      </a>
+      <button type="button" class="btn btn-sm header-cta hidden sm:inline-flex" data-get-started>
+        Get started
+      </button>
+      <button
+        type="button"
+        class="menu-toggle inline-flex size-11 items-center justify-center rounded-full transition-colors lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-menu-toggle
+      >
+        <span class="sr-only">Open menu</span>
+        <Icon name="hugeicons:menu-01" class="icon-open size-6" aria-hidden="true" />
+        <Icon name="hugeicons:cancel-01" class="icon-close hidden size-6" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-x-0 top-[var(--header-h)] bottom-0 hidden overflow-y-auto bg-white lg:hidden" data-menu>
+    <nav aria-label="Primary mobile" class="container-site flex min-h-full flex-col pt-6 pb-10">
+      <ul class="flex flex-col">
+        {nav.map((item, i) => (
+          <li class="border-b border-line">
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class="mm-link flex items-center justify-between py-5 text-[1.375rem] font-light text-navy aria-[current=page]:font-semibold"
+              style={`--i:${i}`}
+            >
+              {item.label}
+              <Icon name="hugeicons:arrow-right-02" class="size-5 text-blue-600" aria-hidden="true" />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-auto flex flex-col gap-3 pt-10">
+        <button type="button" class="btn btn-primary w-full" data-get-started>Get started</button>
+        <a href={contact.phone.href} class="btn btn-outline w-full">
+          <Icon name="hugeicons:call-02" class="size-4" aria-hidden="true" />
+          {contact.phone.label}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Transparent over the dark hero; solid white once scrolled or when the menu is open. */
+  .nav-link, .nav-phone, .menu-toggle { color: rgb(255 255 255 / 0.82); }
+  .nav-link:hover, .nav-phone:hover, .menu-toggle:hover { color: #fff; background: rgb(255 255 255 / 0.08); }
+  .nav-link[aria-current='page'] { color: #fff; }
+  .nav-link[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.2rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-sky);
+  }
+  .header-cta { background: #fff; color: var(--color-navy); }
+  .header-cta:hover { background: var(--color-sky-50); }
+
+  .site-header[data-scrolled='true'] .header-bg,
+  .site-header[data-menu-open='true'] .header-bg {
+    background: rgb(255 255 255 / 0.94);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border-color: var(--color-line);
+    box-shadow: 0 8px 24px -18px rgb(18 49 89 / 0.35);
+  }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) :is(.nav-link, .nav-phone, .menu-toggle) { color: var(--color-body); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) :is(.nav-link, .nav-phone, .menu-toggle):hover { color: var(--color-navy); background: var(--color-mist); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .nav-link[aria-current='page'] { color: var(--color-navy); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .nav-link[aria-current='page']::after { background: var(--color-blue); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .header-cta { background: var(--color-blue-600); color: #fff; }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .header-cta:hover { background: var(--color-blue-700); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .logo-light { display: none; }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .logo-dark { display: inline; }
+
+  .site-header[data-menu-open='true'] .mobile-menu { display: block; }
+  .site-header[data-menu-open='true'] .icon-open { display: none; }
+  .site-header[data-menu-open='true'] .icon-close { display: block; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .site-header[data-menu-open='true'] .mm-link {
+      animation: mm-in 360ms var(--ease-out) both;
+      animation-delay: calc(var(--i) * 40ms);
+    }
+    @keyframes mm-in { from { opacity: 0; transform: translateY(8px); } }
+  }
+</style>

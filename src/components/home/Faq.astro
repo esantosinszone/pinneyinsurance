@@ -1,0 +1,75 @@
+---
+import { Icon } from 'astro-icon/components';
+import { faqs } from '../../data/home';
+import { contact, mail } from '../../data/site';
+---
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-28" data-reveal>
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title" class="h2 mt-5">What P&amp;C agencies <strong>ask us first.</strong></h2>
+        <p class="mt-6 text-muted">The ones that come up on every first call.</p>
+
+        <div class="mt-10 border-t border-line pt-6">
+          <p class="font-semibold text-navy">Still have a question?</p>
+          <p class="mt-1 text-[0.9375rem] text-muted">Email brokerage sales support and a person will get back to you.</p>
+          <p class="mt-4 flex flex-col gap-2 text-[0.9375rem]">
+            <a class="link inline-flex items-center gap-2" href={mail.partnerships}><Icon name="hugeicons:mail-01" class="size-4" aria-hidden="true" />Email sales support</a>
+            <a class="link inline-flex items-center gap-2" href={contact.phone.href}><Icon name="hugeicons:call-02" class="size-4" aria-hidden="true" />{contact.phone.label}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- name="faq" makes the group exclusive natively: opening one closes the others -->
+    <div class="border-t border-navy lg:col-span-8" data-faq>
+      {faqs.map((f, i) => (
+        <details name="faq" class="group border-b border-line" open={i === 0} data-reveal>
+          <summary class="flex cursor-pointer items-start group-open:cursor-default justify-between gap-6 py-6 text-[1.125rem] font-semibold text-navy transition-colors hover:text-blue-600 sm:text-[1.1875rem]">
+            {f.q}
+            <span class="acc-icon mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-blue-600 transition-colors group-hover:border-blue-600 group-open:border-navy group-open:bg-navy group-open:text-white">
+              <Icon name="hugeicons:add-01" class="size-4" aria-hidden="true" />
+            </span>
+          </summary>
+          <div class="max-w-[68ch] pr-12 pb-7">
+            <p>{f.a}</p>
+            {f.link && <a href={f.link.href} class="link mt-3 inline-flex items-center gap-1.5 text-[0.9375rem]">{f.link.label}<Icon name="hugeicons:arrow-right-02" class="size-4" aria-hidden="true" /></a>}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { onPage } from '../../scripts/lifecycle';
+
+  // One item open at a time, and one always open:
+  // - opening an item closes the rest (also covers browsers without <details name>)
+  // - clicking the open item's question does nothing, so it can't collapse to zero
+  onPage((signal) => {
+    const root = document.querySelector<HTMLElement>('[data-faq]');
+    if (!root) return;
+    const items = Array.from(root.querySelectorAll<HTMLDetailsElement>('details'));
+
+    items.forEach((d) => {
+      d.querySelector('summary')!.addEventListener(
+        'click',
+        (e) => {
+          if (d.open) e.preventDefault();
+        },
+        { signal },
+      );
+      d.addEventListener(
+        'toggle',
+        () => {
+          if (d.open) items.forEach((o) => o !== d && (o.open = false));
+        },
+        { signal },
+      );
+    });
+
+    if (!items.some((d) => d.open) && items[0]) items[0].open = true;
+  });
+</script>

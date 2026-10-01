@@ -1,0 +1,14 @@
+---
+interface Props { class?: string; tone?: 'light' | 'dark'; }
+const { class: cls = '', tone = 'dark' } = Astro.props;
+---
+<a href="/" class:list={['group inline-flex items-center gap-3 rounded-md', cls]} aria-label="Pinney Insurance — partner home">
+  <span class="flex flex-col leading-none">
+    <span class:list={['text-[1.375rem] font-extrabold tracking-[0.02em]', tone === 'light' ? 'text-white' : 'text-navy']}>PINNEY</span>
+    <span class:list={['mt-1 text-[0.5rem] font-semibold tracking-[0.62em]', tone === 'light' ? 'text-sky' : 'text-blue-600']}>INSURANCE</span>
+  </span>
+  <span class:list={['hidden h-7 w-px sm:block', tone === 'light' ? 'bg-white/25' : 'bg-line']} aria-hidden="true"></span>
+  <span class:list={['hidden text-[0.6875rem] font-semibold leading-tight tracking-[0.08em] uppercase sm:block', tone === 'light' ? 'text-white/70' : 'text-muted']}>
+    Life Insurance<br />Division
+  </span>
+</a>

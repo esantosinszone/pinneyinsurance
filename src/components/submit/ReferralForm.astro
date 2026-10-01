@@ -1,0 +1,114 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '../ui/Button.astro';
+import { links, mail } from '../../data/site';
+
+const need = ['Name', 'State', 'Phone', 'Date of birth', 'Email', 'Coverage amount'];
+const next = [
+  'A licensed advisor and a named case manager are assigned.',
+  'We call as your life division, within 24 hours.',
+  'Quote, application, underwriting, placement — then we report back.',
+];
+const formSrc = `https://api.leadconnectorhq.com/widget/form/${links.formEmbedId}`;
+---
+<section class="section" id="form" aria-labelledby="form-title">
+  <div class="container-site grid gap-14 lg:grid-cols-12 lg:gap-16">
+    <aside class="lg:col-span-4">
+      <div class="lg:sticky lg:top-28" data-reveal>
+        <p class="eyebrow">Submit one right now</p>
+        <h2 id="form-title" class="h2 mt-5">The referral form.</h2>
+        <p class="mt-4 inline-flex items-center gap-2 text-[0.875rem] text-muted">
+          <Icon name="hugeicons:security-check" class="size-4 text-blue-600" aria-hidden="true" />Secure · about 2 minutes
+        </p>
+
+        <h3 class="label mt-10">What we need</h3>
+        <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[0.9375rem]">
+          {need.map((n) => <li class="flex gap-2.5"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-blue-600" aria-hidden="true" />{n}</li>)}
+        </ul>
+
+        <h3 class="label mt-10">What happens next</h3>
+        <ol class="mt-4 space-y-4 text-[0.9375rem]">
+          {next.map((t, i) => (
+            <li class="flex gap-4"><span class="w-5 font-bold text-blue-600">{i + 1}</span><span>{t}</span></li>
+          ))}
+        </ol>
+
+        <p class="caption mt-10 border-t border-line pt-6">
+          Working App Assist or writing the case yourself? Same form — note it in the message and we route it. Partnership questions go to <a class="link" href={mail.partnerships}>brokerage sales support</a>.
+        </p>
+      </div>
+    </aside>
+
+    <div class="lg:col-span-8" data-reveal style="--reveal-delay:100ms">
+      <div class="overflow-hidden rounded-[1.75rem] border border-line bg-paper" data-form-wrap>
+        <div class="flex items-center justify-between gap-4 border-b border-line bg-white px-6 py-4">
+          <span class="inline-flex items-center gap-2.5 text-[0.875rem] font-semibold text-navy">
+            <span class="size-2 rounded-full bg-blue" aria-hidden="true"></span>Referral form
+          </span>
+          <a href={links.directForm} target="_blank" rel="noopener" class="link text-[0.8125rem]">Open in a new tab<span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+
+        <iframe
+          src={formSrc}
+          id={`inline-${links.formEmbedId}`}
+          title="Referral form"
+          class="block h-[1450px] w-full border-0 bg-white"
+          loading="lazy"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Inszone Option B"
+          data-height="1450"
+          data-layout-iframe-id={`inline-${links.formEmbedId}`}
+          data-form-id={links.formEmbedId}
+          data-cookie-consent="true"
+          data-cookie-consent-provider="auto"
+        ></iframe>
+
+        <div class="hidden p-8 sm:p-12" data-form-fallback>
+          <Icon name="hugeicons:information-circle" class="size-8 text-blue-600" aria-hidden="true" />
+          <h3 class="h3 mt-4">The form didn't load here</h3>
+          <p class="mt-2 max-w-[52ch] text-muted">Some browsers and preview environments block embedded forms. Open it directly, or email the client details over — either route reaches the same desk.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <Button href={links.directForm} arrow>Open the form</Button>
+            <Button href={mail.clientInfo} variant="outline" icon="hugeicons:mail-01">Email it instead</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+<script>
+  import { onPage } from '../../scripts/lifecycle';
+
+  // Re-initialised on every page load / client-side navigation (ClientRouter).
+  onPage(() => {
+    // Reveal a fallback if the embedded form is blocked.
+    const wrap = document.querySelector<HTMLElement>('[data-form-wrap]');
+    const frame = wrap?.querySelector('iframe');
+    if (wrap && frame) {
+      let loaded = false;
+      frame.addEventListener('load', () => (loaded = true));
+      const check = () =>
+        setTimeout(() => {
+          if (!loaded) {
+            frame.classList.add('hidden');
+            wrap.querySelector('[data-form-fallback]')!.classList.remove('hidden');
+          }
+        }, 6000);
+      // the iframe is lazy, so only start the timer once it is near the viewport
+      new IntersectionObserver((entries, io) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          check();
+          io.disconnect();
+        }
+      }, { rootMargin: '400px' }).observe(frame);
+    }
+  });
+</script>

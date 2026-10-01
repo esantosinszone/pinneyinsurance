@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import SubNav from '../components/SubNav.astro';
+import Button from '../components/ui/Button.astro';
+import ThreeSteps from '../components/playbook/ThreeSteps.astro';
+import Fit from '../components/playbook/Fit.astro';
+import Scripts from '../components/playbook/Scripts.astro';
+import Training from '../components/playbook/Training.astro';
+import CallLanguage from '../components/playbook/CallLanguage.astro';
+import Standard from '../components/playbook/Standard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { img } from '../data/site';
+
+const sections = [
+  { href: '#three-steps', label: 'Three steps' },
+  { href: '#who-to-refer', label: 'Who to refer' },
+  { href: '#scripts', label: 'Scripts' },
+  { href: '#training', label: 'Training' },
+  { href: '#on-the-call', label: 'On the call' },
+  { href: '#make-it-a-standard', label: 'Make it a standard' },
+];
+---
+<Base
+  title="Referral playbook"
+  description="For producers and account managers: how to spot a life referral, who to send and who to hold, word-for-word scripts by client type, training, and exactly what Pinney says on the call."
+>
+  <PageHero
+    eyebrow="Referral playbook · For producers"
+    title="Notice an opening. <strong>Pass a name.</strong>"
+    lead="No life license and no selling required. Here is who to refer, what to say, and exactly what your client hears when we call."
+    image={img.conversation}
+  >
+    <Fragment slot="actions">
+      <Button variant="light" href="/submit#form" arrow>Send a referral</Button>
+      <Button variant="ghost-dark" href="#scripts">Jump to the scripts</Button>
+    </Fragment>
+  </PageHero>
+  <SubNav label="On this page" items={sections} />
+  <ThreeSteps />
+  <Fit />
+  <Scripts />
+  <Training />
+  <CallLanguage />
+  <Standard />
+  <CtaBand title="Got someone in mind <strong>right now?</strong>" body="Send the name over while the conversation is still fresh. A licensed advisor calls within 24 hours, as your agency's life division." />
+</Base>

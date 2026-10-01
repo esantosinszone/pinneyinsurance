@@ -1,0 +1,26 @@
+---
+import Button from './ui/Button.astro';
+import { mail } from '../data/site';
+
+interface Props {
+  title?: string;
+  body?: string;
+}
+const {
+  title = 'Send one name this week and <strong>watch what we do with it.</strong>',
+  body = "Nothing to sign before you test it. Pick the client you already know needs coverage, use the hand-off line, and send it through. You'll get a named advisor and a case manager on it right away.",
+} = Astro.props;
+---
+<section class="on-dark brand-gradient grain relative isolate overflow-hidden">
+  <div class="container-site relative z-10 grid gap-10 py-[clamp(4.5rem,9vw,7.5rem)] lg:grid-cols-12 lg:items-end">
+    <div class="lg:col-span-8" data-reveal>
+      <h2 class="h2 max-w-[20ch]" set:html={title} />
+      <p class="lead mt-6 max-w-[56ch] !text-white/80">{body}</p>
+    </div>
+    <div class="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end" data-reveal style="--reveal-delay:100ms">
+      <Button variant="light" arrow data-get-started>Get started</Button>
+      <Button variant="ghost-dark" href={mail.bookAnalysis}>Request a book analysis</Button>
+    </div>
+    <slot />
+  </div>
+</section>

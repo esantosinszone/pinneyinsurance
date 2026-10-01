@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './ui/Logo.astro';
+import { contact, links, mail, nav } from '../data/site';
+---
+<footer class="on-dark relative overflow-hidden bg-navy-950">
+  <div class="pointer-events-none absolute -top-40 right-[-10%] size-[36rem] rounded-full bg-blue/15 blur-3xl" aria-hidden="true"></div>
+
+  <div class="container-site relative pt-20 pb-10">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <Logo tone="light" />
+        <p class="mt-6 max-w-[34ch] text-[0.9375rem]">
+          Placing life business since 1972. Written for partner agencies and their producers — not client-facing material.
+        </p>
+      </div>
+
+      <nav aria-label="Footer" class="lg:col-span-2">
+        <p class="label !text-white/50">Partner site</p>
+        <ul class="mt-4 space-y-2.5 text-[0.9375rem]">
+          {nav.map((n) => <li><a href={n.href} class="text-white/80 transition-colors hover:text-white">{n.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-3">
+        <p class="label !text-white/50">Refer a client</p>
+        <ul class="mt-4 space-y-2.5 text-[0.9375rem]">
+          <li><a href="/submit#form" class="text-white/80 transition-colors hover:text-white">Referral form</a></li>
+          <li><a href={links.portalSignup} target="_blank" rel="noopener" class="text-white/80 transition-colors hover:text-white">Register for Insureio <span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href={mail.bookAnalysis} class="text-white/80 transition-colors hover:text-white">Request a book analysis</a></li>
+        </ul>
+        <p class="mt-6 text-[0.875rem] text-white/55">Life · Disability · Long-term care<br />Annuities · Retirement · Business succession</p>
+      </div>
+
+      <address class="not-italic lg:col-span-3">
+        <p class="label !text-white/50">Pinney Insurance Center</p>
+        <ul class="mt-4 space-y-3 text-[0.9375rem]">
+          <li class="flex gap-3">
+            <Icon name="hugeicons:location-01" class="mt-1 size-4 shrink-0 text-sky" aria-hidden="true" />
+            <span>{contact.address[0]}<br />{contact.address[1]}</span>
+          </li>
+          <li class="flex gap-3">
+            <Icon name="hugeicons:call-02" class="mt-1 size-4 shrink-0 text-sky" aria-hidden="true" />
+            <span><a href={contact.phone.href} class="hover:text-white">{contact.phone.label}</a> · <a href={contact.tollFree.href} class="hover:text-white">{contact.tollFree.label}</a></span>
+          </li>
+          <li class="flex gap-3">
+            <Icon name="hugeicons:mail-01" class="mt-1 size-4 shrink-0 text-sky" aria-hidden="true" />
+            <a href={`mailto:${contact.partnerships}`} class="break-all hover:text-white">{contact.partnerships}</a>
+          </li>
+        </ul>
+      </address>
+    </div>
+
+    <div class="rule-top mt-16 pt-8">
+      <p class="max-w-[110ch] text-[0.75rem] leading-relaxed text-white/50">
+        This site is educational and describes a referral arrangement between agencies. Nothing in it is an offer of insurance, a recommendation, a guarantee of coverage or of underwriting outcome, or tax or legal advice. Commission figures are illustrations built from user-entered assumptions and are not a quote; actual compensation is governed by your executed partner agreement and by carrier commission schedules, which vary by carrier, product, issue age, and rate class. Underwriting decisions, issue timelines, and claim requirements are set by the issuing insurance company. Referrals must comply with applicable state insurance law regarding compensation to unlicensed persons; requirements vary by state and are confirmed during onboarding.
+      </p>
+      <p class="mt-6 text-[0.75rem] text-white/45">© {new Date().getFullYear()} Pinney Insurance Center · <a href={links.mainSite} class="hover:text-white">pinneyinsurance.com</a></p>
+    </div>
+  </div>
+</footer>

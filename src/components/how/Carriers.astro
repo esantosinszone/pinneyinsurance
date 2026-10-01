@@ -1,0 +1,85 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { carriers, products } from '../../data/how';
+---
+<section class="section bg-paper" id="carriers" aria-labelledby="car-title">
+  <div class="container-site">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <SectionHeader class="lg:col-span-7" id="car-title" eyebrow="Carriers and products" title="Matched to the carrier <strong>whose underwriting likes it.</strong>" />
+      <p class="lead lg:col-span-5" data-reveal>
+        That matching is most of the placement-ratio difference — and it is the part you would have to build a department to replicate.
+      </p>
+    </div>
+
+    <h3 class="label mt-14" data-reveal>What we place</h3>
+    <ul class="mt-5 grid grid-cols-2 border-t border-l border-line md:grid-cols-3 lg:grid-cols-6" data-reveal>
+      {products.map((p) => (
+        <li class="flex flex-col gap-4 border-r border-b border-line bg-white p-5">
+          <Icon name={p.icon} class="size-7 text-blue-600" aria-hidden="true" />
+          <span class="text-[0.9375rem] leading-snug font-semibold text-navy">{p.label}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-16" data-carriers data-reveal>
+      <div class="flex flex-wrap items-end justify-between gap-6 border-b border-navy pb-5">
+        <div>
+          <h3 class="h3">The carriers we shop</h3>
+          <p class="caption mt-1"><span data-count>{carriers.length}</span> appointments · life, annuity, DI, LTC, final expense</p>
+        </div>
+        <div class="relative w-full sm:w-72">
+          <label for="carrier-search" class="sr-only">Filter carriers</label>
+          <Icon name="hugeicons:search-01" class="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted" aria-hidden="true" />
+          <input
+            id="carrier-search"
+            type="search"
+            placeholder="Find a carrier"
+            autocomplete="off"
+            class="h-11 w-full rounded-full border border-line-strong bg-white pr-4 pl-10 text-[0.9375rem] text-navy transition-[border-color,box-shadow] placeholder:text-muted focus:border-blue-600 focus:shadow-[0_0_0_4px_rgb(0_140_221/0.15)] focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <ul class="mt-6 columns-1 gap-10 sm:columns-2 md:columns-3 lg:columns-4" aria-live="polite">
+        {carriers.map((c) => {
+          const ny = c.includes('(NY only)');
+          const name = c.replace(' (NY only)', '');
+          return (
+            <li class="flex break-inside-avoid items-baseline gap-2 border-b border-line/70 py-2 text-[0.9375rem] text-body" data-name={c.toLowerCase()}>
+              {name}
+              {ny && <span class="rounded-full bg-sky-50 px-2 py-0.5 text-[0.6875rem] font-semibold text-blue-700">NY only</span>}
+            </li>
+          );
+        })}
+      </ul>
+      <p class="mt-6 hidden text-muted" data-empty>No carrier matches that search. We shop more than this list — <a class="link" href="/submit#form">send the case anyway</a>.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { onPage } from '../../scripts/lifecycle';
+
+  // Re-initialised on every page load / client-side navigation (ClientRouter).
+  onPage(() => {
+    const root = document.querySelector<HTMLElement>('[data-carriers]');
+    if (root) {
+      const input = root.querySelector<HTMLInputElement>('input')!;
+      const items = Array.from(root.querySelectorAll<HTMLElement>('li[data-name]'));
+      const count = root.querySelector('[data-count]')!;
+      const empty = root.querySelector<HTMLElement>('[data-empty]')!;
+      input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        let n = 0;
+        items.forEach((li) => {
+          const show = !q || li.dataset.name!.includes(q);
+          li.hidden = !show;
+          if (show) n++;
+        });
+        count.textContent = String(n);
+        empty.classList.toggle('hidden', n > 0);
+      });
+    }
+  });
+</script>

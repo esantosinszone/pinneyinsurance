@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '../ui/Button.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { handoffLine, sendFields } from '../../data/playbook';
+---
+<section class="section" id="three-steps" aria-labelledby="steps-title">
+  <div class="container-site">
+    <SectionHeader
+      id="steps-title"
+      eyebrow="Generating the referral"
+      title="Your side of this is <strong>three steps long.</strong>"
+      lead="You are not selling life insurance and you do not need a life license — you are noticing an opening and passing a name."
+    />
+
+    <ol class="mt-16 grid gap-14 lg:grid-cols-3 lg:gap-12">
+      <li class="border-t-2 border-navy pt-8" data-reveal>
+        <span class="numeral text-[4rem] text-blue" aria-hidden="true">01</span>
+        <h3 class="mt-4 text-[1.75rem] font-semibold text-navy">Spot it</h3>
+        <p class="mt-4">
+          A client mentions something that changed — a house, a baby, a business partner, a loan, a term policy running out. That is the referral.
+        </p>
+        <p class="mt-4 text-[0.9375rem] text-muted">There is no minimum case size and you do not need to guess whether they'll qualify.</p>
+      </li>
+
+      <li class="border-t-2 border-navy pt-8" data-reveal style="--reveal-delay:90ms">
+        <span class="numeral text-[4rem] text-blue" aria-hidden="true">02</span>
+        <h3 class="mt-4 text-[1.75rem] font-semibold text-navy">Ask once</h3>
+        <p class="mt-4">One sentence, in your own words, that opens the door and hands it off. Then the line that actually matters:</p>
+        <blockquote class="say mt-5 text-[1.0625rem] leading-relaxed">“{handoffLine}”</blockquote>
+      </li>
+
+      <li class="border-t-2 border-navy pt-8" data-reveal style="--reveal-delay:180ms">
+        <span class="numeral text-[4rem] text-blue" aria-hidden="true">03</span>
+        <h3 class="mt-4 text-[1.75rem] font-semibold text-navy">Send it</h3>
+        <p class="mt-4">Six fields and your name. Everything else is a bonus.</p>
+        <ul class="mt-5 space-y-2.5 text-[0.9375rem]">
+          {sendFields.map((f) => (
+            <li class="flex gap-3"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-blue-600" aria-hidden="true" />{f}</li>
+          ))}
+        </ul>
+        <Button href="/submit#form" size="sm" arrow class="mt-7">Send a referral</Button>
+      </li>
+    </ol>
+
+    <aside class="mt-16 grid gap-3 rounded-2xl bg-sky-50 p-6 sm:grid-cols-[auto_1fr] sm:gap-5 sm:p-8" data-reveal>
+      <Icon name="hugeicons:hand-prayer" class="size-7 text-blue-600" aria-hidden="true" />
+      <div>
+        <p class="font-semibold text-navy">If they say no, leave it.</p>
+        <p class="mt-1 max-w-[70ch]">Don't push and don't submit. A client who says no today still calls you when the baby comes — and the ask cost you nothing.</p>
+      </div>
+    </aside>
+  </div>
+</section>

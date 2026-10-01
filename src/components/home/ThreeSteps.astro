@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const steps = [
+  { icon: 'hugeicons:sent', verb: 'You refer', body: 'Send a name, phone, and email. About two minutes, no life license required.', tone: 'text-blue-600 bg-sky-50' },
+  { icon: 'hugeicons:headset', verb: 'We sell', body: 'Our licensed team calls as your life division, quotes it, closes it, underwrites it, and places it.', tone: 'text-white bg-navy' },
+  { icon: 'hugeicons:money-receive-02', verb: 'You earn', body: '50/50 split of the commission on placed business. Your client relationship stays yours.', tone: 'text-white bg-blue-600' },
+];
+---
+<section class="section-tight" aria-labelledby="three-steps-title">
+  <div class="container-site">
+    <h2 id="three-steps-title" class="sr-only">How the partnership works</h2>
+    <ol class="relative grid gap-12 md:grid-cols-3 md:gap-8">
+      <!-- connecting rule behind the icons -->
+      <span class="absolute top-7 right-[16%] left-[16%] hidden h-px bg-[linear-gradient(90deg,var(--color-line)_50%,transparent_0)] bg-[length:10px_1px] md:block" aria-hidden="true"></span>
+      {steps.map((s, i) => (
+        <li class="relative flex gap-5 md:flex-col md:items-center md:text-center" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+          <span class:list={['relative inline-flex size-14 shrink-0 items-center justify-center rounded-full ring-8 ring-white', s.tone]}>
+            <Icon name={s.icon} class="size-6" aria-hidden="true" />
+          </span>
+          <div>
+            <p class="label">Step {i + 1}</p>
+            <h3 class="mt-1 text-[1.75rem] font-light tracking-tight text-navy md:mt-3">{s.verb}</h3>
+            <p class="mt-2 max-w-[32ch] text-[0.9375rem] text-muted md:mx-auto">{s.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

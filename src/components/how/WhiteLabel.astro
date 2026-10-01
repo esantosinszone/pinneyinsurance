@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components';
+import { img } from '../../data/site';
+---
+<section class="section" id="white-label" aria-labelledby="wl-title">
+  <div class="container-site grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
+    <div class="lg:col-span-6" data-reveal>
+      <p class="eyebrow">White label, in practice</p>
+      <h2 id="wl-title" class="h2 mt-5 max-w-[16ch]">Your client hears <strong>your agency.</strong></h2>
+      <p class="mt-6 max-w-[56ch]">
+        Your client is contacted by the life insurance division of your agency. Calls, emails, and scheduling links carry that identity — outbound mail comes from an <span class="font-semibold whitespace-nowrap text-blue-600">@lifeinsurancedivision</span> address, never a brokerage letterhead they've never heard of.
+      </p>
+      <p class="mt-4 max-w-[56ch]">
+        Clients don't question it. The exact intro language is yours to set at kickoff, and you're welcome to sit on the first calls.
+      </p>
+
+      <div class="mt-12 border-t border-line pt-8">
+        <h3 class="flex items-center gap-3 text-[1.25rem] font-semibold text-navy">
+          <Icon name="hugeicons:money-bag-02" class="size-6 text-blue-600" aria-hidden="true" />
+          What it costs you: nothing.
+        </h3>
+        <p class="mt-3 max-w-[56ch] text-muted">
+          No platform fee, no minimum production, no exclusivity, and no charge for the CRM, quoting engine, case management, or underwriting support. We're paid out of the same commission you are — so we only make money when your client's policy places. Pinney has been placing life business since 1972.
+        </p>
+      </div>
+    </div>
+
+    <figure class="relative lg:col-span-6" data-reveal style="--reveal-delay:100ms">
+      <img src={img.producer.src} alt={img.producer.alt} width="1200" height="1000" loading="lazy" class="aspect-[6/5] w-full rounded-[1.75rem] object-cover" />
+      <!-- what the client actually sees -->
+      <div class="absolute -bottom-8 left-4 right-4 rounded-2xl bg-white p-5 shadow-[0_30px_60px_-30px_rgb(10_22_60/0.45)] sm:left-auto sm:-right-4 sm:w-80 lg:-right-8" aria-hidden="true">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex size-10 items-center justify-center rounded-full bg-navy text-[0.75rem] font-bold text-white">LD</span>
+          <div class="min-w-0">
+            <p class="truncate text-[0.875rem] font-semibold text-navy">[Your Agency] Life Insurance Division</p>
+            <p class="truncate text-[0.75rem] text-muted">advisor@lifeinsurancedivision</p>
+          </div>
+        </div>
+        <p class="mt-3 text-[0.8125rem] text-body">“[Your producer] asked me to reach out about the coverage you discussed…”</p>
+      </div>
+    </figure>
+  </div>
+</section>

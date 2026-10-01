@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Button from '../components/ui/Button.astro';
+import RouteFinder from '../components/submit/RouteFinder.astro';
+import Ways from '../components/submit/Ways.astro';
+import ReferralForm from '../components/submit/ReferralForm.astro';
+import { img, mail } from '../data/site';
+---
+<Base
+  title="Submit a client"
+  description="Find the right route for a case, register for the Insureio submission portal, or submit a client on the referral form. First call within 24 hours."
+>
+  <PageHero
+    eyebrow="Submit a client"
+    title="Six fields. <strong>We take it from there.</strong>"
+    lead="Find the right route, set your team up on the portal, or send someone through the form right now. A licensed advisor calls within 24 hours."
+    image={img.paperwork}
+  >
+    <Fragment slot="actions">
+      <Button variant="light" href="#form" arrow="down">Go to the form</Button>
+      <Button variant="ghost-dark" href={mail.clientInfo} icon="hugeicons:mail-01">Email the details instead</Button>
+    </Fragment>
+  </PageHero>
+  <RouteFinder />
+  <Ways />
+  <ReferralForm />
+</Base>

@@ -1,0 +1,50 @@
+---
+import { metrics } from '../../data/how';
+
+// Deterministic layout of 100 applications: 60 place anyway, 20 more because of
+// in-house underwriting, 20 do not place.
+const cells = Array.from({ length: 100 }, (_, i) => {
+  const k = (i * 37) % 100;
+  return k < 60 ? 'base' : k < 80 ? 'lift' : 'none';
+});
+const tone = { base: 'bg-blue', lift: 'bg-sky', none: 'bg-white/10 ring-1 ring-inset ring-white/15' } as const;
+---
+<section class="on-dark section bg-navy" id="underwriting" aria-labelledby="uw-title">
+  <div class="container-site">
+    <div class="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
+      <div class="lg:col-span-6" data-reveal>
+        <p class="eyebrow">What an underwriter on staff is worth</p>
+        <h2 id="uw-title" class="h2 mt-5 max-w-[16ch]">On a 50/50 split, <strong>placement ratio is the whole game.</strong></h2>
+        <p class="mt-6 max-w-[54ch]">
+          Impaired risk gets screened before submission and matched to the carrier whose underwriting actually writes it. That is where the average 20-point placement lift comes from.
+        </p>
+        <dl class="mt-10 grid grid-cols-3 gap-6 border-t border-white/15 pt-6">
+          <div class="flex flex-col"><dt class="text-[0.8125rem]">Place anyway</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-blue">60</dd></div>
+          <div class="flex flex-col"><dt class="text-[0.8125rem]">Placed because an underwriter saw them first</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-sky">+20</dd></div>
+          <div class="flex flex-col"><dt class="text-[0.8125rem]">Out of 100 placed</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-white">80</dd></div>
+        </dl>
+      </div>
+
+      <figure class="mx-auto w-full max-w-md lg:col-span-6 lg:mr-0" data-reveal style="--reveal-delay:100ms">
+        <div class="grid grid-cols-10 gap-1.5 sm:gap-2" role="img" aria-label="100 applications: 60 place anyway, 20 more place because of in-house underwriting, 20 do not place">
+          {cells.map((c) => <span class:list={['aspect-square rounded-[4px]', tone[c]]}></span>)}
+        </div>
+        <figcaption class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[0.8125rem]">
+          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-blue"></span>Would place anyway</span>
+          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-sky"></span>Placed because of pre-screening and carrier matching</span>
+          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-white/10 ring-1 ring-white/25"></span>Does not place</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <dl class="mt-[clamp(4rem,7vw,6rem)] grid gap-10 border-t border-white/15 pt-10 md:grid-cols-3">
+      {metrics.map((m) => (
+        <div class="flex flex-col" data-reveal>
+          <dt class="mt-3 font-semibold text-white">{m.title}</dt>
+          <dd class="numeral order-first text-[3rem] text-white">{m.value}</dd>
+          <dd class="mt-2 text-[0.9375rem] text-white/65">{m.body}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

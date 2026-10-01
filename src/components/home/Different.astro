@@ -1,0 +1,48 @@
+---
+import { differentiators } from '../../data/home';
+import { img } from '../../data/site';
+
+const proof = [
+  { value: '60+', title: 'Carriers shopped per case', body: 'Term, UL, whole life, final expense, disability, LTC, and annuities.' },
+  { value: '50+', title: 'Years placing life business', body: 'Founded 1972. Winner of the 2017 iPipeline Industry Leadership Award.' },
+  { value: '100%', title: 'Digital submission', body: 'e-Applications, e-signatures, e-tickets, e-policy delivery, encrypted email.' },
+  { value: '$0', title: 'Cost to your agency', body: 'No platform fee, no minimum production, no exclusivity.' },
+];
+---
+<section class="on-dark section relative isolate overflow-hidden bg-navy-950" id="why-pinney" aria-labelledby="diff-title">
+  <img src={img.office.src} alt="" loading="lazy" class="absolute inset-0 -z-20 size-full object-cover opacity-[0.14] mix-blend-luminosity" />
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,var(--color-navy-950)_0%,rgb(10_22_60/0.85)_45%,var(--color-navy-950)_100%)]" aria-hidden="true"></div>
+
+  <div class="container-site">
+    <div class="grid gap-8 lg:grid-cols-12" data-reveal>
+      <div class="lg:col-span-7">
+        <p class="eyebrow">What makes Pinney different</p>
+        <h2 id="diff-title" class="h2 mt-5 max-w-[18ch]">Carrier access is table stakes. <strong>Three things actually separate us.</strong></h2>
+      </div>
+      <p class="lead self-end !text-white/70 lg:col-span-5">
+        Every brokerage has the carriers. What it can't copy is the engine around them — the part you would otherwise have to build a department to replicate.
+      </p>
+    </div>
+
+    <ol class="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
+      {differentiators.map((d, i) => (
+        <li class="rule-top pt-7" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+          <span class="numeral block text-[3.5rem] text-sky/70" aria-hidden="true">0{i + 1}</span>
+          <p class="label mt-6 !text-sky">{d.kicker}</p>
+          <h3 class="mt-2 text-[1.5rem] leading-tight font-semibold">{d.title}</h3>
+          <p class="mt-4 text-[0.9375rem]">{d.body}</p>
+        </li>
+      ))}
+    </ol>
+
+    <dl class="mt-[clamp(4rem,7vw,6rem)] grid gap-px overflow-hidden rounded-2xl bg-white/12 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+      {proof.map((p) => (
+        <div class="flex flex-col gap-3 bg-navy-950/90 p-7">
+          <dt class="font-semibold text-white">{p.title}</dt>
+          <dd class="numeral order-first text-[2.75rem] text-white">{p.value}</dd>
+          <dd class="text-[0.875rem] text-white/60">{p.body}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

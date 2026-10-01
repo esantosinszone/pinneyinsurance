@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'light' | 'outline' | 'ghost-dark';
+  size?: 'md' | 'sm';
+  arrow?: boolean | 'down' | 'external';
+  icon?: string;
+  class?: string;
+  [key: string]: unknown;
+}
+const { href, variant = 'primary', size = 'md', arrow = false, icon, class: cls, ...rest } = Astro.props;
+const classes = ['btn', `btn-${variant}`, size === 'sm' && 'btn-sm', cls];
+const external = typeof href === 'string' && /^https?:/.test(href);
+const arrowName = arrow === 'down' ? 'hugeicons:arrow-down-02' : arrow === 'external' || external ? 'hugeicons:arrow-up-right-01' : 'hugeicons:arrow-right-02';
+---
+{href ? (
+  <a href={href} class:list={classes} {...(external ? { target: '_blank', rel: 'noopener' } : {})} {...rest}>
+    {icon && <Icon name={icon} class="size-[1.15em]" aria-hidden="true" />}
+    <slot />
+    {arrow && <Icon name={arrowName} class="size-[1.1em]" data-arrow aria-hidden="true" />}
+    {external && <span class="sr-only">(opens in a new tab)</span>}
+  </a>
+) : (
+  <button type="button" class:list={classes} {...rest}>
+    {icon && <Icon name={icon} class="size-[1.15em]" aria-hidden="true" />}
+    <slot />
+    {arrow && <Icon name={arrowName} class="size-[1.1em]" data-arrow aria-hidden="true" />}
+  </button>
+)}

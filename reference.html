@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinney — Your $0 Outsourced Life Insurance Call Center</title>
+  <meta name="description" content="Partner playbook for P&amp;C agencies, mortgage companies, and financial services firms: how to submit, what makes Pinney different, carriers, fit, scripts, training, contact strategy, and the referral form.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+  <style>
+    html { color-scheme: light; }
+    body { margin: 0; }
+    img { max-width: 100%; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<style>
+/* ==========================================================
+   PINNEY x INSZONE — P&C partner referral playbook
+   Single visual world: dark navy ground, gradient accents,
+   light-tinted option cards. Every color painted explicitly.
+   ========================================================== */
+:root{
+  color-scheme:light;
+
+  --bg-1:#FFFFFF;
+  --bg-2:#F7FAFC;
+  --bg-3:#EFF4F9;
+  --panel:#FFFFFF;
+  --panel-2:#F6FAFD;
+  --line:#DCE6EF;
+  --line-soft:#E8EFF6;
+
+  --text:#0E2233;
+  --text-soft:#22384B;
+  --text-mid:#3E5266;
+  --text-dim:#5B6B7B;
+  --ink-dark:#0E2233;
+
+  --blue-1:#0067AE;
+  --blue-2:#005691;
+  --blue-3:#003F6B;
+  --blue-4:#1B7FCC;
+  --blue-5:#3D9BD6;
+  --cyan:#0091D5;
+  --purple-2:#6B3FD4;
+  --purple-3:#5A32BC;
+  --purple-4:#5A32BC;
+  --gold:#E0A500;
+  --gold-soft:#7A5E00;
+  --green:#0E8C5E;
+  --red:#B4342A;
+
+  --tint-refer-a:#F4F0FE;
+  --tint-refer-b:#E9E1FC;
+  --tint-support-a:#EFF6FD;
+  --tint-support-b:#E0ECF9;
+  --tint-self-a:#EBF7FE;
+  --tint-self-b:#D9EFFC;
+
+  --grad-brand:linear-gradient(90deg,#005691,#0071BC,#6B3FD4);
+  --grad-btn:linear-gradient(135deg,#0091D5,#005691);
+
+  --radius:20px;
+  --radius-sm:12px;
+  --pill:999px;
+  --maxw:1180px;
+  --shellw:1320px;
+  --rail:262px;
+  --railgap:2rem;
+  --pad:1.5rem;
+  --gap:clamp(3.5rem,7vw,6rem);
+
+  --gold-deep:#B98900;
+  --warm-ink:#8A4A10;
+  --ok-deep:#0A7049;
+  --bad-deep:#8E271E;
+  --line-strong:#AFC4D6;
+  --deep-a:#FFFFFF;
+  --deep-b:#F1F6FB;
+  --ghost-bg:#FFFFFF;
+  --ghost-bg-h:#EAF2F9;
+  --track:#E1EAF2;
+  --on-accent:#FFFFFF;
+  --on-gold:#3A2B00;
+  --nav-glass:rgba(255,255,255,.92);
+  --rail-glass:rgba(255,255,255,.94);
+  --scrim:rgba(14,34,51,.55);
+  --scrim-soft:rgba(14,34,51,.40);
+  --lift:rgba(0,86,145,.04);
+  --lift-2:rgba(0,86,145,.13);
+  --hairline:rgba(14,34,51,.10);
+  --row-hover:rgba(0,113,188,.05);
+  --btn-glow:rgba(0,86,145,.20);
+  --btn-glow-2:rgba(0,86,145,.30);
+  --wash-a:rgba(0,113,188,.08);--wash-a-soft:rgba(0,113,188,.045);--wash-a-0:rgba(0,113,188,0);
+  --wash-a-14:rgba(0,113,188,.12);--wash-a-18:rgba(0,113,188,.16);
+  --wash-a-24:rgba(0,113,188,.26);--wash-a-30:rgba(0,113,188,.32);--wash-a-42:rgba(0,113,188,.42);
+  --wash-b:rgba(107,63,212,.07);--wash-b-0:rgba(107,63,212,0);
+  --wash-b-20:rgba(107,63,212,.20);--wash-b-24:rgba(107,63,212,.30);
+  --wash-g:rgba(224,165,0,.13);--wash-g-soft:rgba(224,165,0,.07);--wash-g-0:rgba(224,165,0,.03);
+  --wash-g-16:rgba(224,165,0,.20);--wash-g-22:rgba(224,165,0,.26);--wash-g-42:rgba(185,137,0,.48);
+  --wash-ok:rgba(14,140,94,.07);--wash-ok-soft:rgba(14,140,94,.05);
+  --wash-ok-16:rgba(14,140,94,.14);--wash-ok-22:rgba(14,140,94,.20);
+  --wash-ok-28:rgba(14,140,94,.28);--wash-ok-42:rgba(14,140,94,.42);
+  --wash-bad:rgba(180,52,42,.05);--wash-bad-13:rgba(180,52,42,.12);--wash-bad-22:rgba(180,52,42,.24);
+  --wash-warm:rgba(168,90,0,.13);--wash-off:rgba(71,89,107,.11);--wash-off-2:rgba(71,89,107,.17);
+  --tag-a-ink:#005691;--tag-b-ink:#5A32BC;--tag-c-ink:#0067AE;
+  --tag-b-bg:rgba(107,63,212,.12);--tag-c-bg:rgba(0,113,188,.12);
+  --opt-a-edge:rgba(0,145,213,.24);--opt-b-edge:rgba(107,63,212,.24);--opt-c-edge:rgba(0,113,188,.20);
+  --form-bg:#F7FAFC;
+
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Roboto","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --shadow:0 10px 26px rgba(14,34,51,.08);
+  --shadow-lg:0 22px 60px rgba(14,34,51,.14);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 360px at 15% 0%,rgba(0,113,188,.06),rgba(255,255,255,0) 60%),
+    radial-gradient(900px 360px at 85% 22%,rgba(107,63,212,.05),rgba(255,255,255,0) 62%),
+    linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  background-attachment:fixed;
+  color:var(--text-soft);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--text);margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--blue-1)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+section{scroll-margin-top:76px}
+.sec{padding-block:var(--gap)}
+.sec:first-child{padding-top:clamp(2.5rem,5vw,3.5rem)}
+
+/* ---------- type roles ---------- */
+.kicker{font-family:var(--f-mono);font-size:.6875rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-1)}
+.h2{font-size:clamp(1.75rem,3.4vw,2.4rem)}
+.h3{font-size:1.25rem;font-weight:700}
+.lede{font-size:1.0625rem;line-height:1.7;color:var(--text-mid);max-width:66ch}
+.sm{font-size:.875rem;line-height:1.55;color:var(--text-dim)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.sec-head{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2.5rem;max-width:70ch}
+.rule{height:3px;width:78px;border-radius:var(--pill);background:var(--grad-brand)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:70;background:var(--nav-glass);backdrop-filter:blur(12px) saturate(1.3);border-bottom:1px solid var(--line-soft)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;height:60px;max-width:var(--shellw);margin:0 auto;padding-inline:var(--pad)}
+.logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex:none}
+.logo-mark{width:22px;height:22px;border-radius:6px;background:var(--grad-btn);flex:none}
+.logo-txt{font-family:var(--f-display);font-weight:800;font-size:.8125rem;letter-spacing:.02em;color:var(--text)}
+.logo-txt span{color:var(--text-dim);font-weight:600}
+.nav-links{display:flex;gap:1.2rem;overflow-x:auto;scrollbar-width:none;flex:0 1 auto;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.03em;color:var(--text-dim);text-decoration:none;white-space:nowrap;padding-block:.35rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--blue-1);border-bottom-color:var(--blue-1)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;text-decoration:none;
+  font-family:var(--f-display);font-weight:700;font-size:.875rem;letter-spacing:.01em;
+  padding:.8rem 1.4rem;border-radius:var(--pill);white-space:nowrap;line-height:1.2;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.btn-primary{background:var(--grad-btn);color:var(--on-accent);box-shadow:0 10px 26px var(--btn-glow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px var(--btn-glow-2)}
+.btn-primary:active{transform:translateY(1px)}
+.btn-ghost{background:var(--ghost-bg);color:var(--text);border:1px solid var(--lift-2)}
+.btn-ghost:hover{transform:translateY(-2px);background:var(--ghost-bg-h)}
+.btn-sm{font-size:.8125rem;padding:.62rem 1.1rem}
+.btn-block{width:100%;justify-content:center}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(2.75rem,6vw,4.25rem) clamp(2rem,4vw,3rem);text-align:center}
+.hero .brandrow{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.brandrow .b{font-family:var(--f-display);font-weight:900;letter-spacing:.02em;color:var(--text);font-size:1.5rem;line-height:1;display:inline-block}
+.brandrow .b small{
+  display:block;font-size:.5rem;font-weight:700;color:var(--text-mid);margin-top:.4rem;letter-spacing:0;
+  text-align:justify;text-align-last:justify;line-height:1;
+}
+.brandrow .div{width:1px;height:38px;background:var(--line)}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.75rem);font-weight:900;letter-spacing:-.035em;max-width:20ch;margin-inline:auto}
+.hero h1 .g{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin:1.35rem auto 0;max-width:64ch;font-size:1.0625rem;line-height:1.7;color:var(--text-mid)}
+.hero .rule{margin:1.75rem auto 0}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+.statbar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--radius-sm);overflow:hidden;margin-top:2.5rem}
+.statbar>div{background:var(--panel);padding:1.15rem 1rem;text-align:center}
+.statbar b{display:block;font-family:var(--f-mono);font-weight:700;font-size:clamp(1.25rem,2.4vw,1.6rem);color:var(--text);font-variant-numeric:tabular-nums;line-height:1.1}
+.statbar span{display:block;font-family:var(--f-mono);font-size:.625rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-top:.5rem}
+
+/* ---------- shell ---------- */
+.shell{max-width:var(--shellw);margin:0 auto;padding-inline:var(--pad)}
+
+/* ---------- floating table of contents ---------- */
+.tocrail{
+  position:fixed;top:60px;left:0;bottom:0;width:var(--rail);z-index:55;
+  background:var(--rail-glass);backdrop-filter:blur(16px) saturate(1.2);
+  border-right:1px solid var(--line-soft);
+  padding:1.35rem 1.1rem 1.5rem;overflow-y:auto;scrollbar-width:thin;
+  display:flex;flex-direction:column;gap:.9rem;
+  transition:transform .28s cubic-bezier(.16,.84,.44,1);
+}
+.toc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.toc-h{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+.toc-min{
+  width:26px;height:26px;min-width:26px;border-radius:6px;border:1px solid var(--line);
+  background:transparent;color:var(--text-dim);cursor:pointer;display:grid;place-items:center;
+  font-family:var(--f-body);font-size:1rem;line-height:1;transition:all .2s;
+}
+.toc-min:hover{border-color:var(--blue-1);color:var(--blue-1)}
+.toc-list{display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.toc-list a{
+  display:grid;grid-template-columns:26px 1fr;gap:.55rem;align-items:baseline;
+  padding:.55rem .7rem;margin-left:-1px;border-left:2px solid transparent;
+  font-size:.8125rem;line-height:1.35;color:var(--text-dim);text-decoration:none;
+  transition:color .2s ease,border-color .2s ease;
+}
+.toc-list a .n{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.06em;color:var(--line-soft)}
+.toc-list a:hover{color:var(--text-soft)}
+.toc-list a:hover .n{color:var(--text-dim)}
+.toc-list a.active{color:var(--text);border-left-color:var(--blue-1);font-weight:500}
+.toc-list a.active .n{color:var(--blue-1)}
+.toc-cta{margin-top:.35rem}
+
+.tocpill{
+  position:fixed;left:0;top:76px;z-index:56;display:none;align-items:center;gap:.5rem;
+  background:var(--panel);border:1px solid var(--line);border-left:0;
+  border-radius:0 var(--pill) var(--pill) 0;padding:.62rem .95rem .62rem .8rem;
+  color:var(--text-soft);cursor:pointer;box-shadow:var(--shadow);
+  font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  transition:all .2s;
+}
+.tocpill:hover{border-color:var(--blue-1);color:var(--blue-1);padding-left:1rem}
+.tocbg{position:fixed;inset:0;z-index:54;background:var(--scrim-soft);display:none}
+
+/* docked by default on wide screens */
+@media (min-width:1141px){
+  body{padding-left:calc(var(--rail) + var(--railgap))}
+  /* the rail is the navigation while docked — no need to duplicate it in the bar */
+  html:not([data-toc="closed"]) .nav-links{display:none}
+  /* minimized: keep clear of the floating Contents tab */
+  html[data-toc="closed"] body{padding-left:5rem}
+  html[data-toc="closed"] .tocrail{transform:translateX(-100%)}
+  html[data-toc="closed"] .tocpill{display:inline-flex}
+}
+/* overlay panel on narrow screens */
+@media (max-width:1140px){
+  .tocrail{transform:translateX(-100%);width:min(310px,86vw);box-shadow:var(--shadow-lg)}
+  .tocpill{display:inline-flex}
+  html[data-toc="open"] .tocrail{transform:none}
+  html[data-toc="open"] .tocpill{display:none}
+  html[data-toc="open"] .tocbg{display:block}
+}
+
+
+/* ---------- three-step band ---------- */
+.trio{background:linear-gradient(180deg,var(--wash-a-soft),rgba(20,26,33,0));border-bottom:1px solid var(--line-soft);padding-block:clamp(2.25rem,4.5vw,3.25rem)}
+.trio-grid{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;gap:0}
+.tstep{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.9rem;padding:0 1rem}
+.tdisc{
+  width:104px;height:104px;border-radius:50%;display:grid;place-items:center;position:relative;flex:none;
+  border:1px solid var(--line);
+}
+.tdisc.a{background:radial-gradient(circle at 30% 25%,var(--wash-g-22),var(--wash-g-soft));border-color:var(--wash-g-42)}
+.tdisc.b{background:radial-gradient(circle at 30% 25%,var(--wash-a-24),var(--wash-a-soft));border-color:var(--wash-a-42)}
+.tdisc.c{background:radial-gradient(circle at 30% 25%,var(--wash-ok-22),var(--wash-ok-soft));border-color:var(--wash-ok-42)}
+.tdisc svg{width:44px;height:44px}
+.tnum{
+  position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--f-mono);font-size:.6875rem;font-weight:700;color:var(--on-accent);
+}
+.tdisc.a .tnum{background:var(--gold)}
+.tdisc.b .tnum{background:var(--blue-1)}
+.tdisc.c .tnum{background:var(--green)}
+.tstep h3{font-family:var(--f-display);font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:900;letter-spacing:-.02em}
+.tstep .a-t{color:var(--gold-soft)}
+.tstep .b-t{color:var(--blue-1)}
+.tstep .c-t{color:var(--green)}
+.tstep p{font-size:.875rem;line-height:1.55;color:var(--text-dim);max-width:30ch}
+.tarrow{display:grid;place-items:center;color:var(--line-strong,var(--line-strong))}
+.tarrow svg{width:28px;height:28px}
+
+/* ---------- who we hope you are ---------- */
+.whoband{padding-block:var(--gap)}
+.who-lead{font-size:1.0625rem;line-height:1.75;color:var(--text-mid);max-width:68ch}
+.who-lead + .who-lead{margin-top:1.1rem}
+.who-punch{
+  font-family:var(--f-display);font-size:clamp(1.35rem,3vw,1.9rem);font-weight:900;letter-spacing:-.025em;
+  color:var(--text);line-height:1.2;margin:1.75rem 0;
+}
+.who-punch em{font-style:normal;background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.lane{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.85rem;position:relative;overflow:hidden}
+.lane::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.lane.l1::before{background:linear-gradient(90deg,var(--cyan),var(--blue-2))}
+.lane.l2::before{background:linear-gradient(90deg,var(--purple-4),var(--purple-3))}
+.lane.l3::before{background:linear-gradient(90deg,var(--gold),var(--gold-deep))}
+.lane-k{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.lane.l1 .lane-k{color:var(--cyan)}
+.lane.l2 .lane-k{color:var(--purple-4)}
+.lane.l3 .lane-k{color:var(--gold-soft)}
+.lane h4{font-family:var(--f-display);font-size:1.0625rem;font-weight:800}
+.lane p{font-size:.875rem;line-height:1.6;color:var(--text-mid)}
+.specialty{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:1.25rem}
+.specialty span{
+  background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:.8rem 1rem;
+  font-family:var(--f-display);font-size:.875rem;font-weight:700;color:var(--text-soft);
+}
+.mindset{
+  background:linear-gradient(150deg,var(--deep-a),var(--deep-b) 65%);border:1px solid var(--wash-a-24);border-radius:var(--radius);
+  padding:clamp(1.75rem,4vw,2.5rem);margin-top:1.75rem;position:relative;overflow:hidden;
+}
+.mindset::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+.mindset .q{font-family:var(--f-display);font-size:clamp(1.1rem,2.4vw,1.5rem);font-weight:700;color:var(--text);line-height:1.4;max-width:60ch}
+.mindset .after{margin-top:1.25rem;font-size:.9375rem;line-height:1.65;color:var(--text-mid);max-width:66ch}
+
+/* ---------- submission wizard ---------- */
+.wizband{background:linear-gradient(180deg,var(--wash-a-soft),rgba(20,26,33,0));border-bottom:1px solid var(--line-soft);padding-block:clamp(2.25rem,4.5vw,3.25rem)}
+.wizgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,4vw,3.5rem);align-items:start}
+.wizintro h2{font-size:clamp(1.5rem,3vw,2rem)}
+.wizintro p{margin-top:1rem;color:var(--text-mid);font-size:.9375rem;line-height:1.65;max-width:44ch}
+.wizintro .rule{margin-top:1.1rem}
+.wizsteps{display:flex;flex-direction:column;gap:.55rem;margin-top:1.5rem}
+.wizsteps div{display:grid;grid-template-columns:20px 1fr;gap:.6rem;font-size:.8125rem;color:var(--text-dim);line-height:1.45}
+.wizsteps .n{font-family:var(--f-mono);font-size:.6875rem;font-weight:700;color:var(--blue-1)}
+
+.wiz{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.75rem;position:relative;overflow:hidden;min-height:270px;display:flex;flex-direction:column}
+.wiz::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+.wiz-tag{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-1);margin-bottom:.9rem}
+.wiz-tag.res{color:var(--gold-soft)}
+.wiz-q{font-family:var(--f-display);font-size:clamp(1.1rem,2.2vw,1.4rem);font-weight:800;color:var(--text);line-height:1.25;letter-spacing:-.02em}
+.wiz-help{margin-top:.75rem;font-size:.875rem;line-height:1.55;color:var(--text-dim);max-width:56ch}
+.wiz-btns{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}
+.wiz-b{
+  font-family:var(--f-display);font-weight:700;font-size:.875rem;padding:.75rem 1.35rem;border-radius:var(--pill);
+  border:1px solid var(--line);background:var(--panel-2);color:var(--text-soft);cursor:pointer;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease;
+}
+.wiz-b:hover{transform:translateY(-2px);border-color:var(--blue-1);color:var(--text);background:var(--wash-a)}
+.wiz-b.yes:hover{border-color:var(--green);background:var(--wash-ok)}
+.wiz-b.no:hover{border-color:var(--gold);background:var(--wash-g)}
+.wiz-cta{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}
+.wiz-actions{display:flex;gap:.6rem;margin-top:auto;padding-top:1.5rem}
+.wiz-a{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--text-dim);padding:.45rem .85rem;border-radius:var(--pill);cursor:pointer;transition:all .2s}
+.wiz-a:hover{border-color:var(--blue-1);color:var(--blue-1)}
+.wiz-prog{display:flex;gap:.3rem;margin-left:auto;align-items:center}
+.wiz-dot{width:6px;height:6px;border-radius:50%;background:var(--line-strong,var(--line))}
+.wiz-dot.on{background:var(--blue-1)}
+
+/* ---------- carriers ---------- */
+.carrierbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.75rem;margin-top:1.25rem}
+.carrierhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.carrierhead .c{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
+.carriers{columns:4;column-gap:2rem;list-style:none;margin:0;padding:0}
+.carriers li{
+  break-inside:avoid;font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.02em;line-height:1.9;
+  color:var(--text-mid);padding-left:.85rem;position:relative;
+}
+.carriers li::before{content:"";position:absolute;left:0;top:.82em;width:4px;height:4px;border-radius:1px;background:var(--blue-2)}
+.carriers li .ny{color:var(--text-dim);font-size:.9em}
+
+
+/* ---------- figures ---------- */
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.75rem;margin-top:1.25rem;overflow-x:auto}
+.fig-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.35rem}
+.fig-h h4{font-family:var(--f-display);font-size:1.0625rem;font-weight:800;color:var(--text)}
+.fig-h .note{font-family:var(--f-mono);font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
+.fig svg{display:block;width:100%;height:auto}
+.fig-cap{margin-top:1.15rem;font-size:.8125rem;line-height:1.55;color:var(--text-dim);max-width:78ch}
+.legend{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:1.1rem}
+.legend span{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--f-mono);font-size:.625rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim)}
+.legend i{width:10px;height:10px;border-radius:2px;display:block;flex:none}
+.legend i.round{border-radius:50%}
+svg .s-lab{font-family:var(--f-mono);font-size:10px;font-weight:700;letter-spacing:.12em;fill:var(--text-dim)}
+svg .s-t{font-family:var(--f-display);font-size:13px;font-weight:700;fill:var(--text)}
+svg .s-s{font-family:var(--f-body);font-size:11px;fill:var(--text-dim)}
+svg .s-big{font-family:var(--f-mono);font-size:20px;font-weight:700;fill:var(--text)}
+svg .s-gold{fill:var(--gold-soft)}
+svg .s-blue{fill:var(--blue-1)}
+
+/* ---------- get started bar ---------- */
+.gsbar{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;
+  background:linear-gradient(90deg,var(--wash-a),var(--wash-b));
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.35rem 1.6rem;margin-top:2rem;
+}
+.gsbar p{font-family:var(--f-display);font-weight:700;color:var(--text);font-size:1rem;line-height:1.3}
+.gsbar span{display:block;font-family:var(--f-body);font-weight:400;font-size:.875rem;color:var(--text-dim);margin-top:.3rem;max-width:60ch}
+
+/* ---------- option cards ---------- */
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:stretch}
+.opt{position:relative;border-radius:var(--radius);padding:1.5rem 1.35rem 1.35rem;overflow:hidden;display:flex;flex-direction:column;gap:1rem;color:var(--ink-dark);box-shadow:0 16px 36px rgba(0,0,0,.28),inset 0 1px 0 var(--lift-2)}
+.opt::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.opt.refer{background:linear-gradient(180deg,var(--tint-refer-a),var(--tint-refer-b));border:1px solid var(--opt-b-edge)}
+.opt.refer::before{background:linear-gradient(90deg,var(--purple-4),var(--purple-3))}
+.opt.support{background:linear-gradient(180deg,var(--tint-support-a),var(--tint-support-b));border:1px solid var(--opt-c-edge)}
+.opt.support::before{background:linear-gradient(90deg,var(--blue-4),var(--blue-3))}
+.opt.self{background:linear-gradient(180deg,var(--tint-self-a),var(--tint-self-b));border:1px solid var(--opt-a-edge)}
+.opt.self::before{background:linear-gradient(90deg,var(--cyan),var(--blue-2))}
+.opt-top{display:flex;gap:.85rem;align-items:flex-start}
+.opt-n{width:44px;height:44px;min-width:44px;border-radius:var(--pill);display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:1.05rem;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.opt.refer .opt-n{background:linear-gradient(135deg,var(--purple-4),var(--purple-3))}
+.opt.support .opt-n{background:linear-gradient(135deg,var(--blue-5),var(--blue-3))}
+.opt.self .opt-n{background:linear-gradient(135deg,var(--cyan),var(--blue-2))}
+.opt-tag{display:inline-block;font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:.24rem .55rem;border-radius:var(--pill);margin-bottom:.3rem}
+.opt.refer .opt-tag{color:var(--tag-b-ink);background:var(--tag-b-bg)}
+.opt.support .opt-tag{color:var(--tag-c-ink);background:var(--tag-c-bg)}
+.opt.self .opt-tag{color:var(--tag-a-ink);background:var(--wash-a)}
+.opt-title{font-family:var(--f-display);font-size:1.2rem;font-weight:800;line-height:1.2;color:#0F172A;letter-spacing:-.02em}
+.opt.refer .opt-title .a{color:var(--purple-3)}
+.opt.support .opt-title .a{color:var(--blue-3)}
+.opt.self .opt-title .a{color:var(--blue-2)}
+.opt-sub{font-size:.8125rem;font-weight:700;color:#243447;margin-top:.35rem}
+.opt-boxes{display:grid;gap:.75rem}
+.opt-boxes.two{grid-template-columns:1fr 1fr}
+.dark-box{background:#0F172A;border-radius:var(--radius-sm);padding:.9rem 1rem;color:#fff}
+.dark-box h4{font-family:var(--f-body);font-size:.8125rem;font-weight:700;color:#7DD3FC;margin-bottom:.45rem;letter-spacing:0}
+.dark-box ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.dark-box li{font-size:.8125rem;line-height:1.35;font-weight:500;padding-left:1.05rem;position:relative;color:#EAF2FB}
+.dark-box li::before{content:"✓";position:absolute;left:0;top:0;color:#38BDF8;font-weight:700;font-size:.75rem}
+.opt-foot{margin-top:auto;font-family:var(--f-display);font-weight:800;font-size:1rem}
+.opt.refer .opt-foot{color:var(--purple-3)}
+.opt.support .opt-foot{color:var(--blue-3)}
+.opt.self .opt-foot{color:var(--blue-2)}
+
+.tick{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.tick li{font-size:.875rem;line-height:1.5;color:var(--text-mid);padding-left:1.15rem;position:relative}
+.tick li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:2px;background:var(--gold)}
+
+/* ---------- panels / grids ---------- */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.panel-2{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:1.25rem}
+.grid{display:grid;gap:1.25rem}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+
+/* ---------- steps ---------- */
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-brand)}
+.step-n{font-family:var(--f-mono);font-size:.6875rem;font-weight:700;letter-spacing:.18em;color:var(--blue-1)}
+.step h3{font-size:1.15rem}
+.step p{font-size:.9375rem;color:var(--text-mid)}
+.need{list-style:none;margin:.35rem 0 0;padding:0;display:flex;flex-direction:column;gap:.35rem}
+.need li{font-size:.875rem;color:var(--text-soft);padding-left:1.15rem;position:relative}
+.need li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:2px;background:var(--blue-1)}
+
+/* ---------- proof strip ---------- */
+.does{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden}
+.does .cell{background:var(--panel);padding:1.35rem 1.25rem;display:flex;flex-direction:column;gap:.5rem}
+.does .cell b{font-family:var(--f-mono);font-size:1.5rem;font-weight:700;color:var(--blue-1);line-height:1;font-variant-numeric:tabular-nums}
+.does .cell h4{font-family:var(--f-display);font-size:.9375rem;font-weight:700}
+.does .cell p{font-size:.8125rem;line-height:1.5;color:var(--text-dim)}
+
+/* three differentiators */
+.diff{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.diff article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.5rem;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.6rem}
+.diff article::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.diff .d1::before{background:linear-gradient(90deg,var(--purple-4),var(--purple-3))}
+.diff .d2::before{background:linear-gradient(90deg,var(--gold),var(--gold-deep))}
+.diff .d3::before{background:linear-gradient(90deg,var(--cyan),var(--blue-2))}
+.d-k{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.d1 .d-k{color:var(--purple-4)}
+.d2 .d-k{color:var(--gold-soft)}
+.d3 .d-k{color:var(--cyan)}
+.diff h4{font-family:var(--f-display);font-size:1.125rem;font-weight:800;color:var(--text);line-height:1.25}
+.diff p{font-size:.875rem;line-height:1.6;color:var(--text-mid)}
+
+/* headline metrics */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem}
+.metric{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;position:relative;overflow:hidden}
+.metric::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-brand)}
+.metric b{display:block;font-family:var(--f-mono);font-weight:700;font-size:clamp(2.1rem,4vw,2.75rem);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;background:linear-gradient(90deg,var(--cyan),var(--blue-1));-webkit-background-clip:text;background-clip:text;color:transparent}
+.metric h4{font-family:var(--f-display);font-size:.9375rem;font-weight:700;margin-top:.8rem}
+.metric p{font-size:.8125rem;color:var(--text-dim);margin-top:.3rem;line-height:1.5}
+
+/* value buckets */
+.buckets{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.bucket{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:1.25rem;position:relative;overflow:hidden}
+.bucket::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.bucket.b1::before{background:linear-gradient(90deg,var(--cyan),var(--blue-2))}
+.bucket.b2::before{background:linear-gradient(90deg,var(--blue-4),var(--blue-3))}
+.bucket.b3::before{background:linear-gradient(90deg,var(--purple-4),var(--purple-3))}
+.bucket-h{display:flex;flex-direction:column;gap:.45rem}
+.bucket-n{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.bucket.b1 .bucket-n{color:var(--cyan)}
+.bucket.b2 .bucket-n{color:var(--blue-4)}
+.bucket.b3 .bucket-n{color:var(--purple-4)}
+.bucket-q{font-family:var(--f-display);font-size:1.0625rem;font-weight:800;color:var(--text);line-height:1.3}
+.vlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.95rem}
+.vlist li{padding-left:1.15rem;position:relative}
+.vlist li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border-radius:2px}
+.bucket.b1 .vlist li::before{background:var(--cyan)}
+.bucket.b2 .vlist li::before{background:var(--blue-4)}
+.bucket.b3 .vlist li::before{background:var(--purple-4)}
+.vlist b{display:block;font-family:var(--f-display);font-size:.9375rem;font-weight:700;color:var(--text);line-height:1.3}
+.vlist span{display:block;font-size:.8125rem;color:var(--text-dim);line-height:1.5;margin-top:.22rem}
+
+/* case path */
+.flowline{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;margin-top:1.5rem}
+.fl{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:.9rem .85rem;display:flex;flex-direction:column;gap:.35rem;position:relative}
+.fl .who{font-family:var(--f-mono);font-size:.5625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim)}
+.fl.us .who{color:var(--cyan)}
+.fl.you .who{color:var(--gold)}
+.fl b{font-family:var(--f-display);font-size:.8125rem;font-weight:700;color:var(--text);line-height:1.25}
+.fl span{font-size:.75rem;color:var(--text-dim);line-height:1.4}
+
+/* ---------- fit ---------- */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.fitcard{border-radius:var(--radius);padding:1.5rem;border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;gap:1rem}
+.fitcard.good{border-color:var(--wash-ok-28);background:linear-gradient(180deg,var(--wash-ok),var(--panel) 55%)}
+.fitcard.bad{border-color:var(--wash-bad-22);background:linear-gradient(180deg,var(--wash-bad),var(--panel) 55%)}
+.fit-h{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.fit-badge{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .65rem;border-radius:var(--pill)}
+.good .fit-badge{background:var(--wash-ok-16);color:var(--green)}
+.bad .fit-badge{background:var(--wash-bad-13);color:var(--red)}
+.fitlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.85rem}
+.fitlist li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:start;padding-bottom:.85rem;border-bottom:1px solid var(--line-soft)}
+.fitlist li:last-child{padding-bottom:0;border-bottom:0}
+.fitlist .mk{font-family:var(--f-mono);font-weight:700;font-size:.875rem;line-height:1.45}
+.good .fitlist .mk{color:var(--green)}
+.bad .fitlist .mk{color:var(--red)}
+.fitlist b{display:block;font-family:var(--f-display);font-size:.9375rem;font-weight:700;color:var(--text);line-height:1.3}
+.fitlist span{display:block;font-size:.8125rem;color:var(--text-dim);line-height:1.45;margin-top:.15rem}
+
+/* ---------- personality ---------- */
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.person{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;display:flex;flex-direction:column;gap:.9rem;position:relative;overflow:hidden}
+.person::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
+.person.p1::before{background:linear-gradient(180deg,var(--cyan),var(--blue-2))}
+.person.p2::before{background:linear-gradient(180deg,var(--blue-4),var(--blue-3))}
+.person.p3::before{background:linear-gradient(180deg,var(--purple-4),var(--purple-3))}
+.person.p4::before{background:linear-gradient(180deg,var(--gold),var(--gold-deep))}
+.person.p5::before{background:linear-gradient(180deg,var(--green),var(--ok-deep))}
+.person.p6::before{background:linear-gradient(180deg,var(--red),var(--bad-deep))}
+.p-head{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.p-name{font-family:var(--f-display);font-size:1.0625rem;font-weight:800;color:var(--text)}
+.p-cue{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text-dim)}
+.p-tell{font-size:.875rem;color:var(--text-dim);line-height:1.5}
+.say{background:var(--panel-2);border-left:3px solid var(--blue-1);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:.9rem 1rem;font-size:.9375rem;line-height:1.6;color:var(--text-soft)}
+.person.p3 .say{border-left-color:var(--purple-4)}
+.person.p4 .say{border-left-color:var(--gold)}
+.person.p5 .say{border-left-color:var(--green)}
+.person.p6 .say{border-left-color:var(--red)}
+.avoid{font-size:.8125rem;color:var(--text-dim)}
+.avoid b{color:var(--red);font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase}
+.copybtn{align-self:flex-start;font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--text-dim);padding:.42rem .8rem;border-radius:var(--pill);cursor:pointer;transition:all .2s}
+.copybtn:hover{border-color:var(--blue-1);color:var(--blue-1)}
+.copybtn[data-done="1"]{border-color:var(--green);color:var(--green)}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:.875rem;min-width:640px}
+thead th{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:.9rem 1.1rem;background:var(--panel-2);color:var(--text-mid);border-bottom:1px solid var(--line);white-space:nowrap}
+tbody td{padding:.9rem 1.1rem;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--text-mid)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--row-hover)}
+td.k{font-family:var(--f-mono);font-weight:700;color:var(--text);white-space:nowrap}
+.st{font-family:var(--f-mono);font-size:.5625rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:.26rem .55rem;border-radius:var(--pill);white-space:nowrap;display:inline-block}
+.st.hot{background:var(--wash-g-16);color:var(--gold-soft)}
+.st.warm{background:var(--wash-warm);color:var(--warm-ink)}
+.st.cool{background:var(--wash-a-14);color:var(--blue-1)}
+.st.off{background:var(--wash-off);color:var(--text-dim)}
+
+/* ---------- call beats ---------- */
+.beats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.beat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:1.25rem;display:flex;gap:.9rem}
+.beat-n{width:30px;height:30px;min-width:30px;border-radius:8px;display:grid;place-items:center;font-family:var(--f-mono);font-size:.75rem;font-weight:700;background:var(--grad-btn);color:var(--on-accent)}
+.beat-b{display:flex;flex-direction:column;gap:.45rem;min-width:0}
+.beat-h{font-family:var(--f-display);font-size:.9375rem;font-weight:700;color:var(--text)}
+.beat-q{font-size:.9375rem;line-height:1.55;color:var(--text-soft);border-left:2px solid var(--blue-3);padding-left:.75rem}
+.beat-n2{font-size:.8125rem;color:var(--text-dim);line-height:1.45}
+.slot{font-family:var(--f-mono);font-size:.85em;font-weight:700;color:var(--gold-soft);background:var(--wash-g);padding:.05em .35em;border-radius:4px}
+
+/* ---------- calculator ---------- */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.25rem}
+.calc-in{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.75rem;display:flex;flex-direction:column;gap:1.6rem}
+.field{display:flex;flex-direction:column;gap:.55rem}
+.field label{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.field label .v{font-family:var(--f-mono);font-size:1rem;font-weight:700;color:var(--text);letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:var(--pill);background:var(--track);border:1px solid var(--line);cursor:pointer}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--grad-btn);border:3px solid var(--panel);box-shadow:0 4px 12px rgba(0,0,0,.4);cursor:pointer}
+input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue-2);border:3px solid var(--panel);box-shadow:0 4px 12px rgba(0,0,0,.4);cursor:pointer}
+.calc-out{border-radius:var(--radius);padding:1.85rem;display:flex;flex-direction:column;gap:1.35rem;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--deep-a),var(--deep-b) 60%);border:1px solid var(--wash-b-24)}
+.calc-out::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+.calc-out::after{content:"";position:absolute;right:-70px;bottom:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,var(--wash-b-20),var(--wash-b-0) 70%);pointer-events:none}
+.calc-lbl{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim)}
+.calc-big{font-family:var(--f-mono);font-weight:700;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;background:linear-gradient(90deg,var(--cyan),var(--blue-1),var(--purple-4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.calc-rows{display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
+.calc-row{display:flex;justify-content:space-between;gap:1rem;font-size:.875rem;padding-bottom:.6rem;border-bottom:1px solid var(--hairline)}
+.calc-row:last-child{border-bottom:0}
+.calc-row span:first-child{color:var(--text-dim)}
+.calc-row span:last-child{font-family:var(--f-mono);font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+
+/* ---------- FAQ ---------- */
+.faq{display:flex;flex-direction:column;gap:.75rem}
+details.q{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .2s ease}
+details.q[open]{border-color:var(--wash-a-30)}
+details.q summary{
+  list-style:none;cursor:pointer;padding:1.05rem 1.35rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  font-family:var(--f-display);font-weight:700;font-size:.9375rem;color:var(--text);
+}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary:hover{background:var(--wash-a-soft)}
+.q-mark{
+  width:24px;height:24px;min-width:24px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;
+  color:var(--blue-1);font-family:var(--f-mono);font-size:.875rem;font-weight:700;line-height:1;
+  transition:transform .25s ease,background .25s ease;
+}
+details.q[open] .q-mark{transform:rotate(45deg);background:var(--wash-a-14)}
+details.q .a{padding:0 1.35rem 1.25rem;font-size:.9375rem;line-height:1.65;color:var(--text-mid);max-width:76ch}
+details.q .a a{color:var(--blue-1)}
+
+/* ---------- training video ---------- */
+.vidwrap{margin-top:2rem}
+.vidwrap .vid,.vidwrap .vid-alt{max-width:880px;margin-inline:auto}
+.vid{
+  position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(150deg,var(--deep-a),var(--deep-b) 65%);aspect-ratio:16/9;width:100%;
+  display:grid;place-items:center;cursor:pointer;text-align:center;padding:1.5rem;
+}
+.vid::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+.vid::after{
+  content:"";position:absolute;right:-90px;bottom:-120px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,var(--wash-a-18),var(--wash-a-0) 70%);pointer-events:none;
+}
+.vid:hover .vid-play{transform:scale(1.06);box-shadow:0 16px 40px var(--btn-glow-2)}
+.vid-in{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.vid-play{
+  width:76px;height:76px;border-radius:50%;background:var(--grad-btn);display:grid;place-items:center;
+  box-shadow:0 12px 30px var(--btn-glow-2);transition:transform .2s ease,box-shadow .2s ease;
+}
+.vid-play svg{width:30px;height:30px;margin-left:4px}
+.vid-k{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-1)}
+.vid-t{font-family:var(--f-display);font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:800;color:var(--text);max-width:26ch;line-height:1.25}
+.vid-s{font-size:.875rem;color:var(--text-dim);max-width:52ch;line-height:1.55}
+.vid.loaded{display:block;padding:0;cursor:default;aspect-ratio:16/9}
+.vid.loaded iframe{display:block;width:100%;height:100%;border:0}
+.vid-alt{margin-top:.85rem;font-size:.8125rem;color:var(--text-dim);text-align:center}
+
+/* ---------- embedded form ---------- */
+.formzone{max-width:800px;margin:0 auto}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.way{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.85rem;position:relative;overflow:hidden}
+.way::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.way.w1::before{background:linear-gradient(90deg,var(--cyan),var(--blue-2))}
+.way.w2::before{background:linear-gradient(90deg,var(--gold),var(--gold-deep))}
+.way-n{display:flex;align-items:center;gap:.6rem}
+.way-n span{width:26px;height:26px;min-width:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-size:.6875rem;font-weight:700;color:var(--on-accent)}
+.way.w1 .way-n span{background:var(--grad-btn)}
+.way.w2 .way-n span{background:var(--gold)}
+.way-n b{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.way.w1 .way-n b{color:var(--cyan)}
+.way.w2 .way-n b{color:var(--gold-soft)}
+.way h4{font-family:var(--f-display);font-size:1.125rem;font-weight:800;color:var(--text);line-height:1.25}
+.way p{font-size:.875rem;line-height:1.6;color:var(--text-mid)}
+.way ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.35rem}
+.way li{font-size:.8125rem;line-height:1.45;color:var(--text-dim);padding-left:1.05rem;position:relative}
+.way li::before{content:"";position:absolute;left:0;top:.5em;width:5px;height:5px;border-radius:1px;background:var(--cyan)}
+.way.w2 li::before{background:var(--gold)}
+.way .btn{margin-top:auto;align-self:flex-start}
+.way.w2 .btn{background:var(--gold);color:var(--on-gold);box-shadow:0 10px 26px var(--wash-g-22)}
+.way.w2 .btn:hover{filter:brightness(.95)}
+.orbar{display:flex;align-items:center;gap:1rem;margin:0 0 1.75rem}
+.orbar::before,.orbar::after{content:"";height:1px;background:var(--line);flex:1}
+.orbar span{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+.fs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+.fs-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:1.15rem 1.25rem;display:flex;flex-direction:column;gap:.7rem}
+.fs-k{font-family:var(--f-mono);font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-1)}
+.fs-fields{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.3rem .9rem}
+.fs-fields li{font-family:var(--f-mono);font-size:.6875rem;color:var(--text-soft);padding-left:.9rem;position:relative;letter-spacing:.01em;line-height:1.5}
+.fs-fields li::before{content:"";position:absolute;left:0;top:.55em;width:4px;height:4px;border-radius:1px;background:var(--blue-2)}
+.fs-next{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;counter-reset:fn}
+.fs-next li{counter-increment:fn;display:grid;grid-template-columns:18px 1fr;gap:.55rem;font-size:.75rem;line-height:1.45;color:var(--text-mid)}
+.fs-next li::before{content:counter(fn,decimal-leading-zero);font-family:var(--f-mono);font-size:.5625rem;font-weight:700;color:var(--gold);padding-top:.22rem}
+
+.formwrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;position:relative;overflow:hidden}
+.formwrap::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+.formbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.3rem .35rem .9rem}
+.formbar .t{display:flex;align-items:center;gap:.55rem;font-family:var(--f-display);font-size:.9375rem;font-weight:700;color:var(--text)}
+.formbar .dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none;box-shadow:0 0 0 3px var(--wash-ok-16)}
+.formbar .m{font-family:var(--f-mono);font-size:.5625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
+.formshell{background:var(--form-bg);border-radius:var(--radius-sm);overflow:hidden;min-height:560px}
+.formshell iframe{display:block;width:100%;border:0;background:var(--form-bg)}
+.formfall{display:none;padding:2.75rem 1.5rem;text-align:center}
+.formfall h4{font-family:var(--f-display);font-size:1.0625rem;font-weight:800;color:var(--text);margin-bottom:.6rem}
+.formfall p{font-size:.9375rem;color:var(--text-mid);max-width:48ch;margin:0 auto 1.5rem}
+.formwrap.failed .formshell,.formwrap.failed .formbar{display:none}
+.formwrap.failed .formfall{display:block}
+.formfoot{margin-top:1.25rem;font-size:.8125rem;line-height:1.6;color:var(--text-dim);text-align:center}
+
+/* ---------- callouts / CTA ---------- */
+.callout{background:linear-gradient(90deg,var(--wash-a),var(--wash-b));border:1px solid var(--line);border-left:3px solid var(--blue-1);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.15rem 1.35rem;font-size:.9375rem;line-height:1.6;color:var(--text-soft)}
+.callout b{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-1);display:block;margin-bottom:.35rem}
+.callout.gold{border-left-color:var(--gold);background:linear-gradient(90deg,var(--wash-g),var(--wash-g-0))}
+.callout.gold b{color:var(--gold-soft)}
+
+.cta{border-radius:var(--radius);padding:clamp(2rem,5vw,3.25rem);text-align:center;position:relative;overflow:hidden;background:linear-gradient(150deg,var(--deep-a),var(--deep-b) 65%);border:1px solid var(--wash-a-24);box-shadow:var(--shadow-lg)}
+.cta::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--grad-brand)}
+.cta h2{font-size:clamp(1.6rem,3.4vw,2.25rem);max-width:22ch;margin-inline:auto}
+.cta p{margin:1.15rem auto 0;max-width:58ch;color:var(--text-mid)}
+.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-top:1.85rem}
+.kick{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;text-align:left}
+.kick div{background:var(--lift);border:1px solid var(--line);border-radius:var(--radius-sm);padding:1rem 1.1rem}
+.kick b{display:block;font-family:var(--f-mono);font-size:.625rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-1);margin-bottom:.4rem}
+.kick span{font-size:.8125rem;color:var(--text-mid);line-height:1.45}
+
+/* ---------- modal ---------- */
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:1.25rem}
+.modal-bg{position:absolute;inset:0;background:var(--scrim);backdrop-filter:blur(6px)}
+.modal-card{
+  position:relative;width:min(680px,100%);max-height:90vh;overflow:auto;
+  background:linear-gradient(160deg,var(--deep-a),var(--deep-b) 62%);
+  border:1px solid var(--wash-a-30);border-radius:var(--radius);
+  padding:2rem 1.85rem;box-shadow:var(--shadow-lg);
+}
+.modal-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand)}
+.modal-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;background:var(--lift);border:1px solid var(--line);color:var(--text-mid);cursor:pointer;font-size:1.05rem;line-height:1;display:grid;place-items:center;font-family:var(--f-body)}
+.modal-close:hover{background:var(--lift-2);color:var(--text)}
+.modal-card h2{font-size:1.6rem}
+.modal-card > p{margin-top:.75rem;color:var(--text-mid);font-size:.9375rem;max-width:52ch}
+.gs-opts{display:flex;flex-direction:column;gap:.85rem;margin-top:1.6rem}
+.gs-opt{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:1rem;align-items:center;background:var(--lift);border:1px solid var(--line);border-radius:var(--radius-sm);padding:1.15rem 1.25rem;text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.gs-opt:hover{border-color:var(--blue-1);background:var(--wash-a);transform:translateY(-2px)}
+.gs-n{width:38px;height:38px;border-radius:var(--pill);display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:.875rem;color:var(--on-accent);background:var(--grad-btn)}
+.gs-opt:nth-child(2) .gs-n{background:linear-gradient(135deg,var(--blue-5),var(--blue-3))}
+.gs-opt:nth-child(3) .gs-n{background:linear-gradient(135deg,var(--purple-4),var(--purple-3))}
+.gs-t{display:block;font-family:var(--f-display);font-weight:700;color:var(--text);font-size:.9375rem;line-height:1.25}
+.gs-d{display:block;font-size:.8125rem;color:var(--text-dim);margin-top:.28rem;line-height:1.45}
+.gs-go{font-family:var(--f-mono);font-size:1rem;color:var(--blue-1)}
+.modal-foot{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--line);font-size:.8125rem;color:var(--text-dim);line-height:1.55}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--line);background:var(--bg-3);padding-block:2.5rem 3rem;margin-top:var(--gap)}
+.foot-in{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;max-width:var(--shellw);margin:0 auto;padding-inline:var(--pad)}
+.foot-c{display:flex;flex-direction:column;gap:.3rem;font-size:.875rem;color:var(--text-mid)}
+.foot-c strong{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.35rem}
+.foot-c a{text-decoration:none}
+.disc{max-width:var(--shellw);margin:2rem auto 0;padding-inline:var(--pad);padding-top:1.5rem;border-top:1px solid var(--line-soft);font-size:.75rem;line-height:1.6;color:var(--text-dim)}
+
+/* ---------- motion ---------- */
+@keyframes rise{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{animation:rise .5s cubic-bezier(.16,.84,.44,1) both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1140px){
+  .shell{grid-template-columns:1fr}
+  .toc{display:none}
+}
+@media (max-width:1040px){
+  .options,.g3,.does,.buckets,.metrics,.lanes,.diff{grid-template-columns:1fr 1fr}
+  .flowline{grid-template-columns:repeat(3,1fr)}
+  .kick{grid-template-columns:1fr}
+  .carriers{columns:3}
+}
+@media (max-width:820px){
+  .calc,.beats,.people,.fit,.g2,.wizgrid,.ways{grid-template-columns:1fr}
+  .trio-grid{grid-template-columns:1fr;gap:1.75rem}
+  .tarrow{transform:rotate(90deg)}
+  .specialty{grid-template-columns:1fr 1fr}
+  .carriers{columns:2}
+  .statbar{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
+@media (max-width:600px){
+  .options,.g3,.does,.flowline,.buckets,.metrics,.diff{grid-template-columns:1fr}
+  .opt-boxes.two,.lanes,.specialty,.fs-row,.fs-fields,.ways{grid-template-columns:1fr}
+  .gs-opt{grid-template-columns:38px minmax(0,1fr)}
+  .gs-go{display:none}
+  .carriers{columns:1}
+}
+
+
+/* light-surface treatments */
+.btn-ghost{border:1px solid var(--line-strong)}
+.tocrail{border-right:1px solid var(--line)}
+.formshell{border:1px solid var(--line)}
+.cta,.calc-out,.modal-card{background:linear-gradient(150deg,#F6FBFF,#E9F2FA 65%)}
+.vid{background:linear-gradient(150deg,#EFF6FD,#E1EDF8 65%)}
+.calc-big{background:linear-gradient(90deg,#005691,#0071BC,#6B3FD4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.st.hot{color:#7A5200}
+.st.warm{color:#8A4A10}
+.fl.you .who,.vid-alt a{color:#7A5E00}
+.dark-box{background:#0E2233}
+
+
+</style>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top"><span class="logo-mark"></span><span class="logo-txt">PINNEY <span>/ Life Referral Desk</span></span></a>
+    <div class="nav-links">
+      <a href="#submit">How to submit</a>
+      <a href="#does">Why Pinney</a>
+      <a href="#carriers">Carriers</a>
+      <a href="#fit">Good &amp; bad fit</a>
+      <a href="#people">Scripts</a>
+      <a href="#faq">FAQ</a>
+      <a href="#form">Submit</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:.6rem;flex:none">
+      <button class="btn btn-primary btn-sm" type="button" data-gs>Get started</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ===================== FLOATING TABLE OF CONTENTS ===================== -->
+<button class="tocpill" type="button" id="tocOpen" aria-expanded="false" aria-controls="tocRail">&#9776; Contents</button>
+<div class="tocbg" id="tocBg"></div>
+<aside class="tocrail" id="tocRail" aria-label="Table of contents">
+  <div class="toc-top">
+    <span class="toc-h">On this page</span>
+    <button class="toc-min" type="button" id="tocMin" aria-label="Minimize table of contents" title="Minimize">&minus;</button>
+  </div>
+  <nav class="toc-list" id="toc">
+      <a href="#submit"><span class="n">&middot;</span><span>Start here &mdash; how to submit</span></a>
+      <a href="#who-you-are"><span class="n">&middot;</span><span>Who we hope you are</span></a>
+      <a href="#refer"><span class="n">01</span><span>Generating the referral</span></a>
+      <a href="#does"><span class="n">02</span><span>What makes us different</span></a>
+      <a href="#carriers"><span class="n">03</span><span>Carriers &amp; products</span></a>
+      <a href="#fit"><span class="n">04</span><span>Good &amp; bad fit</span></a>
+      <a href="#people"><span class="n">05</span><span>How to generate + script</span></a>
+      <a href="#contact"><span class="n">06</span><span>Contact strategy</span></a>
+      <a href="#language"><span class="n">07</span><span>Our language</span></a>
+      <a href="#math"><span class="n">08</span><span>The math</span></a>
+      <a href="#faq"><span class="n">09</span><span>Questions</span></a>
+      <a href="#form"><span class="n">10</span><span>Submit a client</span></a>
+    </nav>
+  <button class="btn btn-primary btn-sm btn-block toc-cta" type="button" data-gs>Get started</button>
+</aside>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <div class="wrap rise">
+    <div class="brandrow">
+      <div class="b" role="img" aria-label="Pinney Insurance">PINNEY<small aria-hidden="true">I N S U R A N C E</small></div>
+      <div class="div"></div>
+      <div class="b" role="img" aria-label="Life Insurance Division">LIFE INSURANCE<small aria-hidden="true">D I V I S I O N</small></div>
+    </div>
+
+    <h1>Your <span class="g">$0</span> Outsourced Life Insurance Call Center</h1>
+    <p class="hero-sub">You send a name. Our licensed team calls, quotes, sells, underwrites, and places the policy under your agency's name. You keep 50% of the commission and spend about two minutes on it.</p>
+    <div class="rule"></div>
+
+    <div class="hero-actions">
+      <button class="btn btn-primary" type="button" data-gs>Get started &rarr;</button>
+      <a class="btn btn-ghost" href="#does">See what we do</a>
+    </div>
+
+    <div class="statbar">
+      <div><b>50/50</b><span>Commission split</span></div>
+      <div><b>$0</b><span>Cost to your agency</span></div>
+      <div><b>60+</b><span>Carriers shopped</span></div>
+      <div><b>24 hrs</b><span>To the first call</span></div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ===================== YOU REFER / WE SELL / YOU EARN ===================== -->
+<section class="trio">
+  <div class="wrap trio-grid">
+    <div class="tstep">
+      <div class="tdisc a"><span class="tnum">1</span><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></div>
+      <h3><span class="a-t">You Refer</span></h3>
+      <p>Send a name, phone, and email. About two minutes, no life license required.</p>
+    </div>
+    <div class="tarrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+    <div class="tstep">
+      <div class="tdisc b"><span class="tnum">2</span><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-1)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M20 14h-2a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1z"/><path d="M18 19v1a2 2 0 0 1-2 2h-3"/></svg></div>
+      <h3><span class="b-t">We Sell</span></h3>
+      <p>Our licensed team calls as your life division, quotes it, closes it, underwrites it, and places it.</p>
+    </div>
+    <div class="tarrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+    <div class="tstep">
+      <div class="tdisc c"><span class="tnum">3</span><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3 3 0 0 0-3-1.5c-1.7 0-3 .9-3 2.2 0 3 6 1.3 6 4.1 0 1.3-1.3 2.2-3 2.2a3 3 0 0 1-3-1.5"/><path d="M12 6.2v1.8M12 16v1.8"/></svg></div>
+      <h3><span class="c-t">You Earn</span></h3>
+      <p>50/50 split of the commission on placed business. Your client relationship stays yours.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SUBMISSION WIZARD ===================== -->
+<section class="wizband" id="submit">
+  <div class="wrap wizgrid">
+    <div class="wizintro">
+      <div class="kicker">Start here</div>
+      <h2 style="margin-top:.75rem">Not sure which way to submit?</h2>
+      <div class="rule"></div>
+      <p>Answer a few questions and we'll point you at the right route &mdash; refer it to us, drop the ticket, or write it yourself. Every path ends at the same form.</p>
+      <div class="wizsteps">
+        <div><span class="n">01</span><span>Tell us how involved you want to be</span></div>
+        <div><span class="n">02</span><span>We check licensing, appointment, and product training</span></div>
+        <div><span class="n">03</span><span>You get the route and the link to submit</span></div>
+      </div>
+    </div>
+
+    <div class="wiz" id="wiz" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== WHO WE'RE FOR ===================== -->
+<section class="whoband" id="who-you-are">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Who we're for</div>
+      <h2 class="h2">You have life insurance clients. You don't want a back office.</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p class="who-lead">P&amp;C agencies, mortgage companies, and financial services firms with clients who need life insurance &mdash; and no interest in building the department it takes to place it.</p>
+
+    <div class="who-punch">You need customers who trust you.<br><em>We bring everything else.</em></div>
+
+    <div class="lanes">
+      <article class="lane l1">
+        <div class="lane-k">Personal Lines</div>
+        <h4>Your account managers already know</h4>
+        <p>They hear it first when a client buys a home, has a baby, or changes coverage. We turn that into a referral without asking an account manager to become a life agent.</p>
+      </article>
+      <article class="lane l2">
+        <div class="lane-k">Commercial P&amp;C</div>
+        <h4>Business owners create bigger cases</h4>
+        <p>Buy-sell funding, key-person, succession, executive benefits, estate planning. Your team spots it, our specialists take it from opportunity to placed.</p>
+      </article>
+      <article class="lane l3">
+        <div class="lane-k">Benefits &amp; Financial Services</div>
+        <h4>The conversation is already open</h4>
+        <p>You are already talking about compensation, retention, and risk. Individual life, disability income, and long-term care sit one question away.</p>
+      </article>
+    </div>
+
+    <div class="who-punch" style="margin-top:2.25rem;margin-bottom:0">Our goal isn't to turn you into a life insurance agency.<br><em>It's to make life insurance a repeatable line of the business you already run.</em></div>
+
+    <div class="gsbar">
+      <p>Sound like your shop?<span>Set your firm up to refer, or send one name and test it.</span></p>
+      <button class="btn btn-primary" type="button" data-gs>Get started &rarr;</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SHELL: TOC + CONTENT ===================== -->
+<div class="shell">
+
+
+  <main class="main">
+
+    <!-- ============ 01 GENERATING THE REFERRAL ============ -->
+    <section class="sec" id="refer">
+      <div class="sec-head">
+        <div class="kicker">Section 01</div>
+        <h2 class="h2">Generating the referral</h2>
+        <div class="rule"></div>
+        <p class="lede">Your side of this is three steps long. You are not selling life insurance and you do not need a life license &mdash; you are noticing an opening and passing a name.</p>
+      </div>
+
+      <div class="grid g3">
+        <article class="step">
+          <div class="step-n">STEP 01</div>
+          <h3>Spot it</h3>
+          <p>A client mentions something that changed &mdash; a house, a baby, a business partner, a loan, a term policy running out. That is the referral. There is no minimum case size and you do not need to guess whether they'll qualify.</p>
+        </article>
+        <article class="step">
+          <div class="step-n">STEP 02</div>
+          <h3>Ask once</h3>
+          <p>One sentence, in your own words, that opens the door and hands it off. Then the line that actually matters:</p>
+          <div class="say" style="margin-top:.25rem">&ldquo;I'm going to have our life specialist reach out this week. It'll come up as our life insurance division, so pick up when you see it.&rdquo;</div>
+        </article>
+        <article class="step">
+          <div class="step-n">STEP 03</div>
+          <h3>Send it</h3>
+          <p>Six fields and your name. Everything else is a bonus.</p>
+          <ul class="need">
+            <li>Client's first and last name</li>
+            <li>Phone number</li>
+            <li>Email address</li>
+            <li>State</li>
+            <li>Date of birth</li>
+            <li>Amount of insurance needed, if they said</li>
+            <li>Your name, so the credit finds you</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" style="align-self:flex-start;margin-top:.5rem" type="button" data-gs>Send a referral &rarr;</button>
+        </article>
+      </div>
+
+      <div class="callout gold" style="margin-top:1.5rem">
+        <b>If they say no, leave it</b>
+        Don't push and don't submit. A client who says no today still calls you when the baby comes &mdash; and the ask cost you nothing.
+      </div>
+    </section>
+
+    <!-- ============ 02 WHAT PINNEY DOES ============ -->
+    <section class="sec" id="does">
+      <div class="sec-head">
+        <div class="kicker">Section 02</div>
+        <h2 class="h2">What makes Pinney different</h2>
+        <div class="rule"></div>
+        <p class="lede">Carrier access is table stakes &mdash; every brokerage has it. Three things actually separate us, and then the routes you can work through.</p>
+      </div>
+
+      <div class="diff">
+        <article class="d1">
+          <div class="d-k">Nobody else has this</div>
+          <h4>The Client Multiplier</h4>
+          <p>Every other brokerage takes names out of your book. Beneficiary onboarding and claims education put names back in &mdash; one placed policy can return two to three new households to you.</p>
+        </article>
+        <article class="d2">
+          <div class="d-k">Since 1972</div>
+          <h4>50+ years and licensed everywhere</h4>
+          <p>Licensed agents across every line in every state, 60+ carrier appointments, an underwriter on staff, and case designers who structure the complicated ones before they go out.</p>
+        </article>
+        <article class="d3">
+          <div class="d-k">Built, not bought</div>
+          <h4>Our own technology</h4>
+          <p>Our CRM with automated email and phone drips, 100% digital submission, e-signatures, and e-policy delivery &mdash; free to partners, and the reason nothing sits waiting on a person.</p>
+        </article>
+      </div>
+
+      <h3 class="h3" style="margin:2.75rem 0 .75rem">The routes you can work through</h3>
+      <p class="lede" style="margin-bottom:1.5rem">Everything after the hand-off. Pick the one that matches how involved you want to be &mdash; the carriers, underwriting desk, and case managers are the same in all three.</p>
+
+      <div class="options">
+        <article class="opt refer">
+          <div class="opt-top">
+            <div class="opt-n">1</div>
+            <div>
+              <span class="opt-tag">Option 1 &mdash; Refer &amp; Earn</span>
+              <div class="opt-title">You Refer &rarr; <span class="a">We Sell</span></div>
+              <div class="opt-sub">50/50 Compensation Split</div>
+            </div>
+          </div>
+          <div class="opt-boxes">
+            <div class="dark-box">
+              <h4>We do:</h4>
+              <ul>
+                <li>Needs analysis</li>
+                <li>Health screening</li>
+                <li>Provide quotes</li>
+                <li>Make the sale</li>
+                <li>Application processing</li>
+                <li>Case management</li>
+                <li>Policy delivery</li>
+                <li>Policy placement</li>
+              </ul>
+            </div>
+          </div>
+          <div class="opt-foot">50% of your normal commission</div>
+        </article>
+
+        <article class="opt support">
+          <div class="opt-top">
+            <div class="opt-n">2</div>
+            <div>
+              <span class="opt-tag">Option 2 &mdash; App Assist</span>
+              <div class="opt-title">You Sell &rarr; <span class="a">We Complete App</span></div>
+              <div class="opt-sub">Drop Ticket &amp; Save Time &mdash; You Keep 100%</div>
+            </div>
+          </div>
+          <div class="opt-boxes two">
+            <div class="dark-box">
+              <h4>You do:</h4>
+              <ul>
+                <li>Needs analysis</li>
+                <li>Health screening</li>
+                <li>Provide quotes</li>
+                <li>Make the sale</li>
+              </ul>
+            </div>
+            <div class="dark-box">
+              <h4>We do:</h4>
+              <ul>
+                <li>Application processing</li>
+                <li>Case management</li>
+                <li>Policy delivery</li>
+                <li>Policy placement</li>
+              </ul>
+            </div>
+          </div>
+          <div class="opt-foot">100% of your normal commission</div>
+        </article>
+
+        <article class="opt self">
+          <div class="opt-top">
+            <div class="opt-n">3</div>
+            <div>
+              <span class="opt-tag">Option 3 &mdash; Self-Service</span>
+              <div class="opt-title">You Sell &rarr; <span class="a">You Complete App</span></div>
+              <div class="opt-sub">Run the application yourself on our contracts</div>
+            </div>
+          </div>
+          <div class="opt-boxes">
+            <div class="dark-box">
+              <h4>Best for agents who want to:</h4>
+              <ul>
+                <li>Complete the application directly</li>
+                <li>Stay hands-on through submission</li>
+                <li>Move quickly with no handoff</li>
+                <li>Use our free CRM and quoting tools</li>
+                <li>Keep our underwriting desk on call</li>
+              </ul>
+            </div>
+          </div>
+          <div class="opt-foot">100% of your normal commission</div>
+        </article>
+      </div>
+
+
+      <div class="fig" style="padding:0;overflow:visible;background:transparent;border:0;margin-top:1.5rem">
+        <div class="panel" style="border-color:rgba(255,197,61,.28);background:linear-gradient(150deg,rgba(255,197,61,.07),var(--panel) 60%)">
+          <div class="kicker" style="color:var(--gold-soft);margin-bottom:.75rem">Beyond one-at-a-time referrals</div>
+          <h3 class="h3" style="margin-bottom:.75rem">We can work your leads for you</h3>
+          <p style="font-size:.9375rem;color:var(--text-mid);max-width:70ch">Referring case by case is the simplest way in. If you would rather hand us volume, we will do the outbound ourselves &mdash; give us a list of clients, quoted-but-not-sold prospects, or dormant accounts, and our team calls them as your life division, qualifies them, and works whatever is there. Same 50/50 split, same white label, no lead cost to you.</p>
+          <ul class="tick brand" style="margin-top:1rem;max-width:70ch">
+            <li>Send a list instead of a name &mdash; existing clients, old quotes, or a segment of your book</li>
+            <li>We call, qualify, and generate the business; you approve the outreach first</li>
+            <li>Or keep it simple and just refer them one at a time &mdash; your call, and you can do both</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fig" style="margin-top:2.75rem">
+        <div class="fig-h"><h4>The path a referred case takes</h4><span class="note">Two lanes &middot; four of the six steps are ours</span></div>
+        <svg viewBox="0 0 1000 250" role="img" aria-label="Two-lane case path: what you do versus what Pinney does"><defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--line-strong,#2F4E66)"/></marker></defs><line x1="100" y1="72" x2="980" y2="72" stroke="var(--line)" stroke-width="1"/><line x1="100" y1="148" x2="980" y2="148" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="0" y="76" fill="var(--gold)">YOUR LANE</text><text class="s-lab" x="0" y="152" fill="var(--cyan)">PINNEY&#8217;S LANE</text><rect x="100" y="46" width="138" height="52" rx="8" fill="rgba(255,197,61,.10)" stroke="var(--gold)" stroke-width="1"/><text class="s-t" x="112" y="68">Send the name</text><text class="s-s" x="112" y="85">6 fields, 2 minutes</text><line x1="169" y1="98" x2="169" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/><text class="s-lab" x="169" y="218" text-anchor="middle">DAY 0</text><rect x="248" y="122" width="138" height="52" rx="8" fill="rgba(32,168,255,.09)" stroke="var(--blue-2)" stroke-width="1"/><text class="s-t" x="260" y="144">We call</text><text class="s-s" x="260" y="161">As your life division</text><line x1="317" y1="174" x2="317" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/><text class="s-lab" x="317" y="218" text-anchor="middle">WITHIN 24 HRS</text><rect x="397" y="122" width="138" height="52" rx="8" fill="rgba(32,168,255,.09)" stroke="var(--blue-2)" stroke-width="1"/><text class="s-t" x="409" y="144">We quote &amp; sell</text><text class="s-s" x="409" y="161">Rate on the call</text><line x1="466" y1="174" x2="466" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/><text class="s-lab" x="466" y="218" text-anchor="middle">DAYS 1&#8211;14</text><rect x="545" y="122" width="138" height="52" rx="8" fill="rgba(32,168,255,.09)" stroke="var(--blue-2)" stroke-width="1"/><text class="s-t" x="557" y="144">We underwrite</text><text class="s-s" x="557" y="161">Exams, records, offers</text><line x1="614" y1="174" x2="614" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/><text class="s-lab" x="614" y="218" text-anchor="middle">WEEKS 1&#8211;6</text><rect x="693" y="122" width="138" height="52" rx="8" fill="rgba(32,168,255,.09)" stroke="var(--blue-2)" stroke-width="1"/><text class="s-t" x="705" y="144">We place it</text><text class="s-s" x="705" y="161">Delivered &amp; in force</text><line x1="762" y1="174" x2="762" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/><text class="s-lab" x="762" y="218" text-anchor="middle">ON ISSUE</text><rect x="842" y="46" width="138" height="52" rx="8" fill="rgba(255,197,61,.10)" stroke="var(--gold)" stroke-width="1"/><text class="s-t" x="854" y="68">You get paid</text><text class="s-s" x="854" y="85">50/50 split</text><line x1="910" y1="98" x2="910" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/><text class="s-lab" x="910" y="218" text-anchor="middle">ON PLACEMENT</text><path d="M244 72 C 243 72, 243 148, 242 148" fill="none" stroke="var(--line-strong,var(--line))" stroke-width="1.5" marker-end="url(#ar)"/><path d="M392 148 C 391 148, 391 148, 391 148" fill="none" stroke="var(--line-strong,var(--line))" stroke-width="1.5" marker-end="url(#ar)"/><path d="M541 148 C 540 148, 540 148, 539 148" fill="none" stroke="var(--line-strong,var(--line))" stroke-width="1.5" marker-end="url(#ar)"/><path d="M689 148 C 688 148, 688 148, 687 148" fill="none" stroke="var(--line-strong,var(--line))" stroke-width="1.5" marker-end="url(#ar)"/><path d="M837 148 C 836 148, 836 72, 836 72" fill="none" stroke="var(--line-strong,var(--line))" stroke-width="1.5" marker-end="url(#ar)"/></svg>
+        <p class="fig-cap">Your lane has two boxes. Everything between them &mdash; the call, the sale, the application, the underwriting, the placement &mdash; runs on our side without pulling you back in.</p>
+      </div>
+        <div class="fl us"><span class="who">Pinney</span><b>We call</b><span>As your life division, within 24 hours.</span></div>
+        <div class="fl us"><span class="who">Pinney</span><b>We quote &amp; sell</b><span>Needs analysis, health screen, rate on the call.</span></div>
+        <div class="fl us"><span class="who">Pinney</span><b>We underwrite</b><span>Exams, records, requirements, offer negotiation.</span></div>
+        <div class="fl us"><span class="who">Pinney</span><b>We place it</b><span>Delivered, in force, and reported back to you.</span></div>
+        <div class="fl you"><span class="who">You</span><b>You get paid</b><span>50/50 split on placed business.</span></div>
+      </div>
+
+
+      <div class="fig">
+        <div class="fig-h"><h4>What happens once a case reaches us</h4><span class="note">Five stages &middot; none of them yours</span></div>
+        <svg viewBox="0 0 1100 300" role="img" aria-label="What happens inside Pinney: case arrives, we quote it, the underwriter recommends placement, case management runs it, the case pays out"><defs><marker id="ar4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--blue-2)"/></marker></defs><text class="s-lab" x="0" y="26" fill="var(--blue-1)">INSIDE PINNEY</text><text class="s-s" x="128" y="26">the part you would have to build a department to replicate</text><rect x="0" y="118" width="190" height="108" rx="10" fill="rgba(255,197,61,.10)" stroke="var(--gold)" stroke-width="1.5"/><text class="s-big" x="18" y="156" fill="var(--gold)">01</text><text class="s-t" x="18" y="182">Case arrives</text><text class="s-s" x="18" y="202">Referral or drop ticket</text><line x1="196" y1="172" x2="222" y2="172" stroke="var(--blue-2)" stroke-width="1.5" marker-end="url(#ar4)"/><rect x="228" y="118" width="190" height="108" rx="10" fill="rgba(54,194,255,.10)" stroke="var(--cyan)" stroke-width="1.5"/><text class="s-big" x="246" y="156" fill="var(--cyan)">02</text><text class="s-t" x="246" y="182">We quote it</text><text class="s-s" x="246" y="202">Shopped across 60+ carriers</text><line x1="424" y1="172" x2="449" y2="172" stroke="var(--blue-2)" stroke-width="1.5" marker-end="url(#ar4)"/><rect x="455" y="118" width="190" height="108" rx="10" fill="rgba(32,168,255,.10)" stroke="var(--blue-1)" stroke-width="1.5"/><text class="s-big" x="473" y="156" fill="var(--blue-1)">03</text><text class="s-t" x="473" y="182">Underwriter reviews</text><text class="s-s" x="473" y="202">Best-placement call</text><line x1="651" y1="172" x2="676" y2="172" stroke="var(--blue-2)" stroke-width="1.5" marker-end="url(#ar4)"/><rect x="682" y="118" width="190" height="108" rx="10" fill="rgba(162,119,255,.10)" stroke="var(--purple-4)" stroke-width="1.5"/><text class="s-big" x="700" y="156" fill="var(--purple-4)">04</text><text class="s-t" x="700" y="182">Case management</text><text class="s-s" x="700" y="202">Exams, records, requirements</text><line x1="878" y1="172" x2="904" y2="172" stroke="var(--blue-2)" stroke-width="1.5" marker-end="url(#ar4)"/><rect x="910" y="118" width="190" height="108" rx="10" fill="rgba(61,214,140,.10)" stroke="var(--green)" stroke-width="1.5"/><text class="s-big" x="928" y="156" fill="var(--green)">05</text><text class="s-t" x="928" y="182">It pays out</text><text class="s-s" x="928" y="202">In force. You get paid.</text><path d="M228 252 v8 H872 v-8" fill="none" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="550" y="280" text-anchor="middle">TYPICALLY FOUR TO SIX WEEKS TO APPROVAL</text><text class="s-lab" x="0" y="104" fill="var(--gold)">YOU HAND IT OVER</text><text class="s-lab" x="1100" y="104" text-anchor="end" fill="var(--green)">YOU GET PAID</text></svg>
+        <p class="fig-cap">A case arrives, we quote it across the carrier shelf, our underwriter makes the placement call before anything is submitted, a named case manager chases every requirement until it issues, and then it pays. You are not in any of these five boxes.</p>
+      </div>
+
+      <h3 class="h3" style="margin:2.75rem 0 .75rem">The rest of what you get</h3>
+      <p class="lede" style="margin-bottom:1.5rem">Sorted by the three questions an agency owner actually asks.</p>
+
+      <div class="metrics">
+        <div class="metric">
+          <b>+20%</b>
+          <h4>Average placement ratio lift</h4>
+          <p>What having an underwriter on staff does to the share of submitted applications that end up in force.</p>
+        </div>
+        <div class="metric">
+          <b>24 hrs</b>
+          <h4>To the first call</h4>
+          <p>Every referral, no exceptions. Speed to lead is the single biggest predictor of whether a case ever happens.</p>
+        </div>
+        <div class="metric">
+          <b>2&times;</b>
+          <h4>What one placed policy can become</h4>
+          <p>Beneficiary onboarding sends the people named on the policy through the same process &mdash; and back to you.</p>
+        </div>
+      </div>
+
+
+      <div class="fig">
+        <div class="fig-h"><h4>What an underwriter on staff is worth</h4><span class="note">100 applications submitted &middot; +20 points</span></div>
+        <svg viewBox="0 0 700 250" role="img" aria-label="100 applications: 60 place anyway, 20 more place because of in-house underwriting, 20 do not place"><rect x="0" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="34" y="0" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="68" y="0" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="102" y="0" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="136" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="170" y="0" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="204" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="238" y="0" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="272" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="306" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="340" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="374" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="408" y="0" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="442" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="476" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="510" y="0" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="544" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="578" y="0" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="612" y="0" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="646" y="0" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="0" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="34" y="34" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="68" y="34" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="102" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="136" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="170" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="204" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="238" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="272" y="34" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="306" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="340" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="374" y="34" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="408" y="34" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="442" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="476" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="510" y="34" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="544" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="578" y="34" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="612" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="646" y="34" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="0" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="34" y="68" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="68" y="68" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="102" y="68" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="136" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="170" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="204" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="238" y="68" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="272" y="68" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="306" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="340" y="68" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="374" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="408" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="442" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="476" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="510" y="68" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="544" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="578" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="612" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="646" y="68" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="0" y="102" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="34" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="68" y="102" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="102" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="136" y="102" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="170" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="204" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="238" y="102" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="272" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="306" y="102" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="340" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="374" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="408" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="442" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="476" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="510" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="544" y="102" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="578" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="612" y="102" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="646" y="102" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="0" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="34" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="68" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="102" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="136" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="170" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="204" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="238" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="272" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="306" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="340" y="136" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="374" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="408" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="442" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="476" y="136" width="26" height="26" rx="4" fill="rgba(125,143,163,.10)" stroke="var(--line)" stroke-width="1"/><rect x="510" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="544" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="578" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><rect x="612" y="136" width="26" height="26" rx="4" fill="var(--green)" stroke="var(--green)" stroke-width="1"/><rect x="646" y="136" width="26" height="26" rx="4" fill="var(--blue-2)" stroke="var(--blue-2)" stroke-width="1"/><text class="s-big" x="0" y="203" fill="var(--blue-1)">60</text><text class="s-s" x="42" y="203">place anyway</text><text class="s-big" x="176" y="203" fill="var(--green)">+20</text><text class="s-s" x="234" y="203">place because an underwriter saw them first</text><line x1="0" y1="220" x2="700" y2="220" stroke="var(--line)" stroke-width="1"/><text class="s-big" x="0" y="245">80</text><text class="s-s" x="40" y="245">out of 100 placed &#8212; a 20-point lift on the same submissions</text></svg>
+        <div class="legend">
+          <span><i style="background:var(--blue-2)"></i>Would place anyway</span>
+          <span><i style="background:var(--green)"></i>Additional &mdash; placed because of pre-screening and carrier matching</span>
+          <span><i style="background:rgba(125,143,163,.10);border:1px solid var(--line)"></i>Does not place</span>
+        </div>
+        <p class="fig-cap">Impaired risk gets screened before submission and matched to the carrier whose underwriting actually writes it. That is where the average 20-point placement lift comes from &mdash; and on a 50/50 split, placement ratio is the whole game.</p>
+      </div>
+
+      <div class="buckets">
+        <article class="bucket b1">
+          <div class="bucket-h">
+            <div class="bucket-n">Placement</div>
+            <div class="bucket-q">&ldquo;Will the case actually close?&rdquo;</div>
+          </div>
+          <ul class="vlist">
+            <li><b>Licensed in every state, across every line</b><span>Life, disability, long-term care, annuities, and retirement. No case gets turned away for geography or product.</span></li>
+            <li><b>An underwriter on staff</b><span>Impaired risk pre-screened before submission &mdash; cardiac, diabetes, cancer history, build, prescription flags. Worth about 20 points of placement ratio.</span></li>
+            <li><b>Informal inquiries on hard cases</b><span>We shop a difficult case anonymously across carriers first, so a decline never lands on your client's record.</span></li>
+            <li><b>Case designers</b><span>Buy-sell, key person, executive benefits, estate equalization, retirement income. The structure gets built before the application goes out.</span></li>
+            <li><b>Case managers who chase requirements</b><span>Exams, medical records, carrier requirements, and offers worked daily through the long turnarounds until the policy issues.</span></li>
+            <li><b>A named team, not a queue</b><span>A named advisor, case manager, and brokerage manager. When a case gets complicated, you know exactly who to call.</span></li>
+          </ul>
+        </article>
+
+        <article class="bucket b2">
+          <div class="bucket-h">
+            <div class="bucket-n">Leverage</div>
+            <div class="bucket-q">&ldquo;How much of this lands on my desk?&rdquo;</div>
+          </div>
+          <ul class="vlist">
+            <li><b>Our own CRM, free</b><span>Automated email and phone drips built in. Your client stays engaged without another follow-up task on your calendar.</span></li>
+            <li><b>First call within 24 hours</b><span>On every referral. No name sits in an inbox waiting for someone to get to it.</span></li>
+            <li><b>A 14-day contact strategy</b><span>Twenty-plus calls, texts, and emails before anyone gives up on a name you sent.</span></li>
+            <li><b>App Assist when you'd rather sell it</b><span>You close, we take the application. Two minutes of your time instead of twenty.</span></li>
+            <li><b>Licensing and compliance handled</b><span>Referral compensation is regulated state by state. We do that analysis so the way you get paid is structured correctly from day one.</span></li>
+            <li><b>You always hear back</b><span>Placed, declined, or withdrawn &mdash; every referral gets an answer. No black hole after submission.</span></li>
+          </ul>
+        </article>
+
+        <article class="bucket b3">
+          <div class="bucket-h">
+            <div class="bucket-n">Multiplier</div>
+            <div class="bucket-q">&ldquo;Does this actually grow my agency?&rdquo;</div>
+          </div>
+          <ul class="vlist">
+            <li><b>Beneficiary onboarding and claims packages</b><span>The people your client's policy protects get educated on what the policy is and exactly what to do if it's ever needed.</span></li>
+            <li><b>The Pinney Client Multiplier</b><span>Those same beneficiaries go through the process themselves. One placed policy can double the business that comes out of it.</span></li>
+            <li><b>Referrals collected on the application call</b><span>We ask while we have the client, and the names come back to you. One client, three referral opportunities.</span></li>
+            <li><b>Book analysis before you commit</b><span>Send an extract from your AMS and we'll tell you how much life revenue is already sitting in your book. Costs you nothing.</span></li>
+            <li><b>Term conversion mining</b><span>We find the policies coming up on a conversion deadline. Revenue with a date already attached to it.</span></li>
+            <li><b>Claims advocacy</b><span>When a client dies, our team runs the claim with the family. You're the one who made sure they were covered.</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout gold" style="margin-top:1.5rem">
+        <b>Every other brokerage takes names out of your book</b>
+        Beneficiary onboarding and the Client Multiplier put names back in. That is the piece a competitor cannot copy without building the whole engine behind it first &mdash; and it is why a referral to us is worth more than the case you sent.
+      </div>
+
+      <div class="fig">
+        <div class="fig-h"><h4>The Pinney Client Multiplier</h4><span class="note">One referral in &middot; two to three households back</span></div>
+        <svg viewBox="0 0 1000 400" role="img" aria-label="Client Multiplier: one referral becomes a placed policy, beneficiaries are onboarded, and those households return to your book"><defs><marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--purple-4)"/></marker><marker id="ar3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--blue-2)"/></marker></defs><rect x="0" y="140" width="170" height="92" rx="10" fill="rgba(255,197,61,.10)" stroke="var(--gold)" stroke-width="1.5"/><text class="s-big" x="16" y="174" fill="var(--gold)">1</text><text class="s-t" x="16" y="196">referral you sent</text><text class="s-s" x="16" y="214">Name, phone, email</text><path d="M178 186 L228 186" stroke="var(--blue-2)" stroke-width="1.5" fill="none" marker-end="url(#ar3)"/><rect x="236" y="140" width="180" height="92" rx="10" fill="rgba(32,168,255,.10)" stroke="var(--blue-1)" stroke-width="1.5"/><text class="s-big" x="252" y="174" fill="var(--blue-1)">1</text><text class="s-t" x="252" y="196">policy placed</text><text class="s-s" x="252" y="214">We call, sell, underwrite</text><path d="M424 186 C 470 186, 470 71, 512 71" stroke="var(--purple-4)" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/><rect x="520" y="40" width="190" height="62" rx="10" fill="rgba(162,119,255,.10)" stroke="var(--purple-4)" stroke-width="1.5"/><text class="s-t" x="536" y="66">Beneficiary 1</text><text class="s-s" x="536" y="84">Onboarded &amp; educated</text><path d="M424 186 C 470 186, 470 171, 512 171" stroke="var(--purple-4)" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/><rect x="520" y="140" width="190" height="62" rx="10" fill="rgba(162,119,255,.10)" stroke="var(--purple-4)" stroke-width="1.5"/><text class="s-t" x="536" y="166">Beneficiary 2</text><text class="s-s" x="536" y="184">Onboarded &amp; educated</text><path d="M424 186 C 470 186, 470 271, 512 271" stroke="var(--purple-4)" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/><rect x="520" y="240" width="190" height="62" rx="10" fill="rgba(162,119,255,.10)" stroke="var(--purple-4)" stroke-width="1.5"/><text class="s-t" x="536" y="266">Beneficiary 3</text><text class="s-s" x="536" y="284">Onboarded &amp; educated</text><text class="s-lab" x="424" y="120" fill="var(--purple-4)">NAMED ON THE POLICY</text><path d="M718 71 C 762 71, 762 186, 800 186" stroke="var(--purple-4)" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/><path d="M718 171 C 762 171, 762 186, 800 186" stroke="var(--purple-4)" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/><path d="M718 271 C 762 271, 762 186, 800 186" stroke="var(--purple-4)" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/><rect x="808" y="140" width="192" height="92" rx="10" fill="rgba(255,197,61,.10)" stroke="var(--gold)" stroke-width="1.5"/><text class="s-big" x="824" y="174" fill="var(--gold)">2&#8211;3</text><text class="s-t" x="824" y="196">new households</text><text class="s-s" x="824" y="214">Back in your book</text><text class="s-lab" x="808" y="252" fill="var(--gold)">YOURS TO SELL AGAIN</text><text class="s-lab" x="0" y="252" fill="var(--gold)">YOU START HERE</text><path d="M904 240 C 904 340, 700 348, 400 348 C 200 348, 90 340, 86 240" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="5 5" marker-end="url(#ar2)"/><text class="s-lab" x="500" y="372" text-anchor="middle" fill="var(--gold)">AND THE CYCLE STARTS AGAIN</text></svg>
+        <p class="fig-cap">Every policy names people. Those people get an onboarding package explaining the coverage and a claims guide telling them exactly what to do if it is ever needed &mdash; and then they go through the process themselves. One placed policy can double the business that comes out of it, and the new households land in your book, not ours.</p>
+      </div>
+
+
+      <div class="grid g2" style="margin-top:1.25rem">
+        <div class="panel">
+          <div class="kicker" style="margin-bottom:.6rem">White label, in practice</div>
+          <p style="font-size:.9375rem;color:var(--text-mid)">Your client is contacted by the life insurance division of your agency. Calls, emails, and scheduling links carry that identity &mdash; outbound mail comes from an <span class="mono" style="color:var(--blue-1)">@lifeinsurancedivision</span> address, never a brokerage letterhead they've never heard of. Clients don't question it. The exact intro language is yours to set at kickoff, and you're welcome to sit on the first calls.</p>
+        </div>
+        <div class="panel">
+          <div class="kicker" style="margin-bottom:.6rem">What it costs you</div>
+          <p style="font-size:.9375rem;color:var(--text-mid)">Nothing. No platform fee, no minimum production, no exclusivity, and no charge for the CRM, quoting engine, case management, or underwriting support. We're paid out of the same commission you are &mdash; so we only make money when your client's policy places. Pinney has been placing life business since 1972.</p>
+        </div>
+      </div>
+
+      <div class="does" style="margin-top:1.25rem">
+        <div class="cell"><b>60+</b><h4>Carriers shopped per case</h4><p>Term, UL, whole life, final expense, disability, LTC, and annuities.</p></div>
+        <div class="cell"><b>50+</b><h4>Years placing life business</h4><p>Founded 1972. Winner of the 2017 iPipeline Industry Leadership Award.</p></div>
+        <div class="cell"><b>100%</b><h4>Digital submission</h4><p>e-Applications, e-signatures, e-tickets, e-policy delivery, encrypted email.</p></div>
+        <div class="cell"><b>$0</b><h4>Cost to your agency</h4><p>No platform fee, no minimum production, no exclusivity.</p></div>
+      </div>
+
+
+      <div class="gsbar">
+        <p>Ready to put a name through this?<span>Partner with us, email the client information over, or submit it on the form.</span></p>
+        <button class="btn btn-primary" type="button" data-gs>Get started &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ============ 03 CARRIERS & PRODUCTS ============ -->
+    <section class="sec" id="carriers">
+      <div class="sec-head">
+        <div class="kicker">Section 03</div>
+        <h2 class="h2">Carriers and products</h2>
+        <div class="rule"></div>
+        <p class="lede">Every case gets matched to the carrier whose underwriting actually likes it. That matching is most of the placement-ratio difference &mdash; and it is the part you would have to build a department to replicate.</p>
+      </div>
+
+      <h3 class="h3" style="margin-bottom:1rem">What we place</h3>
+      <div class="specialty">
+      <span>Life insurance</span>
+      <span>Annuities</span>
+      <span>Disability income</span>
+      <span>Long-term care</span>
+      <span>Final expense &amp; burial</span>
+      <span>Advanced planning strategies</span>
+      </div>
+
+      <div class="carrierbox">
+        <div class="carrierhead">
+          <h3 class="h3">The carriers we shop</h3>
+          <span class="c">65 appointments &middot; life, annuity, DI, LTC, final expense</span>
+        </div>
+        <ul class="carriers">
+          <li>Accordia Life</li>
+          <li>American Continental Insurance</li>
+          <li>American Equity</li>
+          <li>American Memorial Life</li>
+          <li>American National</li>
+          <li>Americo</li>
+          <li>Assurity Life</li>
+          <li>Athene</li>
+          <li>Baltimore Life</li>
+          <li>Banner Life</li>
+          <li>Cincinnati Life</li>
+          <li>Companion Life <span class="ny">(NY only)</span></li>
+          <li>Corebridge Financial</li>
+          <li>Pan-American Life</li>
+          <li>Equitable</li>
+          <li>EquiTrust Life</li>
+          <li>Fidelity &amp; Guaranty Life</li>
+          <li>Fidelity Investments</li>
+          <li>Foresters Life</li>
+          <li>Forethought Financial</li>
+          <li>Genworth</li>
+          <li>Gerber Life</li>
+          <li>Globe Life Insurance <span class="ny">(NY only)</span></li>
+          <li>Great American Financial</li>
+          <li>Great Western Insurance</li>
+          <li>Guarantee Trust Life</li>
+          <li>Integrity Life</li>
+          <li>John Hancock Life</li>
+          <li>Legal &amp; General America</li>
+          <li>LifeSecure</li>
+          <li>Life Insurance Company of the SW</li>
+          <li>Lincoln National</li>
+          <li>MassMutual</li>
+          <li>MedAmerica</li>
+          <li>MetLife</li>
+          <li>Minnesota Life</li>
+          <li>Mutual Trust Financial Group</li>
+          <li>National Western Life</li>
+          <li>Nationwide Life</li>
+          <li>New York Life</li>
+          <li>North American Co</li>
+          <li>OneAmerica</li>
+          <li>Oxford Life</li>
+          <li>Pacific Life</li>
+          <li>Peterson Financial / Lloyds</li>
+          <li>Principal Financial Group</li>
+          <li>Protective Life</li>
+          <li>Pruco Life</li>
+          <li>Reliance Standard</li>
+          <li>Royal Neighbors of America</li>
+          <li>Sagicor</li>
+          <li>Savings Bank Life</li>
+          <li>Securian <span class="ny">(NY only)</span></li>
+          <li>Sons of Norway</li>
+          <li>Standard Life</li>
+          <li>State Life / OneAmerica</li>
+          <li>Symetra</li>
+          <li>Transamerica</li>
+          <li>United American</li>
+          <li>United Home Life Insurance</li>
+          <li>United of Omaha</li>
+          <li>US Life <span class="ny">(NY only)</span></li>
+          <li>Vantis Life</li>
+          <li>Voya</li>
+          <li>William Penn <span class="ny">(NY only)</span></li>
+          <li>Zurich American Life</li>
+        </ul>
+        <p class="sm" style="margin-top:1.25rem">Every case gets matched to the carrier whose underwriting actually likes it &mdash; which is where most of the placement-ratio difference comes from.</p>
+      </div>
+    </section>
+
+    <!-- ============ 03 GOOD & BAD FIT ============ -->
+    <section class="sec" id="fit">
+      <div class="sec-head">
+        <div class="kicker">Section 04</div>
+        <h2 class="h2">Good fit and bad fit</h2>
+        <div class="rule"></div>
+        <p class="lede">Send the left column. Skip the right for now. Rule of thumb: if you wouldn't want to explain to the family why there was no coverage, refer it.</p>
+      </div>
+
+
+
+      <div class="fit">
+        <div class="fitcard good">
+          <div class="fit-h"><span class="fit-badge">Refer these</span><span class="h3">Good fit</span></div>
+          <ul class="fitlist">
+            <li><span class="mk">+</span><div><b>Married, young kids, a mortgage</b><span>Income replacement and debt protection in one conversation. Our highest close rate.</span></div></li>
+            <li><span class="mk">+</span><div><b>Business owner with a partner</b><span>Buy-sell funding. Without insurance the operating agreement is a promise, not a plan.</span></div></li>
+            <li><span class="mk">+</span><div><b>A business where one person carries the revenue</b><span>Key-person coverage. Lenders and investors often ask before you do.</span></div></li>
+            <li><span class="mk">+</span><div><b>High earner with a non-working spouse</b><span>One income carries the household and group coverage never closes the gap.</span></div></li>
+            <li><span class="mk">+</span><div><b>Maxed out 401(k) and Roth, cash left over</b><span>Wants tax-advantaged growth with a floor. A retirement conversation, not a death conversation.</span></div></li>
+            <li><span class="mk">+</span><div><b>Term policy within two years of expiring</b><span>The level period ends and the premium jumps. Far easier to solve before the rate change.</span></div></li>
+            <li><span class="mk">+</span><div><b>Bank or SBA loan in progress</b><span>Coverage is routinely a funding condition. This one has a deadline attached.</span></div></li>
+            <li><span class="mk">+</span><div><b>Recently divorced, or a new baby</b><span>Court-ordered coverage is common, and the beneficiary on file is frequently an ex or a parent.</span></div></li>
+          </ul>
+        </div>
+
+        <div class="fitcard bad">
+          <div class="fit-h"><span class="fit-badge">Hold these</span><span class="h3">Bad fit</span></div>
+          <ul class="fitlist">
+            <li><span class="mk">&minus;</span><div><b>Under 25, single, renting, no debt</b><span>Nothing to protect yet. Keep the name and call us when that changes.</span></div></li>
+            <li><span class="mk">&minus;</span><div><b>Retired with no dependents and no estate need</b><span>No income to replace and no heirs to equalize.</span></div></li>
+            <li><span class="mk">&minus;</span><div><b>Students or unemployed young adults</b><span>No income and usually no premium capacity.</span></div></li>
+            <li><span class="mk">&minus;</span><div><b>Living paycheck to paycheck with no surplus</b><span>A policy that lapses in month four helps nobody. Revisit when cash flow steadies.</span></div></li>
+            <li><span class="mk">&minus;</span><div><b>Significant assets, no heirs, no charitable intent</b><span>Self-insured with nowhere for the benefit to go.</span></div></li>
+            <li><span class="mk">&minus;</span><div><b>Government agencies, public schools, large public corporations</b><span>Commercial life concepts don't apply &mdash; ownership is diversified or coverage is institutional.</span></div></li>
+            <li><span class="mk">&minus;</span><div><b>Anyone who told you no</b><span>Don't submit it. The relationship is worth more than the case.</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:1.5rem">
+        <b>Not sure?</b>
+        Send it. A five-minute conversation on our side costs your client nothing and costs you nothing. We would rather sort the fit than have you sort it for us.
+      </div>
+    </section>
+
+    <!-- ============ 04 PERSONALITY & LANGUAGE ============ -->
+    <section class="sec" id="people">
+      <div class="sec-head">
+        <div class="kicker">Section 05</div>
+        <h2 class="h2">How to generate a referral + script</h2>
+        <div class="rule"></div>
+        <p class="lede">Six people already sitting in your book, the moment that opens each conversation, and the exact words to use. Match the sentence to who you're talking to &mdash; the wrong framing kills a good case faster than a bad quote. Say it in your own words; these are a starting point.</p>
+      </div>
+
+      <div class="people">
+        <article class="person p1">
+          <div class="p-head"><div class="p-name">The Protector</div><div class="p-cue">Leads with family</div></div>
+          <p class="p-tell">Talks about their kids before they talk about money. Bought the house for the school district. Responds to responsibility, not returns.</p>
+          <p class="say" data-copy>Congratulations again on the house. One thing I always bring up &mdash; that mortgage is the biggest bill your family would be left with if something happened to you. We have a life team that handles this for our clients. Want me to have them give you a call? No cost, no pressure.</p>
+          <p class="avoid"><b>Avoid</b> Rate-of-return talk. They don't care about the yield, they care who writes the check.</p>
+          <button class="copybtn" type="button">Copy</button>
+        </article>
+
+        <article class="person p2">
+          <div class="p-head"><div class="p-name">The Numbers Person</div><div class="p-cue">Wants the math</div></div>
+          <p class="p-tell">Asks what it costs before they ask what it does. Comparison shops everything. Skeptical of anything that sounds like a pitch.</p>
+          <p class="say" data-copy>Most people are covered for one or two times their salary through work, and the actual number needed is usually closer to twenty times income minus what's already there. Our team will run that number with you in about fifteen minutes and show you what the market prices it at. No obligation on either side.</p>
+          <p class="avoid"><b>Avoid</b> Emotional framing. Give them the arithmetic and let it do the work.</p>
+          <button class="copybtn" type="button">Copy</button>
+        </article>
+
+        <article class="person p3">
+          <div class="p-head"><div class="p-name">The Business Owner</div><div class="p-cue">Thinks in risk</div></div>
+          <p class="p-tell">Already insures buildings, vehicles, liability, and data. Has never insured the two people the whole business runs on.</p>
+          <p class="say" data-copy>Quick question on the business side &mdash; if something happened to you or your partner tomorrow, is there anything in place to fund the buyout? Same question for whoever carries most of the revenue. Our life team does buy-sell and key man work for our commercial clients. Worth a fifteen-minute call?</p>
+          <p class="avoid"><b>Avoid</b> Personal-protection language. Frame it as continuity and control of the business.</p>
+          <button class="copybtn" type="button">Copy</button>
+        </article>
+
+        <article class="person p4">
+          <div class="p-head"><div class="p-name">The Accumulator</div><div class="p-cue">Retirement-minded</div></div>
+          <p class="p-tell">Maxed the 401(k) and the Roth, still has cash, and is tired of watching the market swing. Wants safe growth and predictable income later.</p>
+          <p class="say" data-copy>You mentioned you've already maxed out your retirement accounts. There's a category most people never get shown &mdash; growth with a floor under it and predictable income later, without the market risk. Our team walks through it in fifteen minutes. Want me to set that up?</p>
+          <p class="avoid"><b>Avoid</b> Calling it life insurance up front. This is an income and tax conversation.</p>
+          <button class="copybtn" type="button">Copy</button>
+        </article>
+
+        <article class="person p5">
+          <div class="p-head"><div class="p-name">The Procrastinator</div><div class="p-cue">Agrees, never acts</div></div>
+          <p class="p-tell">Has been meaning to do this for three years. Will say yes to the idea and no to the calendar. Needs the decision taken off their plate.</p>
+          <p class="say" data-copy>You've mentioned this before, so let me just make it easy &mdash; I'll hand your name to our life team and they'll call you. Fifteen minutes, no paperwork on your end, and if the timing's wrong they'll leave it alone. Fair?</p>
+          <p class="avoid"><b>Avoid</b> Asking them to call someone or fill something out. You do it for them or it doesn't happen.</p>
+          <button class="copybtn" type="button">Copy</button>
+        </article>
+
+        <article class="person p6">
+          <div class="p-head"><div class="p-name">The Already-Covered</div><div class="p-cue">&ldquo;I have it through work&rdquo;</div></div>
+          <p class="p-tell">The single most common objection by a wide margin. Usually one to two times salary, and it ends the day the job does.</p>
+          <p class="say" data-copy>That's a good start. Two things worth knowing: it usually ends the day you leave the job, and it's often only one or two times salary. It costs nothing to have our team look at what you've got and tell you whether there's a gap. Want me to set that up?</p>
+          <p class="avoid"><b>Avoid</b> Telling them they're wrong. Agree first, then add the two facts they've never been told.</p>
+          <button class="copybtn" type="button">Copy</button>
+        </article>
+      </div>
+
+      <div class="callout" style="margin-top:1.5rem">
+        <b>The one line you never skip</b>
+        &ldquo;It'll come up as our life insurance division, so pick up when you see it.&rdquo; This is the difference between a pickup and a voicemail, and it is the single biggest driver of how fast a referral becomes a placed policy.
+      </div>
+
+
+      <div class="vidwrap">
+        <h3 class="h3" style="margin-bottom:.75rem">Training</h3>
+        <p class="lede" style="margin-bottom:1.25rem">We train your licensed P&amp;C advisors on this process directly &mdash; how the referral gets generated, what we do with it, and where their case sits at every stage. Run it for a producer meeting or send it to a new hire.</p>
+
+        <div class="vid" id="trainVid" role="button" tabindex="0" aria-label="Play the P&amp;C advisor training video" data-yt="1dKH28a7L58">
+          <div class="vid-in">
+            <div class="vid-play"><svg viewBox="0 0 24 24" fill="#04121F"><path d="M7 4.5v15l13-7.5z"/></svg></div>
+            <div class="vid-k">Partner training</div>
+            <div class="vid-t">Training licensed P&amp;C advisors on our process</div>
+            <div class="vid-s">The full walkthrough &mdash; spotting the opportunity, handing it off, and what happens on our side after.</div>
+          </div>
+        </div>
+        <p class="vid-alt">Trouble playing it here? <a href="https://youtu.be/1dKH28a7L58" target="_blank" rel="noopener">Watch on YouTube</a>.</p>
+      </div>
+
+      <div class="gsbar">
+        <p>Got someone in mind right now?<span>Send the name over while the conversation is still fresh.</span></p>
+        <button class="btn btn-primary" type="button" data-gs>Get started &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ============ 05 CONTACT STRATEGY ============ -->
+    <section class="sec" id="contact">
+      <div class="sec-head">
+        <div class="kicker">Section 06</div>
+        <h2 class="h2">Contact strategy</h2>
+        <div class="rule"></div>
+        <p class="lede">Referrals go cold because nobody calls twice. Here is the exact schedule your client is worked on, and the status your referral carries while it runs.</p>
+      </div>
+
+<div class="fig" style="margin-top:0;margin-bottom:1.5rem">
+        <div class="fig-h"><h4>Every touch, day by day</h4><span class="note">Calls &middot; texts &middot; emails</span></div>
+        <svg viewBox="0 0 1000 250" role="img" aria-label="Fourteen day contact cadence, twenty-six touches"><line x1="46" y1="176" x2="985" y2="176" stroke="var(--line)" stroke-width="1"/><circle cx="79.5" cy="162" r="6" fill="var(--gold)"/><circle cx="79.5" cy="145" r="6" fill="var(--gold)"/><circle cx="79.5" cy="128" r="6" fill="var(--gold)"/><rect x="74.0" y="105.5" width="11" height="11" rx="2" fill="none" stroke="var(--gold)" stroke-width="1.6"/><path d="M73.5 90 h12 v9 h-12 z M73.5 90 l6 5 l6 -5" fill="none" stroke="var(--gold)" stroke-width="1.4"/><line x1="79.5" y1="176" x2="79.5" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="79.5" y="198" text-anchor="middle">1</text><circle cx="146.6" cy="162" r="6" fill="var(--gold)"/><circle cx="146.6" cy="145" r="6" fill="var(--gold)"/><line x1="146.6" y1="176" x2="146.6" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="146.6" y="198" text-anchor="middle">2</text><circle cx="213.7" cy="162" r="6" fill="var(--gold)"/><circle cx="213.7" cy="145" r="6" fill="var(--gold)"/><rect x="208.2" y="122.5" width="11" height="11" rx="2" fill="none" stroke="var(--gold)" stroke-width="1.6"/><line x1="213.7" y1="176" x2="213.7" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="213.7" y="198" text-anchor="middle">3</text><circle cx="280.8" cy="162" r="6" fill="#FF9E2C"/><circle cx="280.8" cy="145" r="6" fill="#FF9E2C"/><line x1="280.8" y1="176" x2="280.8" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="280.8" y="198" text-anchor="middle">4</text><circle cx="347.8" cy="162" r="6" fill="var(--blue-1)"/><path d="M341.8 141 h12 v9 h-12 z M341.8 141 l6 5 l6 -5" fill="none" stroke="var(--blue-1)" stroke-width="1.4"/><line x1="347.8" y1="176" x2="347.8" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="347.8" y="198" text-anchor="middle">5</text><circle cx="414.9" cy="162" r="6" fill="var(--blue-1)"/><line x1="414.9" y1="176" x2="414.9" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="414.9" y="198" text-anchor="middle">6</text><circle cx="482.0" cy="162" r="6" fill="var(--blue-1)"/><path d="M476.0 141 h12 v9 h-12 z M476.0 141 l6 5 l6 -5" fill="none" stroke="var(--blue-1)" stroke-width="1.4"/><line x1="482.0" y1="176" x2="482.0" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="482.0" y="198" text-anchor="middle">7</text><circle cx="549.0" cy="162" r="6" fill="var(--blue-1)"/><line x1="549.0" y1="176" x2="549.0" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="549.0" y="198" text-anchor="middle">8</text><circle cx="616.1" cy="162" r="6" fill="var(--blue-1)"/><line x1="616.1" y1="176" x2="616.1" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="616.1" y="198" text-anchor="middle">9</text><line x1="683.2" y1="176" x2="683.2" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="683.2" y="198" text-anchor="middle">10</text><circle cx="750.2" cy="162" r="6" fill="var(--blue-1)"/><line x1="750.2" y1="176" x2="750.2" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="750.2" y="198" text-anchor="middle">11</text><line x1="817.3" y1="176" x2="817.3" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="817.3" y="198" text-anchor="middle">12</text><circle cx="884.4" cy="162" r="6" fill="var(--blue-1)"/><line x1="884.4" y1="176" x2="884.4" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="884.4" y="198" text-anchor="middle">13</text><circle cx="951.5" cy="162" r="6" fill="var(--text-dim)"/><path d="M945.5 141 h12 v9 h-12 z M945.5 141 l6 5 l6 -5" fill="none" stroke="var(--text-dim)" stroke-width="1.4"/><line x1="951.5" y1="176" x2="951.5" y2="182" stroke="var(--line)" stroke-width="1"/><text class="s-lab" x="951.5" y="198" text-anchor="middle">14</text><rect x="46.0" y="208" width="201.2" height="4" rx="2" fill="var(--gold)" opacity=".7"/><text class="s-lab" x="146.6" y="230" text-anchor="middle" fill="var(--gold)">HOT</text><rect x="247.2" y="208" width="67.1" height="4" rx="2" fill="#FF9E2C" opacity=".7"/><text class="s-lab" x="280.8" y="230" text-anchor="middle" fill="#FF9E2C">WARM</text><rect x="314.3" y="208" width="603.6" height="4" rx="2" fill="var(--blue-1)" opacity=".7"/><text class="s-lab" x="616.1" y="230" text-anchor="middle" fill="var(--blue-1)">COOL</text><rect x="917.9" y="208" width="67.1" height="4" rx="2" fill="var(--text-dim)" opacity=".7"/><text class="s-lab" x="951.5" y="230" text-anchor="middle" fill="var(--text-dim)">CLOSED</text><text class="s-big" x="46" y="34">23</text><text class="s-s" x="86" y="34">touches before we stop</text><text class="s-lab" x="46" y="198" text-anchor="end" transform="translate(-12,0)">DAY</text></svg>
+        <div class="legend">
+          <span><i class="round" style="background:var(--gold)"></i>Call</span>
+          <span><i style="background:transparent;border:1.5px solid var(--blue-1)"></i>Text</span>
+          <span><i style="background:transparent;border:1.5px solid var(--text-dim);border-radius:2px"></i>Email</span>
+          <span><i style="background:var(--gold)"></i>Hot &middot; days 1&#8211;3</span>
+          <span><i style="background:#FF9E2C"></i>Warm &middot; day 4</span>
+          <span><i style="background:var(--blue-1)"></i>Cool &middot; days 5&#8211;13</span>
+        </div>
+        <p class="fig-cap">Heavy at the front, tapering after. If your client engages at any point the cadence stops and the case moves to a real conversation.</p>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:14%">Day</th>
+              <th style="width:34%">Attempts</th>
+              <th>Message pattern</th>
+              <th style="width:1%">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="k">Day 1</td><td>First call within 24 hours, then two more &mdash; midday and PM</td><td>Voicemail on the first and third; text and personalized email follow the first attempt</td><td><span class="st hot">Hot</span></td></tr>
+            <tr><td class="k">Day 2</td><td>Two calls &mdash; AM and PM</td><td>Message on the afternoon attempt only</td><td><span class="st hot">Hot</span></td></tr>
+            <tr><td class="k">Day 3</td><td>Two calls &mdash; AM and PM</td><td>Message on the morning attempt; text immediately after</td><td><span class="st hot">Hot</span></td></tr>
+            <tr><td class="k">Day 4</td><td>Two calls &mdash; AM and PM</td><td>Message on the afternoon attempt</td><td><span class="st warm">Warm</span></td></tr>
+            <tr><td class="k">Days 5&ndash;8</td><td>One call per day, alternating AM and PM</td><td>Message every other day</td><td><span class="st cool">Cool</span></td></tr>
+            <tr><td class="k">Days 8&ndash;13</td><td>One call every other day, alternating AM and PM</td><td>No messages &mdash; attempts only</td><td><span class="st cool">Cool</span></td></tr>
+            <tr><td class="k">Day 14</td><td>Final call</td><td>Final message: the file goes on hold until we hear back</td><td><span class="st off">Closed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid g3" style="margin-top:1.5rem">
+        <div class="panel-2">
+          <div class="kicker" style="margin-bottom:.5rem">First call within 24 hours</div>
+          <p class="sm">Then twenty-plus calls, texts, and emails across fourteen days before anyone gives up on a name you sent.</p>
+        </div>
+        <div class="panel-2">
+          <div class="kicker" style="margin-bottom:.5rem">They engage, cadence stops</div>
+          <p class="sm">The moment your client responds, the case moves to discovery and a real conversation.</p>
+        </div>
+        <div class="panel-2">
+          <div class="kicker" style="margin-bottom:.5rem">You always hear back</div>
+          <p class="sm">Placed, declined, or withdrawn &mdash; you are never left wondering what happened to a name you sent.</p>
+        </div>
+      </div>
+
+      <div class="callout gold" style="margin-top:1.5rem">
+        <b>After the sale</b>
+        Application processing, exam scheduling, medical records, and requirement chasing run daily by a named case manager, typically four to six weeks to approval. Then delivery, placement, and a note back to you.
+      </div>
+    </section>
+
+    <!-- ============ 06 OUR LANGUAGE ============ -->
+    <section class="sec" id="language">
+      <div class="sec-head">
+        <div class="kicker">Section 07</div>
+        <h2 class="h2">Our language on the call</h2>
+        <div class="rule"></div>
+        <p class="lede">You're lending us a relationship you built. You should know, sentence by sentence, what gets said with your name on it. Bracketed fields are set at your kickoff.</p>
+      </div>
+
+      <div class="beats">
+        <article class="beat">
+          <div class="beat-n">01</div>
+          <div class="beat-b">
+            <div class="beat-h">Introduction</div>
+            <p class="beat-q">&ldquo;Hello <span class="slot">[client]</span>, this is <span class="slot">[advisor]</span> with the life insurance division at <span class="slot">[your agency]</span>. <span class="slot">[Your producer]</span> asked me to reach out. Did I catch you at a bad time?&rdquo;</p>
+            <p class="beat-n2">Your agency is named first, your producer second. That is what gets the call answered instead of screened.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">02</div>
+          <div class="beat-b">
+            <div class="beat-h">Purpose</div>
+            <p class="beat-q">&ldquo;I'm calling to take a few minutes to go over your information, get you a quote, and walk you through how the application and approval process works.&rdquo;</p>
+            <p class="beat-n2">Calls are recorded for quality assurance and the client is told so.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">03</div>
+          <div class="beat-b">
+            <div class="beat-h">Who we are</div>
+            <p class="beat-q">&ldquo;What we do is gather your information and bring you free quotes from top-rated carriers &mdash; Prudential, Mutual of Omaha, Banner Life, John Hancock, to name a few.&rdquo;</p>
+            <p class="beat-n2">Carrier names do the credibility work. No unfamiliar brokerage enters the conversation.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">04</div>
+          <div class="beat-b">
+            <div class="beat-h">Establish the need</div>
+            <p class="beat-q">&ldquo;First of all &mdash; what's come up in your life that's prompting you to look at life insurance right now?&rdquo;</p>
+            <p class="beat-n2">Uncovers who they're protecting. Everything after this is built on the answer.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">05</div>
+          <div class="beat-b">
+            <div class="beat-h">Set expectations</div>
+            <p class="beat-q">&ldquo;It's three simple steps: a few health and lifestyle questions, a no-cost mini exam, and underwriting &mdash; usually four to six weeks to approval.&rdquo;</p>
+            <p class="beat-n2">Said up front, so the exam and the wait never become the surprise that stalls the case.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">06</div>
+          <div class="beat-b">
+            <div class="beat-h">Verify the basics</div>
+            <p class="beat-q">&ldquo;Let me verify a few basics &mdash; name, address, phone, email, date of birth, height and weight. And have you used any form of tobacco or nicotine in the past five years?&rdquo;</p>
+            <p class="beat-n2">Clean data at the front is the difference between a four-week case and a twelve-week one.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">07</div>
+          <div class="beat-b">
+            <div class="beat-h">Needs analysis</div>
+            <p class="beat-q">&ldquo;Based on what you've told me, I'd recommend around <span class="slot">[amount]</span> &mdash; replacing your income for <span class="slot">[years]</span> years, paying off debt, and crediting your existing coverage and savings. How does that sound?&rdquo;</p>
+            <p class="beat-n2">The number is derived on the call, in front of the client, from their own figures.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">08</div>
+          <div class="beat-b">
+            <div class="beat-h">Health and lifestyle</div>
+            <p class="beat-q">&ldquo;Other than what we've discussed, are you taking any other prescription medications? Any other reason you might not qualify for the best rates?&rdquo;</p>
+            <p class="beat-n2">Where impaired-risk cases get caught early and routed to our underwriter before a carrier ever sees the file.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">09</div>
+          <div class="beat-b">
+            <div class="beat-h">Deliver the rate</div>
+            <p class="beat-q">&ldquo;The carrier with the best rate for you is <span class="slot">[carrier]</span> &mdash; how familiar are you with them? For <span class="slot">[amount]</span> of <span class="slot">[term]</span> level term, the premium is <span class="slot">[premium]</span>. How does that sound?&rdquo;</p>
+            <p class="beat-n2">Carrier rating and years in business are quoted alongside the number.</p>
+          </div>
+        </article>
+
+        <article class="beat">
+          <div class="beat-n">10</div>
+          <div class="beat-b">
+            <div class="beat-h">Handle objections and apply</div>
+            <p class="beat-q">&ldquo;That's a great start &mdash; most employer policies are limited. Let me show you how to build coverage that stays with you no matter where you work.&rdquo;</p>
+            <p class="beat-n2">Objections are answered, not argued with, and the application is taken on the same call wherever possible.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 07 THE MATH ============ -->
+    <section class="sec" id="math">
+      <div class="sec-head">
+        <div class="kicker">Section 08</div>
+        <h2 class="h2">What this is worth to your agency</h2>
+        <div class="rule"></div>
+        <p class="lede">Move the inputs to your own book. The output is your half of the commission on business that actually places &mdash; an illustration built on your assumptions, not a quote.</p>
+      </div>
+
+      <div class="calc">
+        <div class="calc-in">
+          <div class="field">
+            <label for="r-refs">Referrals sent per month <span class="v" id="v-refs">20</span></label>
+            <input type="range" id="r-refs" min="1" max="60" step="1" value="20">
+          </div>
+          <div class="field">
+            <label for="r-prem">Average annual premium per placed case <span class="v" id="v-prem">$1,800</span></label>
+            <input type="range" id="r-prem" min="600" max="12000" step="100" value="1800">
+          </div>
+          <div class="field">
+            <label for="r-place">Share of referrals that place <span class="v" id="v-place">35%</span></label>
+            <input type="range" id="r-place" min="5" max="70" step="1" value="35">
+          </div>
+          <div class="field">
+            <label for="r-comm">Commission rate <span class="v" id="v-comm">20%</span></label>
+            <input type="range" id="r-comm" min="5" max="120" step="5" value="20">
+          </div>
+          <p class="sm">Commission rates vary widely by carrier and product. Set this to whatever your grid actually pays.</p>
+        </div>
+
+        <div class="calc-out">
+          <div>
+            <div class="calc-lbl">Your share, first twelve months</div>
+            <div class="calc-big" id="out-year">$15,120</div>
+          </div>
+          <div class="calc-rows">
+            <div class="calc-row"><span>Referrals sent per year</span><span id="out-sent">240</span></div>
+            <div class="calc-row"><span>Cases placed</span><span id="out-placed">84</span></div>
+            <div class="calc-row"><span>Total commission generated</span><span id="out-total">$30,240</span></div>
+            <div class="calc-row"><span>Your 50% share</span><span id="out-share">$15,120</span></div>
+            <div class="calc-row"><span>Your share per referral sent</span><span id="out-per">$63</span></div>
+          </div>
+          <p class="sm">Illustration only. Actual compensation depends on carrier, product, issue age, rate class, and the terms in your partner agreement.</p>
+        </div>
+      </div>
+
+
+        <div class="fig" style="margin-top:0">
+          <div class="fig-h"><h4>Your share, month by month</h4><span class="note">Cumulative &middot; first 12 months</span></div>
+          <svg id="calcChart" viewBox="0 0 1000 300" role="img" aria-label="Cumulative share of commission across twelve months"></svg>
+          <p class="fig-cap">Bars are cumulative. The chart redraws as you move the sliders above.</p>
+        </div>
+
+      <div class="grid g2" style="margin-top:1.5rem">
+        <div class="callout">
+          <b>The commission is the visible half</b>
+          The other half is retention. Clients holding life alongside their P&amp;C don't shop the bundle every renewal &mdash; a 9-person P&amp;C team running this system measured 95% retention on exactly those households. A term policy is not requoted annually; it anchors the relationship for twenty years.
+        </div>
+        <div class="callout gold">
+          <b>What one firm produced</b>
+          Over $100,000 in added life commissions in under six months. No new leads bought, no life producer hired, nothing changed about how they sold auto and home &mdash; they added one question to the quote process and sent the names to us.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08 FAQ ============ -->
+    <section class="sec" id="faq">
+      <div class="sec-head">
+        <div class="kicker">Section 09</div>
+        <h2 class="h2">Questions we get from P&amp;C agencies</h2>
+        <div class="rule"></div>
+        <p class="lede">The ones that come up on every first call. Click any question to open it.</p>
+      </div>
+
+      <div class="faq">
+        <details class="q" open>
+          <summary>What does this cost our agency?<span class="q-mark">+</span></summary>
+          <div class="a">Nothing. There is no platform fee, no minimum production requirement, no exclusivity, and no charge for the CRM, the quoting engine, case management, case design, or underwriting support. We're paid out of the same commission you are, which means we only make money when your client's policy actually places.</div>
+        </details>
+
+        <details class="q">
+          <summary>Do our producers need a life license?<span class="q-mark">+</span></summary>
+          <div class="a">Not to refer. Your producer notices an opening, asks one question, and passes a name &mdash; that's the whole job. Referral compensation to unlicensed persons is regulated state by state, and we do that analysis with you during onboarding so the way you get paid is structured correctly from day one. If a producer <em>is</em> licensed and wants to write the case themselves, Options 2 and 3 are there for that.</div>
+        </details>
+
+        <details class="q">
+          <summary>How and when do we get paid?<span class="q-mark">+</span></summary>
+          <div class="a">A 50/50 split of the commission on placed business. No placed business, no commission &mdash; we take the risk on the cases that don't close. Payment mechanics and timing are set out in your partner agreement, which we walk through at kickoff before you send a single name.</div>
+        </details>
+
+        <details class="q">
+          <summary>What does our client actually hear when you call?<span class="q-mark">+</span></summary>
+          <div class="a">They hear the life insurance division of your agency. Your agency is named first and your producer second, outbound email comes from an <span class="mono">@lifeinsurancedivision</span> address, and no unfamiliar brokerage name enters the conversation. Section 07 has the full call outline, sentence by sentence. You're also welcome to sit in on the first several calls before you trust us with the rest of the book &mdash; ask for it at kickoff.</div>
+        </details>
+
+        <details class="q">
+          <summary>How fast do you call, and what if they don't answer?<span class="q-mark">+</span></summary>
+          <div class="a">First call within 24 hours of receiving the referral. After that, a 14-day contact strategy: twenty-plus calls, texts, and emails, heavy in the first four days and tapering after. If the client engages at any point the cadence stops and the case moves to a real conversation. If they never respond, the file closes as withdrawn and you're told &mdash; you're never left wondering what happened to a name you sent.</div>
+        </details>
+
+        <details class="q">
+          <summary>Is there a minimum case size?<span class="q-mark">+</span></summary>
+          <div class="a">No. Send the small ones. A $250,000 term policy on a young family takes the same fifteen-minute call as a large case, and those households are the ones that stay with your agency for twenty years.</div>
+        </details>
+
+        <details class="q">
+          <summary>What if the client has health issues?<span class="q-mark">+</span></summary>
+          <div class="a">That's when this is worth the most to you. We have an underwriter on staff who pre-screens impaired risk before submission &mdash; cardiac history, diabetes, cancer history, build, prescription flags. On difficult cases we can shop informally and anonymously across carriers first, so a decline never lands on your client's record. Send the hard ones rather than writing them off.</div>
+        </details>
+
+        <details class="q">
+          <summary>How long does a case take?<span class="q-mark">+</span></summary>
+          <div class="a">Typically four to six weeks from application to approval, then delivery and placement. Exams, medical records, carrier requirements, and offer negotiation are chased daily by a named case manager, which is the difference between a case that issues and a case that quietly dies in requirements.</div>
+        </details>
+
+        <details class="q">
+          <summary>We already have a life carrier relationship. Does this conflict?<span class="q-mark">+</span></summary>
+          <div class="a">No exclusivity is required. Plenty of partners use us for the cases they don't want to work and keep whatever they already have in place. Start by sending one name and compare the experience against your current path.</div>
+        </details>
+
+        <details class="q">
+          <summary>Can you tell us what's already in our book before we commit?<span class="q-mark">+</span></summary>
+          <div class="a">Yes, and it costs nothing. Send an extract from your AMS and we'll come back with an estimate of how much life revenue is sitting in your existing book &mdash; households with mortgages, business owners with partners, term policies approaching a conversion deadline. It's the cheapest way to find out whether this is worth your time.</div>
+        </details>
+
+        <details class="q">
+          <summary>How do we get our team to actually do it?<span class="q-mark">+</span></summary>
+          <div class="a">Make it a standard rather than a suggestion. The teams that succeed with this set a target of one to five referrals per producer per week, add one life question to every quote and renewal, track the number somewhere visible, and read it out loud weekly. One agency built the habit in three weeks and now runs 29 to 30 referrals a month off a nine-person team. We'll help you run the kickoff.</div>
+        </details>
+      </div>
+
+      <div class="gsbar">
+        <p>Still have a question we didn't answer?<span>Email brokerage sales support and a person will get back to you.</span></p>
+        <button class="btn btn-primary" type="button" data-gs>Get started &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ============ 10 SUBMIT A CLIENT ============ -->
+    <section class="sec" id="form">
+      <div class="sec-head">
+        <div class="kicker">Section 10</div>
+        <h2 class="h2">Two ways to submit a client</h2>
+        <div class="rule"></div>
+        <p class="lede">Set your team up on the portal for everything going forward, or use the form right now if someone needs coverage today. Either way a licensed advisor and a case manager pick it up and call within 24 hours.</p>
+      </div>
+
+      <div class="formzone">
+        <div class="ways">
+          <article class="way w1">
+            <div class="way-n"><span>1</span><b>The ongoing way</b></div>
+            <h4>Register for our submission portal</h4>
+            <p>Insureio is our CRM, free to partners. Set your team up once and submit, track, and check status on every case yourself.</p>
+            <ul>
+              <li>Submit cases any time, no email or form needed</li>
+              <li>See exactly where each case sits</li>
+              <li>Quoting tools and carrier access built in</li>
+            </ul>
+            <a class="btn btn-primary" href="https://pinney.insureio.com/signup" target="_blank" rel="noopener">Register for our CRM &rarr;</a>
+          </article>
+
+          <article class="way w2">
+            <div class="way-n"><span>2</span><b>Need someone submitted today</b></div>
+            <h4>Use the form below</h4>
+            <p>No setup, no account. Six fields and the case is in our hands &mdash; the fastest route if a client is sitting in front of you right now.</p>
+            <ul>
+              <li>About two minutes</li>
+              <li>First call goes out within 24 hours</li>
+              <li>Works before your portal is set up</li>
+            </ul>
+            <a class="btn" href="#formWrap">Jump to the form &darr;</a>
+          </article>
+        </div>
+
+        <div class="orbar"><span>Submit one right now</span></div>
+
+        <div class="fs-row">
+          <div class="fs-card">
+            <div class="fs-k">What we need</div>
+            <ul class="fs-fields">
+              <li>Name</li>
+              <li>State</li>
+              <li>Phone</li>
+              <li>Date of birth</li>
+              <li>Email</li>
+              <li>Coverage amount</li>
+            </ul>
+          </div>
+          <div class="fs-card">
+            <div class="fs-k">What happens next</div>
+            <ol class="fs-next">
+              <li>A licensed advisor and a named case manager are assigned.</li>
+              <li>We call as your life division, within 24 hours.</li>
+              <li>Quote, application, underwriting, placement &mdash; then we report back.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="formwrap" id="formWrap">
+          <div class="formbar">
+            <span class="t"><span class="dot"></span>Referral form</span>
+            <span class="m">Secure &middot; about 2 minutes</span>
+          </div>
+
+          <div class="formshell">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/uszospXcpa6TYCAfo5TK"
+              style="width:100%;height:1450px;border:none;border-radius:8px"
+              id="inline-uszospXcpa6TYCAfo5TK"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Inszone Option B"
+              data-height="1450"
+              data-layout-iframe-id="inline-uszospXcpa6TYCAfo5TK"
+              data-form-id="uszospXcpa6TYCAfo5TK"
+              data-cookie-consent="true"
+              data-cookie-consent-provider="auto"
+              title="Referral form">
+            </iframe>
+          </div>
+
+          <div class="formfall">
+            <h4>The form didn't load here</h4>
+            <p>Some browsers and preview environments block embedded forms. Open it directly, or email the client details over &mdash; either route reaches the same desk.</p>
+            <div class="cta-actions" style="margin-top:0">
+              <a class="btn btn-primary" href="https://marketing.pinneyinsurance.com/inszonequote" target="_blank" rel="noopener">Open the form &rarr;</a>
+              <a class="btn btn-ghost" href="mailto:corris@pinneyinsurance.com?subject=New%20Life%20Referral%20-%20Client%20Information&amp;body=Name%3A%0D%0AEmail%3A%0D%0APhone%20number%3A%0D%0AState%3A%0D%0ABirthday%3A%0D%0AAmount%20of%20insurance%20needed%3A%0D%0A%0D%0AReferred%20by%3A%0D%0AAgency%3A%0D%0A">Email it instead</a>
+            </div>
+          </div>
+        </div>
+
+        <p class="formfoot">Working App Assist or writing the case yourself? Same form &mdash; note it in the message and we route it. Partnership questions go to <a href="mailto:brokeragesalessupport@pinneyinsurance.com?subject=Looking%20To%20Refer%20Leads%20-%20P%26C">brokerage sales support</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="sec" id="start" style="padding-top:0">
+      <div class="cta">
+        <h2>Send one name this week and watch what we do with it.</h2>
+        <p>Nothing to sign before you test it. Pick the client you already know needs coverage, use the hand-off line, and send it through. You'll get a named advisor and a case manager on it right away.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" type="button" data-gs>Get started &rarr;</button>
+          <a class="btn btn-ghost" href="mailto:brokeragesalessupport@pinneyinsurance.com?subject=Book%20analysis%20request">Request a book analysis</a>
+        </div>
+        <div class="kick">
+          <div><b>Before you start</b><span>Set the white-label intro line your clients will hear, and name a referral owner on your side.</span></div>
+          <div><b>Make it a standard</b><span>One to five referrals per producer per week, and one life question added to every quote.</span></div>
+          <div><b>Track it weekly</b><span>Put the number somewhere visible and read it out loud. That is the whole management system.</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-c">
+      <strong>Pinney Insurance Center</strong>
+      <span>2266 Lava Ridge Court, Suite 200 &middot; Roseville, CA 95661</span>
+      <span><a href="tel:19164096166">(916) 409-6166</a> &middot; <a href="tel:18008234852">(800) 823-4852</a></span>
+      <span><a href="mailto:brokeragesalessupport@pinneyinsurance.com">brokeragesalessupport@pinneyinsurance.com</a></span>
+    </div>
+    <div class="foot-c">
+      <strong>Refer a client</strong>
+      <span><a href="https://marketing.pinneyinsurance.com/inszonequote" target="_blank" rel="noopener">marketing.pinneyinsurance.com/inszonequote</a></span>
+      <span>Life &middot; Disability &middot; Long-term care</span>
+      <span>Annuities &middot; Retirement &middot; Business succession</span>
+    </div>
+    <div class="foot-c" style="max-width:32ch">
+      <strong>For agency use</strong>
+      <span class="sm">Written for partner agencies and their producers. Not client-facing material.</span>
+    </div>
+  </div>
+  <p class="disc">This document is educational and describes a referral arrangement between agencies. Nothing in it is an offer of insurance, a recommendation, a guarantee of coverage or of underwriting outcome, or tax or legal advice. Commission figures are illustrations built from user-entered assumptions and are not a quote; actual compensation is governed by your executed partner agreement and by carrier commission schedules, which vary by carrier, product, issue age, and rate class. Underwriting decisions, issue timelines, and claim requirements are set by the issuing insurance company. Referrals must comply with applicable state insurance law regarding compensation to unlicensed persons; requirements vary by state and are confirmed during onboarding.</p>
+</footer>
+
+<!-- ===================== GET STARTED MODAL ===================== -->
+<div class="modal" id="gsModal" hidden>
+  <div class="modal-bg" data-gs-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="gsTitle">
+    <button class="modal-close" type="button" data-gs-close aria-label="Close">&times;</button>
+    <h2 id="gsTitle">Get started</h2>
+    <p>Three ways in. Pick whichever fits where you are right now.</p>
+
+    <div class="gs-opts">
+      <a class="gs-opt" href="mailto:brokeragesalessupport@pinneyinsurance.com?subject=Looking%20To%20Refer%20Leads%20-%20P%26C&amp;body=I%20am%20interested%20in%20setting%20my%20firm%20up%20to%20do%20referrals%20-%20can%20we%20meet%3F%20I%20have%20time%20on%20my%20calendar%20on%20%5BDAY%20AND%20TIME%5D.%0D%0A%0D%0AAgency%3A%0D%0AName%3A%0D%0APhone%3A%0D%0A">
+        <span class="gs-n">1</span>
+        <span>
+          <span class="gs-t">Set my firm up to refer</span>
+          <span class="gs-d">Opens an email to brokerage sales support, subject and message already written &mdash; just drop in a day that works. We'll set your intro language, your named team, and how you get paid.</span>
+        </span>
+        <span class="gs-go">&rarr;</span>
+      </a>
+
+      <a class="gs-opt" href="mailto:corris@pinneyinsurance.com?subject=New%20Life%20Referral%20-%20Client%20Information&amp;body=Name%3A%0D%0AEmail%3A%0D%0APhone%20number%3A%0D%0AState%3A%0D%0ABirthday%3A%0D%0AAmount%20of%20insurance%20needed%3A%0D%0A%0D%0AReferred%20by%3A%0D%0AAgency%3A%0D%0A">
+        <span class="gs-n">2</span>
+        <span>
+          <span class="gs-t">Email the client information to us</span>
+          <span class="gs-d">Opens a pre-formatted email with every field we need &mdash; name, email, phone, state, birthday, and coverage amount. Fastest option if you're between calls.</span>
+        </span>
+        <span class="gs-go">&rarr;</span>
+      </a>
+
+      <a class="gs-opt" href="#form">
+        <span class="gs-n">3</span>
+        <span>
+          <span class="gs-t">Submit the client here</span>
+          <span class="gs-d">The referral form, right here on this page. About two minutes, and it routes straight to a licensed advisor and a case manager.</span>
+        </span>
+        <span class="gs-go">&rarr;</span>
+      </a>
+    </div>
+
+    <p class="modal-foot">Partnership questions: <strong style="color:var(--text-soft)">brokeragesalessupport@pinneyinsurance.com</strong> &middot; (916) 409-6166. Client information: <strong style="color:var(--text-soft)">corris@pinneyinsurance.com</strong>. First call on any referral goes out within 24 hours.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- get started modal ---------- */
+  var modal = document.getElementById("gsModal");
+  var lastFocus = null;
+
+  function openModal(){
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    var first = modal.querySelector(".gs-opt");
+    if(first) first.focus();
+  }
+  function closeModal(){
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-gs]").forEach(function(b){
+    b.addEventListener("click", openModal);
+  });
+  modal.querySelectorAll("[data-gs-close]").forEach(function(b){
+    b.addEventListener("click", closeModal);
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && !modal.hidden) closeModal();
+  });
+  modal.querySelectorAll(".gs-opt").forEach(function(a){
+    a.addEventListener("click", function(){ setTimeout(closeModal, 150); });
+  });
+
+
+
+
+  /* ---------- floating table of contents ---------- */
+  var root = document.documentElement;
+  var tocRail = document.getElementById("tocRail");
+  var tocPill = document.getElementById("tocOpen");
+  var tocMin  = document.getElementById("tocMin");
+  var tocBg   = document.getElementById("tocBg");
+  var WIDE = function(){ return window.matchMedia("(min-width:1141px)").matches; };
+
+  function setToc(state){
+    root.setAttribute("data-toc", state);
+    if(tocPill) tocPill.setAttribute("aria-expanded", state === "open" ? "true" : "false");
+    try{ localStorage.setItem("pinney-toc", state); }catch(e){}
+  }
+  (function initToc(){
+    var saved = null;
+    try{ saved = localStorage.getItem("pinney-toc"); }catch(e){}
+    if(saved === "open" || saved === "closed"){
+      if(!WIDE() && saved === "open"){ root.setAttribute("data-toc","closed"); }
+      else { root.setAttribute("data-toc", saved); }
+    } else {
+      root.setAttribute("data-toc", WIDE() ? "open" : "closed");
+    }
+  })();
+
+  if(tocPill) tocPill.addEventListener("click", function(){ setToc("open"); });
+  if(tocMin)  tocMin.addEventListener("click", function(){ setToc("closed"); });
+  if(tocBg)   tocBg.addEventListener("click", function(){ setToc("closed"); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && !WIDE() && root.getAttribute("data-toc") === "open") setToc("closed");
+  });
+  if(tocRail) tocRail.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ if(!WIDE()) setToc("closed"); });
+  });
+
+  /* ---------- submission wizard ---------- */
+  var FORM = "#form";
+  var wiz = document.getElementById("wiz");
+
+  var steps = {
+    start:{ q:"Do you want to handle the sale yourself?",
+      o:[{t:"No, refer it to Pinney",n:"annuity",k:"no"},{t:"Yes",n:"licensed",k:"yes"}] },
+
+    annuity:{ q:"Is this an annuity?",
+      o:[{t:"Yes",n:"annuityEmail",k:"yes"},{t:"No",n:"refer",k:"no"}] },
+
+    licensed:{ q:"Are you licensed in the client's state?",
+      o:[{t:"Yes",n:"appointment",k:"yes"},{t:"No",n:"refer",k:"no"}] },
+
+    appointment:{ q:"Are you appointed with the carrier?",
+      h:"Not appointed yet? Email contracting@pinneyinsurance.com to start &mdash; about a two-week turnaround.",
+      o:[{t:"Yes",n:"product",k:"yes"},{t:"No",n:"getappointed",k:"no"}] },
+
+    product:{ q:"Is product-specific training required?",
+      h:"Typically no for Term. Usually yes for Annuity, LTC, and IUL.",
+      o:[{t:"No",n:"sales",k:"no"},{t:"Yes",n:"training",k:"yes"}] },
+
+    sales:{ q:"Do you want to write the policy yourself?",
+      o:[{t:"Yes",n:"sell",k:"yes"},{t:"Not really",n:"ticket",k:"no"}] },
+
+    getappointed:{ q:"Get appointed first, then you can sell it yourself.",
+      h:"Email contracting@pinneyinsurance.com to start. About a two-week turnaround.",
+      o:[{t:"My client needs the policy now",n:"refer"},{t:"I'll get appointed and sell it later",n:"appointLater"}] },
+
+    refer:{ r:1, tag:"Option 1 &mdash; Refer &amp; Earn",
+      q:"Refer it. You refer, we sell.",
+      h:"50/50 split. We handle the needs analysis, health screening, quotes, the sale, the application, case management, delivery, and placement. Submit the client on the form and we call within 24 hours.",
+      form:1 },
+
+    ticket:{ r:1, tag:"Option 2 &mdash; App Assist",
+      q:"Drop the ticket. You sell, we complete the app.",
+      h:"You keep 100% of your normal commission. Submit the client on the form and our app team calls them to take the full application and collect every requirement.",
+      form:1 },
+
+    sell:{ r:1, tag:"Option 3 &mdash; Self-Service",
+      q:"Write it yourself. You sell and complete the app.",
+      h:"You keep 100% of your normal commission. Start the case on the form and your brokerage manager will get you set up in Insureio.",
+      form:1 },
+
+    training:{ r:1, tag:"Training first",
+      q:"Complete the product training, then submit.",
+      h:"Once training is done your brokerage manager will help you submit in Insureio. Start the case on the form and we'll route it to them.",
+      form:1 },
+
+    annuityEmail:{ r:1, tag:"Annuity",
+      q:"Email your annuity request to premium@pinneyinsurance.com.",
+      h:"Say whether you want it handled as a 50/50 referral.",
+      mail:"premium@pinneyinsurance.com", subj:"Annuity request", label:"Email the annuity desk" },
+
+    appointLater:{ r:1, tag:"Contracting",
+      q:"Email contracting@pinneyinsurance.com to get appointed.",
+      h:"About a two-week turnaround. Come back here when you're ready to submit the case.",
+      mail:"contracting@pinneyinsurance.com", subj:"Carrier appointment request", label:"Email contracting" }
+  };
+
+  var cur = "start", hist = ["start"];
+
+  function esc(s){ return s; }
+
+  function renderWiz(){
+    if(!wiz) return;
+    var s = steps[cur];
+    if(!s) return;
+    var html = '<div class="wiz-tag' + (s.r ? " res" : "") + '">' + (s.tag || ("Question " + hist.length)) + "</div>";
+    html += '<div class="wiz-q">' + esc(s.q) + "</div>";
+    if(s.h) html += '<div class="wiz-help">' + s.h + "</div>";
+
+    if(!s.r){
+      html += '<div class="wiz-btns">' + s.o.map(function(b){
+        return '<button class="wiz-b ' + (b.k || "") + '" type="button" data-next="' + b.n + '">' + b.t + "</button>";
+      }).join("") + "</div>";
+    } else {
+      html += '<div class="wiz-cta">';
+      if(s.form) html += '<a class="btn btn-primary" href="' + FORM + '">Submit the client &rarr;</a>';
+      if(s.mail) html += '<a class="btn btn-primary" href="mailto:' + s.mail + "?subject=" + encodeURIComponent(s.subj) + '">' + s.label + " &rarr;</a>";
+      html += '<button class="btn btn-ghost" type="button" data-gs-inner>Other ways in</button>';
+      html += "</div>";
+    }
+
+    var dots = "";
+    for(var i=0;i<6;i++) dots += '<span class="wiz-dot' + (i < hist.length ? " on" : "") + '"></span>';
+
+    html += '<div class="wiz-actions">' +
+      (hist.length > 1 ? '<button class="wiz-a" type="button" data-wiz="back">Back</button>' : "") +
+      '<button class="wiz-a" type="button" data-wiz="reset">Start over</button>' +
+      '<span class="wiz-prog">' + dots + "</span>" +
+      "</div>";
+
+    wiz.innerHTML = html;
+
+    wiz.querySelectorAll("[data-next]").forEach(function(b){
+      b.addEventListener("click", function(){
+        cur = b.getAttribute("data-next");
+        hist.push(cur);
+        renderWiz();
+      });
+    });
+    var back = wiz.querySelector('[data-wiz="back"]');
+    if(back) back.addEventListener("click", function(){
+      if(hist.length > 1){ hist.pop(); cur = hist[hist.length-1]; renderWiz(); }
+    });
+    var reset = wiz.querySelector('[data-wiz="reset"]');
+    if(reset) reset.addEventListener("click", function(){ cur = "start"; hist = ["start"]; renderWiz(); });
+    var other = wiz.querySelector("[data-gs-inner]");
+    if(other) other.addEventListener("click", openModal);
+  }
+  renderWiz();
+
+  /* ---------- table of contents scroll spy ---------- */
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+  var sections = tocLinks.map(function(a){
+    return document.querySelector(a.getAttribute("href"));
+  }).filter(Boolean);
+
+  function setActive(id){
+    tocLinks.forEach(function(a){
+      a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+    });
+  }
+  if("IntersectionObserver" in window && sections.length){
+    var seen = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ seen[en.target.id] = en.isIntersecting ? en.intersectionRatio : 0; });
+      var best = null, bestVal = 0;
+      sections.forEach(function(s){
+        var v = seen[s.id] || 0;
+        if(v > bestVal){ bestVal = v; best = s.id; }
+      });
+      if(best) setActive(best);
+    }, { rootMargin: "-84px 0px -55% 0px", threshold: [0, .15, .4, .75, 1] });
+    sections.forEach(function(s){ io.observe(s); });
+    setActive(sections[0].id);
+  }
+
+  /* ---------- copy buttons ---------- */
+  document.querySelectorAll(".copybtn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var q = btn.parentElement.querySelector("[data-copy]");
+      if(!q) return;
+      var text = q.textContent.replace(/[“”]/g,"").trim();
+      var done = function(){
+        btn.textContent = "Copied";
+        btn.setAttribute("data-done","1");
+        setTimeout(function(){ btn.textContent = "Copy"; btn.removeAttribute("data-done"); }, 1800);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+      } else { fallback(text, done); }
+    });
+  });
+  function fallback(text, cb){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly","");
+    ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); cb(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  /* ---------- commission illustration ---------- */
+  var refs=document.getElementById("r-refs"),
+      prem=document.getElementById("r-prem"),
+      place=document.getElementById("r-place"),
+      comm=document.getElementById("r-comm");
+
+  function money(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+
+  function drawChart(annual){
+    var svg = document.getElementById("calcChart");
+    if(!svg) return;
+    var W=1000,H=300,L=78,R=985,T=28,B=248;
+    var months=12, max=annual||1;
+    var bw=(R-L)/months-12;
+    var s='';
+    for(var g=0; g<=4; g++){
+      var gy=T+(B-T)*g/4;
+      var val=max*(1-g/4);
+      s+='<line x1="'+L+'" y1="'+gy.toFixed(1)+'" x2="'+R+'" y2="'+gy.toFixed(1)+'" stroke="var(--line-soft)" stroke-width="1"/>';
+      s+='<text class="s-lab" x="'+(L-10)+'" y="'+(gy+4).toFixed(1)+'" text-anchor="end">'+money(val)+'</text>';
+    }
+    for(var m=1;m<=months;m++){
+      var cum=annual*m/months;
+      var hgt=(B-T)*(cum/max);
+      var x=L+(R-L)*(m-1)/months+6;
+      var y=B-hgt;
+      var last=(m===months);
+      s+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+hgt.toFixed(1)+'" rx="4" fill="'+(last?"var(--gold)":"var(--blue-2)")+'" opacity="'+(last?"1":(0.35+0.5*m/months).toFixed(2))+'"/>';
+      s+='<text class="s-lab" x="'+(x+bw/2).toFixed(1)+'" y="'+(B+20)+'" text-anchor="middle">'+m+'</text>';
+      if(last){
+        s+='<text class="s-big" x="'+(x+bw/2).toFixed(1)+'" y="'+(y-12).toFixed(1)+'" text-anchor="middle" fill="var(--gold-soft)">'+money(cum)+'</text>';
+      }
+    }
+    s+='<line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="var(--line)" stroke-width="1"/>';
+    s+='<text class="s-lab" x="'+L+'" y="'+(B+42)+'">MONTH</text>';
+    svg.innerHTML=s;
+  }
+
+
+  function recalc(){
+    var nRefs=Number(refs.value), nPrem=Number(prem.value),
+        nPlace=Number(place.value)/100, nComm=Number(comm.value)/100;
+    var sentYear=nRefs*12, placed=sentYear*nPlace,
+        totalComm=placed*nPrem*nComm, share=totalComm*0.5;
+
+    document.getElementById("v-refs").textContent=nRefs;
+    document.getElementById("v-prem").textContent=money(nPrem);
+    document.getElementById("v-place").textContent=Math.round(nPlace*100)+"%";
+    document.getElementById("v-comm").textContent=Math.round(nComm*100)+"%";
+
+    document.getElementById("out-sent").textContent=sentYear.toLocaleString("en-US");
+    document.getElementById("out-placed").textContent=Math.round(placed).toLocaleString("en-US");
+    document.getElementById("out-total").textContent=money(totalComm);
+    document.getElementById("out-share").textContent=money(share);
+    document.getElementById("out-year").textContent=money(share);
+    document.getElementById("out-per").textContent=money(sentYear?share/sentYear:0);
+    drawChart(share);
+  }
+  [refs,prem,place,comm].forEach(function(el){ el.addEventListener("input",recalc); });
+  recalc();
+})();
+
+  /* ---------- training video: load the embed on click ---------- */
+  (function(){
+    var v = document.getElementById("trainVid");
+    if(!v) return;
+    function load(){
+      if(v.classList.contains("loaded")) return;
+      var id = v.getAttribute("data-yt");
+      v.classList.add("loaded");
+      v.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+        '?autoplay=1&rel=0" title="Partner training video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      v.removeAttribute("role"); v.removeAttribute("tabindex");
+    }
+    v.addEventListener("click", load);
+    v.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); load(); }
+    });
+  })();
+
+  /* ---------- embedded form: reveal a fallback if it is blocked ---------- */
+  (function(){
+    var wrap = document.getElementById("formWrap");
+    if(!wrap) return;
+    var frame = wrap.querySelector("iframe");
+    var loaded = false;
+    if(frame){
+      frame.addEventListener("load", function(){ loaded = true; });
+      setTimeout(function(){ if(!loaded) wrap.classList.add("failed"); }, 5000);
+    } else {
+      wrap.classList.add("failed");
+    }
+  })();
+</script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>

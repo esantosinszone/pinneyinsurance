@@ -1,0 +1,67 @@
+---
+import '@fontsource-variable/open-sans';
+import '@fontsource-variable/open-sans/wght-italic.css';
+import 'lenis/dist/lenis.css';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GetStarted from '../components/GetStarted.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+// Page-to-page crossfade: the current page fades out while the next one fades in,
+// in parallel (same duration and curve, no delay). Keyframes live in global.css.
+// Astro skips this for prefers-reduced-motion.
+const fadeStep = {
+  old: { name: 'pageFadeOut', duration: '450ms', easing: 'ease-in-out', fillMode: 'both' },
+  new: { name: 'pageFadeIn', duration: '450ms', easing: 'ease-in-out', fillMode: 'both' },
+};
+const pageFade = { forwards: fadeStep, backwards: fadeStep };
+
+const fullTitle = title === 'home' ? 'Pinney — Your $0 Outsourced Life Insurance Call Center' : `${title} · Pinney Life Insurance Division`;
+---
+<!doctype html>
+<html lang="en" transition:animate={pageFade}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0a163c" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <ClientRouter />
+    <!-- Mark JS as available before first paint, and again after each client-side swap,
+         so scroll-reveal content never flashes visible and then hides. -->
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      document.addEventListener('astro:after-swap', () => document.documentElement.classList.add('js'));
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="sr-only z-[60] rounded-full bg-white px-5 py-3 font-semibold text-navy shadow-lg focus:not-sr-only focus:fixed focus:top-3 focus:left-3">
+      Skip to content
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <GetStarted />
+    <!-- overlay scrollbar (desktop / fine pointer); persisted across page swaps -->
+    <div class="scrollbar" data-scrollbar transition:persist="scrollbar" aria-hidden="true">
+      <div class="scrollbar-thumb" data-scrollbar-thumb></div>
+    </div>
+    <script>
+      import '../scripts/scroll.ts';
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>

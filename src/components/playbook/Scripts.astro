@@ -1,0 +1,133 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { personas } from '../../data/playbook';
+---
+<section class="section" id="scripts" aria-labelledby="scripts-title">
+  <div class="container-site">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <SectionHeader class="lg:col-span-7" id="scripts-title" eyebrow="How to generate a referral + script" title="Six people already <strong>sitting in your book.</strong>" />
+      <p class="lead lg:col-span-5" data-reveal>
+        Match the sentence to who you're talking to — the wrong framing kills a good case faster than a bad quote. Say it in your own words; these are a starting point.
+      </p>
+    </div>
+
+    <!-- master/detail: persona list + script panel -->
+    <div class="mt-14 grid gap-8 lg:grid-cols-12 lg:gap-12" data-tabs data-reveal>
+      <div role="tablist" aria-label="Client personalities" aria-orientation="vertical" class="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] lg:col-span-4 lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:border-t lg:border-line lg:px-0 lg:pb-0">
+        {personas.map((p, i) => (
+          <button
+            type="button"
+            role="tab"
+            id={`tab-${p.id}`}
+            aria-controls={`panel-${p.id}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            class="group flex shrink-0 items-center gap-4 rounded-full border border-line px-4 py-2.5 text-left transition-colors duration-200 hover:border-navy aria-selected:border-navy aria-selected:bg-navy aria-selected:text-white lg:rounded-none lg:border-0 lg:border-b lg:border-line lg:px-3 lg:py-5 lg:hover:bg-mist lg:aria-selected:border-line lg:aria-selected:bg-mist lg:aria-selected:text-navy"
+          >
+            <span class="hidden size-10 shrink-0 items-center justify-center rounded-full bg-white text-blue-600 transition-colors group-aria-selected:bg-blue-600 group-aria-selected:text-white lg:inline-flex">
+              <Icon name={p.icon} class="size-5" aria-hidden="true" />
+            </span>
+            <span>
+              <span class="block text-[0.9375rem] font-semibold whitespace-nowrap lg:text-[1.0625rem] lg:text-navy">{p.name}</span>
+              <span class="hidden text-[0.8125rem] text-muted lg:block">{p.cue}</span>
+            </span>
+            <Icon name="hugeicons:arrow-right-02" class="ml-auto hidden size-4 text-blue-600 opacity-0 transition-opacity group-aria-selected:opacity-100 lg:block" aria-hidden="true" />
+          </button>
+        ))}
+      </div>
+
+      <div class="lg:col-span-8">
+        {personas.map((p, i) => (
+          <article role="tabpanel" id={`panel-${p.id}`} aria-labelledby={`tab-${p.id}`} hidden={i !== 0} tabindex="0" class="rounded-[1.75rem] bg-mist p-7 sm:p-10">
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <h3 class="text-[1.75rem] font-light tracking-tight text-navy">{p.name}</h3>
+              <span class="rounded-full bg-white px-3 py-1 text-[0.75rem] font-semibold text-blue-700">{p.cue}</span>
+            </div>
+            <p class="mt-4 max-w-[60ch] text-muted">{p.tell}</p>
+
+            <figure class="mt-8">
+              <figcaption class="label">Say it like this</figcaption>
+              <blockquote class="say mt-4 text-[clamp(1.125rem,1.8vw,1.375rem)] leading-relaxed" data-copy-source>{p.script}</blockquote>
+            </figure>
+
+            <div class="mt-8 flex flex-wrap items-end justify-between gap-6 border-t border-line pt-6">
+              <p class="max-w-[52ch] text-[0.9375rem]">
+                <span class="mr-2 inline-flex items-center gap-1.5 font-semibold text-blue-700"><Icon name="hugeicons:alert-02" class="size-4" aria-hidden="true" />Avoid</span>{p.avoid}
+              </p>
+              <button type="button" class="btn btn-outline btn-sm" data-copy>
+                <Icon name="hugeicons:copy-01" class="size-4" aria-hidden="true" />
+                <span data-copy-label>Copy script</span>
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- the line you never skip -->
+  <div class="on-dark mt-[clamp(5rem,9vw,8rem)] bg-navy-950">
+    <div class="container-site grid gap-8 py-[clamp(4rem,7vw,6rem)] lg:grid-cols-12 lg:items-center" data-reveal>
+      <p class="eyebrow lg:col-span-3">The one line you never skip</p>
+      <div class="lg:col-span-9">
+        <blockquote class="text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-light tracking-tight text-white">
+          “It'll come up as our life insurance division, <strong class="font-semibold text-sky">so pick up when you see it.</strong>”
+        </blockquote>
+        <p class="mt-6 max-w-[64ch]">
+          This is the difference between a pickup and a voicemail, and it is the single biggest driver of how fast a referral becomes a placed policy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { onPage } from '../../scripts/lifecycle';
+
+  // Re-initialised on every page load / client-side navigation (ClientRouter).
+  onPage(() => {
+    // Accessible tabs (roving tabindex, arrow keys) and copy-to-clipboard.
+    document.querySelectorAll<HTMLElement>('[data-tabs]').forEach((root) => {
+      const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('[role=tab]'));
+      const select = (tab: HTMLButtonElement, focus = false) => {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
+        });
+        if (focus) tab.focus();
+      };
+      tabs.forEach((t, i) => {
+        t.addEventListener('click', () => select(t));
+        t.addEventListener('keydown', (e) => {
+          const next = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+          if (next) {
+            e.preventDefault();
+            select(tabs[(i + next + tabs.length) % tabs.length], true);
+          } else if (e.key === 'Home') select(tabs[0], true);
+          else if (e.key === 'End') select(tabs[tabs.length - 1], true);
+        });
+      });
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const text = btn.closest('article')?.querySelector('[data-copy-source]')?.textContent?.trim() ?? '';
+        const label = btn.querySelector('[data-copy-label]')!;
+        try {
+          await navigator.clipboard.writeText(text);
+          label.textContent = 'Copied';
+        } catch {
+          label.textContent = 'Press Ctrl+C to copy';
+          const range = document.createRange();
+          range.selectNodeContents(btn.closest('article')!.querySelector('[data-copy-source]')!);
+          getSelection()?.removeAllRanges();
+          getSelection()?.addRange(range);
+        }
+        setTimeout(() => (label.textContent = 'Copy script'), 1800);
+      });
+    });
+  });
+</script>

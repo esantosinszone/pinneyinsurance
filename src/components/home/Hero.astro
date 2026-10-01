@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '../ui/Button.astro';
+import { img, stats } from '../../data/site';
+---
+<section class="on-dark brand-gradient grain relative isolate overflow-hidden pt-[calc(var(--header-h)+2rem)] lg:pt-[calc(var(--header-h)+3rem)]">
+  <div class="container-site relative z-10 grid items-center gap-10 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:col-span-7">
+      <p class="eyebrow hero-in" style="--d:0ms">For P&amp;C agencies, mortgage &amp; financial firms</p>
+      <h1 class="display hero-in mt-5" style="--d:90ms">
+        Your <strong class="text-sky">$0</strong> outsourced<br>life insurance <strong>call center</strong>
+      </h1>
+      <p class="lead hero-in mt-5 max-w-[52ch] !text-white/80" style="--d:190ms">
+        You send a name. Our licensed team calls, quotes, sells, underwrites, and places the policy under your agency's name. You keep 50% of the commission and spend about two minutes on it.
+      </p>
+      <div class="hero-in mt-8 flex flex-wrap gap-3" style="--d:280ms">
+        <Button variant="light" arrow data-get-started>Get started</Button>
+        <Button variant="ghost-dark" href="/how-it-works">See how it works</Button>
+      </div>
+    </div>
+
+    <!-- photographic composition -->
+    <div class="relative mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-[26rem]">
+      <img
+        src={img.advisor.src}
+        alt={img.advisor.alt}
+        width="900"
+        height="1125"
+        fetchpriority="high"
+        style="--d:160ms"
+        class="hero-media ml-auto aspect-[1/1] w-[84%] rounded-[1.75rem] object-cover object-top shadow-[0_50px_90px_-40px_rgb(0_0_0/0.75)]"
+      />
+      <img
+        src={img.family.src.replace('w=1600', 'w=700')}
+        alt={img.family.alt}
+        width="560"
+        height="420"
+        style="--d:380ms"
+        class="hero-media-side absolute bottom-[8%] left-0 aspect-[4/3] w-[44%] rounded-2xl border-4 border-navy-950/60 object-cover shadow-2xl"
+      />
+      <p style="--d:560ms" class="hero-pop absolute top-[10%] left-[2%] flex items-center gap-3 rounded-full bg-white py-2 pr-5 pl-2 text-[0.8125rem] font-semibold text-navy shadow-xl">
+        <span class="inline-flex size-8 items-center justify-center rounded-full bg-sky-50 text-blue-600">
+          <Icon name="hugeicons:call-outgoing-01" class="size-4" aria-hidden="true" />
+        </span>
+        First call within 24 hours
+      </p>
+    </div>
+  </div>
+
+  <!-- key figures -->
+  <div class="container-site relative z-10 pt-10 pb-[clamp(2.75rem,5vw,4rem)] lg:pt-14">
+    <dl class="grid grid-cols-2 gap-y-8 border-t border-white/15 pt-7 md:grid-cols-4">
+      {stats.map((s, i) => (
+        <div style={`--d:${420 + i * 70}ms`} class:list={['hero-in flex flex-col-reverse gap-2 pr-4', i > 0 && 'md:border-l md:border-white/15 md:pl-8', i % 2 === 1 && 'border-l border-white/15 pl-6 md:pl-8']}>
+          <dt class="text-[0.8125rem] font-semibold tracking-[0.06em] text-white/60 uppercase">{s.label}</dt>
+          <dd class="numeral text-[clamp(2rem,3.4vw,2.75rem)] text-white">{s.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+import { standards } from '../../data/playbook';
+import { img } from '../../data/site';
+---
+<section class="section-tight bg-paper" id="make-it-a-standard" aria-labelledby="std-title">
+  <div class="container-site grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+    <figure class="relative lg:col-span-5" data-reveal>
+      <img src={img.success.src} alt={img.success.alt} width="1000" height="800" loading="lazy" class="aspect-[5/4] w-full rounded-[1.75rem] object-cover" />
+      <figcaption class="absolute -bottom-6 left-6 right-6 rounded-2xl bg-navy p-5 text-white shadow-xl sm:right-auto sm:max-w-xs">
+        <p class="numeral text-[2.25rem]">29–30</p>
+        <p class="mt-1 text-[0.875rem] text-white/75">referrals a month off a nine-person team — a habit one agency built in three weeks.</p>
+      </figcaption>
+    </figure>
+
+    <div class="lg:col-span-7">
+      <div data-reveal>
+        <p class="eyebrow">Make it a standard</p>
+        <h2 id="std-title" class="h2 mt-5 max-w-[18ch]">A standard, <strong>not a suggestion.</strong></h2>
+      </div>
+      <ol class="mt-10 divide-y divide-line border-y border-line">
+        {standards.map((s, i) => (
+          <li class="flex gap-5 py-6" data-reveal style={`--reveal-delay:${i * 70}ms`}>
+            <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-blue-600 ring-1 ring-line">
+              <Icon name={s.icon} class="size-5" aria-hidden="true" />
+            </span>
+            <div>
+              <h3 class="h4">{s.title}</h3>
+              <p class="mt-1 text-[0.9375rem] text-muted">{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-6 text-[0.9375rem]" data-reveal>We'll help you run the kickoff.</p>
+    </div>
+  </div>
+</section>
