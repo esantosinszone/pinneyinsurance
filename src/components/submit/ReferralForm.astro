@@ -48,12 +48,12 @@ const formSrc = `https://api.leadconnectorhq.com/widget/form/${links.formEmbedId
           <a href={links.directForm} target="_blank" rel="noopener" class="link text-[0.8125rem]">Open in a new tab<span class="sr-only"> (opens in a new tab)</span></a>
         </div>
 
+        <!-- src is set by the script below, after the load listener is attached -->
         <iframe
-          src={formSrc}
+          data-src={formSrc}
           id={`inline-${links.formEmbedId}`}
           title="Referral form"
           class="block h-[1450px] w-full border-0 bg-white"
-          loading="lazy"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
           data-trigger-value=""
@@ -83,32 +83,41 @@ const formSrc = `https://api.leadconnectorhq.com/widget/form/${links.formEmbedId
   </div>
 </section>
 
-<script is:inline src="https://link.msgsndr.com/js/form_embed.js" defer></script>
 <script>
   import { onPage } from '../../scripts/lifecycle';
 
-  // Re-initialised on every page load / client-side navigation (ClientRouter).
-  onPage(() => {
-    // Reveal a fallback if the embedded form is blocked.
+  // LeadConnector's form_embed.js scans for form iframes once, when the document
+  // loads, and keeps each one hidden until it has initialised it. With Astro's
+  // ClientRouter the document doesn't reload between pages, so on every page load
+  // we start the iframe ourselves and re-run the embed script so it finds it.
+  const EMBED_SRC = 'https://link.msgsndr.com/js/form_embed.js';
+
+  onPage((signal) => {
     const wrap = document.querySelector<HTMLElement>('[data-form-wrap]');
-    const frame = wrap?.querySelector('iframe');
-    if (wrap && frame) {
-      let loaded = false;
-      frame.addEventListener('load', () => (loaded = true));
-      const check = () =>
-        setTimeout(() => {
-          if (!loaded) {
-            frame.classList.add('hidden');
-            wrap.querySelector('[data-form-fallback]')!.classList.remove('hidden');
-          }
-        }, 6000);
-      // the iframe is lazy, so only start the timer once it is near the viewport
-      new IntersectionObserver((entries, io) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          check();
-          io.disconnect();
-        }
-      }, { rootMargin: '400px' }).observe(frame);
-    }
+    const frame = wrap?.querySelector<HTMLIFrameElement>('iframe[data-src]');
+    if (!wrap || !frame) return;
+
+    // 1. listen before loading, so the load event can't be missed
+    let loaded = false;
+    frame.addEventListener('load', () => (loaded = true), { signal });
+
+    // 2. start the form
+    frame.src = frame.dataset.src!;
+
+    // 3. (re)run the embed script so it initialises this iframe
+    document.querySelectorAll(`script[src^="${EMBED_SRC}"]`).forEach((el) => el.remove());
+    const script = document.createElement('script');
+    script.src = EMBED_SRC;
+    script.async = true;
+    document.body.appendChild(script);
+
+    // 4. fallback if the form is blocked (ad blockers, strict privacy settings)
+    const timer = window.setTimeout(() => {
+      if (!loaded) {
+        frame.classList.add('hidden');
+        wrap.querySelector('[data-form-fallback]')!.classList.remove('hidden');
+      }
+    }, 8000);
+    signal.addEventListener('abort', () => window.clearTimeout(timer));
   });
 </script>

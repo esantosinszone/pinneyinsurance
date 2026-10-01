@@ -14,7 +14,7 @@ import { personas } from '../../data/playbook';
 
     <!-- master/detail: persona list + script panel -->
     <div class="mt-14 grid gap-8 lg:grid-cols-12 lg:gap-12" data-tabs data-reveal>
-      <div role="tablist" aria-label="Client personalities" aria-orientation="vertical" class="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] lg:col-span-4 lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:border-t lg:border-line lg:px-0 lg:pb-0">
+      <div role="tablist" aria-label="Client personalities" aria-orientation="vertical" data-scroll-area="x" class="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] lg:col-span-4 lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:border-t lg:border-line lg:px-0 lg:pb-0">
         {personas.map((p, i) => (
           <button
             type="button"

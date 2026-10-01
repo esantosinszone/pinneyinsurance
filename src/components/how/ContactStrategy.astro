@@ -37,7 +37,7 @@ const notes = [
         </ul>
       </div>
 
-      <div class="mt-10 overflow-x-auto pb-2">
+      <div class="mt-10 overflow-x-auto pb-2" data-scroll-area="x">
         <ol class="grid min-w-[40rem] grid-cols-14 gap-1.5" aria-label="Contact attempts by day">
           {cadence.map((d) => {
             const st = statusStyle[d.status];
@@ -66,7 +66,7 @@ const notes = [
     </figure>
 
     <!-- the schedule as a table -->
-    <div class="mt-12 overflow-x-auto" data-reveal>
+    <div class="mt-12 overflow-x-auto" data-reveal data-scroll-area="x">
       <table class="w-full min-w-[42rem] border-collapse text-left text-[0.9375rem]">
         <caption class="sr-only">14-day contact schedule</caption>
         <thead>

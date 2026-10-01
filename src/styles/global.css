@@ -383,11 +383,14 @@ dialog::backdrop { background: rgb(10 22 60 / 0.55); backdrop-filter: blur(3px);
 
 /* ==========================================================
    Overlay scrollbar — thin, translucent, auto-hiding.
-   Native bar is hidden only when the overlay is active
-   (fine pointer + JS); touch devices keep the native one.
+   Used by the page and by every [data-scroll-area] (scripts/scroll.ts).
+   Native bars are hidden only when the overlay is active
+   (fine pointer + JS); touch devices keep the native ones.
    ========================================================== */
-html.has-overlay-scrollbar { scrollbar-width: none; }
-html.has-overlay-scrollbar::-webkit-scrollbar { display: none; }
+html.has-overlay-scrollbar,
+html.has-overlay-scrollbar [data-scroll-area] { scrollbar-width: none; }
+html.has-overlay-scrollbar::-webkit-scrollbar,
+html.has-overlay-scrollbar [data-scroll-area]::-webkit-scrollbar { display: none; }
 
 .scrollbar {
   position: fixed;
@@ -404,6 +407,10 @@ html.has-overlay-scrollbar::-webkit-scrollbar { display: none; }
 .scrollbar.is-dragging { opacity: 1; pointer-events: auto; }
 html:not(.has-overlay-scrollbar) .scrollbar { display: none; }
 
+/* bars for scroll areas sit over the area's edge (position set by script) */
+.scrollbar--area { position: absolute; bottom: auto; right: auto; z-index: 5; }
+.scrollbar--x { width: auto; height: 14px; }
+
 .scrollbar-thumb {
   position: absolute;
   top: 0;
@@ -415,8 +422,14 @@ html:not(.has-overlay-scrollbar) .scrollbar { display: none; }
   box-shadow: 0 0 0 1px rgb(255 255 255 / 0.18);
   cursor: grab;
   will-change: transform;
-  transition: width 160ms var(--ease-out), background-color 160ms var(--ease-out);
+  transition: width 160ms var(--ease-out), height 160ms var(--ease-out), background-color 160ms var(--ease-out);
 }
+.scrollbar--x .scrollbar-thumb { top: auto; right: auto; bottom: 3px; left: 0; width: auto; height: 4px; }
+
+.scrollbar:not(.scrollbar--x):hover .scrollbar-thumb,
+.scrollbar:not(.scrollbar--x).is-dragging .scrollbar-thumb { width: 7px; }
+.scrollbar--x:hover .scrollbar-thumb,
+.scrollbar--x.is-dragging .scrollbar-thumb { height: 7px; }
 .scrollbar:hover .scrollbar-thumb,
-.scrollbar.is-dragging .scrollbar-thumb { width: 7px; background: rgb(110 130 160 / 0.75); }
+.scrollbar.is-dragging .scrollbar-thumb { background: rgb(110 130 160 / 0.75); }
 .scrollbar.is-dragging .scrollbar-thumb { cursor: grabbing; }

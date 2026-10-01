@@ -51,7 +51,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   </div>
 
   <!-- mobile menu -->
-  <div id="mobile-menu" class="mobile-menu fixed inset-x-0 top-[var(--header-h)] bottom-0 hidden overflow-y-auto bg-white lg:hidden" data-menu>
+  <div id="mobile-menu" class="mobile-menu fixed inset-x-0 top-[var(--header-h)] bottom-0 hidden overflow-y-auto overscroll-contain bg-white lg:hidden" data-menu data-scroll-area="y">
     <nav aria-label="Primary mobile" class="container-site flex min-h-full flex-col pt-6 pb-10">
       <ul class="flex flex-col">
         {nav.map((item, i) => (
