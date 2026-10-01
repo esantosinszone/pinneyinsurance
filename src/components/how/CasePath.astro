@@ -23,13 +23,13 @@ import { img } from '../../data/site';
             <span
               class:list={[
                 'relative z-10 inline-flex size-10 items-center justify-center rounded-full text-[0.8125rem] font-bold ring-[6px] ring-white lg:absolute lg:top-[8.25rem] lg:left-1/2 lg:-translate-x-1/2',
-                you ? 'bg-blue text-white' : 'bg-navy text-white',
+                you ? 'bg-accent-600 text-white' : 'bg-navy text-white',
               ]}
             >
               {i + 1}
             </span>
             <div class:list={['lg:mx-auto lg:max-w-[12rem] lg:px-2', you ? 'lg:h-[7.25rem]' : '']}>
-              <p class:list={['label', you ? '!text-blue-600' : '!text-navy']}>{you ? 'Your lane' : "Pinney's lane"}</p>
+              <p class:list={['label', you ? '!text-accent-600' : '!text-navy']}>{you ? 'Your lane' : "Pinney's lane"}</p>
               <h3 class="h4 mt-1.5">{s.title}</h3>
               <p class="mt-1 text-[0.875rem] leading-snug text-muted">{s.note}</p>
               <p class="mt-3 inline-flex items-center gap-1.5 text-[0.75rem] font-semibold tracking-[0.06em] text-navy uppercase">
@@ -52,14 +52,14 @@ import { img } from '../../data/site';
         <p class="mt-6 max-w-[48ch]">
           This is the part you would have to build a department to replicate. A named case manager owns it from arrival to payout.
         </p>
-        <img src={img.office.src} alt={img.office.alt} width="1000" height="700" loading="lazy" class="mt-10 aspect-[3/2] w-full rounded-[1.5rem] object-cover" />
+        <img src={img.office.src} srcset={img.office.srcset} sizes={img.office.sizes.main} width={img.office.width} height={img.office.height} alt={img.office.alt} loading="lazy" class="mt-10 aspect-[3/2] w-full rounded-[1.5rem] object-cover" />
       </div>
     </div>
 
     <ol class="lg:col-span-7">
       {insideStages.map((s, i) => (
         <li class="grid grid-cols-[4.5rem_1fr] gap-4 border-t border-line-strong py-8 first:border-navy sm:grid-cols-[6rem_1fr]" data-reveal>
-          <span class="numeral text-[2.75rem] text-blue sm:text-[3.5rem]" aria-hidden="true">0{i + 1}</span>
+          <span class="numeral text-[2.75rem] text-accent-600 sm:text-[3.5rem]" aria-hidden="true">0{i + 1}</span>
           <div>
             <h3 class="h3">{s.title}</h3>
             <p class="mt-2 max-w-[52ch] text-[0.9375rem]">{s.body}</p>
@@ -67,7 +67,7 @@ import { img } from '../../data/site';
         </li>
       ))}
       <li class="flex items-center gap-3 border-t border-line-strong pt-6 text-[0.875rem] font-semibold text-navy" data-reveal>
-        <Icon name="hugeicons:calendar-03" class="size-5 text-blue-600" aria-hidden="true" />
+        <Icon name="hugeicons:calendar-03" class="size-5 text-accent-600" aria-hidden="true" />
         Typically four to six weeks to approval.
       </li>
     </ol>

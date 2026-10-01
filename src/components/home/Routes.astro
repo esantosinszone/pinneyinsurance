@@ -27,12 +27,12 @@ import { img } from '../../data/site';
           <tr class="align-bottom">
             <th scope="col" class="w-[38%] pr-3 pb-6 align-bottom sm:w-[34%]">
               <span class="flex flex-wrap gap-x-5 gap-y-2 text-[0.8125rem] font-semibold text-muted">
-                <span class="inline-flex items-center gap-2"><span class="size-2.5 rounded-full bg-blue-600"></span>Pinney does it</span>
+                <span class="inline-flex items-center gap-2"><span class="size-2.5 rounded-full bg-accent-600"></span>Pinney does it</span>
                 <span class="inline-flex items-center gap-2"><span class="size-2.5 rounded-full border-2 border-navy"></span>You do it</span>
               </span>
             </th>
             {routes.map((r) => (
-              <th scope="col" class:list={['px-2 pb-6 align-bottom sm:px-3 md:px-6', r.n === 1 && 'bg-sky-50 rounded-t-2xl pt-6']}>
+              <th scope="col" class:list={['px-2 pb-6 align-bottom sm:px-3 md:px-6', r.n === 1 && 'bg-accent-50 rounded-t-2xl pt-6']}>
                 <span class="label block">Option {r.n}</span>
                 <span class="mt-1 block text-[0.9375rem] leading-tight font-semibold text-navy sm:text-[1.125rem] md:text-[1.375rem]">{r.name}</span>
                 <span class="mt-1.5 hidden text-[0.875rem] font-normal text-muted md:block">
@@ -47,10 +47,10 @@ import { img } from '../../data/site';
             <tr class="border-t border-line">
               <th scope="row" class="py-3.5 pr-3 text-[0.875rem] font-normal text-body sm:text-[0.9375rem]">{t.task}</th>
               {t.who.map((w, i) => (
-                <td class:list={['px-2 py-3.5 sm:px-3 md:px-6', i === 0 && 'bg-sky-50']}>
+                <td class:list={['px-2 py-3.5 sm:px-3 md:px-6', i === 0 && 'bg-accent-50']}>
                   {w === 'p' ? (
-                    <span class="inline-flex items-center gap-2 text-[0.875rem] font-semibold text-blue-600">
-                      <span class="size-2.5 rounded-full bg-blue-600" aria-hidden="true"></span><span class="sr-only sm:not-sr-only">Pinney</span>
+                    <span class="inline-flex items-center gap-2 text-[0.875rem] font-semibold text-accent-600">
+                      <span class="size-2.5 rounded-full bg-accent-600" aria-hidden="true"></span><span class="sr-only sm:not-sr-only">Pinney</span>
                     </span>
                   ) : (
                     <span class="inline-flex items-center gap-2 text-[0.875rem] font-semibold text-navy">
@@ -66,7 +66,7 @@ import { img } from '../../data/site';
           <tr class="border-t-2 border-navy">
             <th scope="row" class="pt-5 pr-4 align-top text-[0.9375rem] font-semibold text-navy">What you keep</th>
             {routes.map((r) => (
-              <td class:list={['px-2 pt-5 pb-6 align-top sm:px-3 md:px-6', r.n === 1 && 'bg-sky-50 rounded-b-2xl']}>
+              <td class:list={['px-2 pt-5 pb-6 align-top sm:px-3 md:px-6', r.n === 1 && 'bg-accent-50 rounded-b-2xl']}>
                 <span class="numeral block text-[1.75rem] text-navy sm:text-[2.25rem] md:text-[2.75rem]">{r.pay}</span>
                 <span class="mt-1 block text-[0.8125rem] text-muted">{r.payNote}</span>
               </td>
@@ -81,7 +81,7 @@ import { img } from '../../data/site';
       <ul class="flex flex-wrap gap-x-7 gap-y-3 text-[0.9375rem]">
         {selfServiceIncludes.map((s) => (
           <li class="inline-flex items-center gap-2">
-            <Icon name="hugeicons:tick-02" class="size-4 text-blue-600" aria-hidden="true" />{s}
+            <Icon name="hugeicons:tick-02" class="size-4 text-accent-600" aria-hidden="true" />{s}
           </li>
         ))}
       </ul>
@@ -97,9 +97,9 @@ import { img } from '../../data/site';
   <div class="container-site mt-[clamp(5rem,9vw,8rem)]">
     <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       <figure class="relative order-last lg:order-first" data-reveal>
-        <img src={img.team.src} alt={img.team.alt} width="1200" height="900" loading="lazy" class="aspect-[4/3] w-full rounded-[1.75rem] object-cover" />
+        <img src={img.team.src} srcset={img.team.srcset} sizes={img.team.sizes.main} width={img.team.width} height={img.team.height} alt={img.team.alt} loading="lazy" class="aspect-[4/3] w-full rounded-[1.75rem] object-cover" />
         <figcaption class="absolute right-5 bottom-5 left-5 flex items-center gap-3 rounded-xl bg-white/95 p-4 text-[0.875rem] text-navy backdrop-blur sm:right-auto">
-          <Icon name="hugeicons:checkmark-circle-02" class="size-5 shrink-0 text-blue-600" aria-hidden="true" />
+          <Icon name="hugeicons:checkmark-circle-02" class="size-5 shrink-0 text-accent-600" aria-hidden="true" />
           Same 50/50 split, same white label, no lead cost.
         </figcaption>
       </figure>
@@ -116,7 +116,7 @@ import { img } from '../../data/site';
             'Or keep it simple and just refer them one at a time — your call, and you can do both',
           ].map((t) => (
             <li class="flex gap-3">
-              <Icon name="hugeicons:arrow-right-02" class="mt-1 size-4 shrink-0 text-blue-600" aria-hidden="true" />
+              <Icon name="hugeicons:arrow-right-02" class="mt-1 size-4 shrink-0 text-accent-600" aria-hidden="true" />
               <span>{t}</span>
             </li>
           ))}

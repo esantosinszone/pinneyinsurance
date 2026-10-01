@@ -4,9 +4,11 @@ interface Props {
   eyebrow: string;
   title: string;
   lead: string;
-  image: { src: string; alt: string };
+  image: { src: string; srcset: string; sizes: Record<string, string>; width: number; height: number; alt: string };
 }
 const { eyebrow, title, lead, image } = Astro.props;
+// computed by scripts/optimize-images.mjs from the photo's real aspect ratio
+const sizes = image.sizes.hero;
 ---
 <section class="on-dark brand-gradient grain relative isolate overflow-hidden pt-[calc(var(--header-h)+2.5rem)] pb-[clamp(3rem,6vw,4.5rem)] lg:pt-[calc(var(--header-h)+3.5rem)]">
   <div class="container-site relative z-10 grid items-center gap-12 lg:grid-cols-12">
@@ -19,9 +21,11 @@ const { eyebrow, title, lead, image } = Astro.props;
     <figure class="hero-media relative lg:col-span-5" style="--d:160ms">
       <img
         src={image.src}
+        srcset={image.srcset}
+        sizes={sizes}
+        width={image.width}
+        height={image.height}
         alt={image.alt}
-        width="900"
-        height="1100"
         class="aspect-[16/10] w-full rounded-[1.5rem] object-cover sm:aspect-[2/1] lg:aspect-[1/1] lg:rounded-[1.75rem] shadow-[0_40px_80px_-40px_rgb(0_0_0/0.7)]"
         fetchpriority="high"
       />

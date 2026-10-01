@@ -38,7 +38,7 @@ const steps = {
       </p>
       <ol class="mt-10 space-y-4 border-t border-line pt-6 text-[0.9375rem]">
         {['Tell us how involved you want to be', 'We check licensing, appointment, and product training', 'You get the route and the link to submit'].map((t, i) => (
-          <li class="flex gap-4"><span class="w-6 font-bold text-blue-600">0{i + 1}</span><span class="text-muted">{t}</span></li>
+          <li class="flex gap-4"><span class="w-6 font-bold text-accent-600">0{i + 1}</span><span class="text-muted">{t}</span></li>
         ))}
       </ol>
     </div>
@@ -46,7 +46,7 @@ const steps = {
     <div class="lg:col-span-7" data-reveal style="--reveal-delay:100ms">
       <div class="relative flex min-h-[22rem] flex-col overflow-hidden rounded-[1.75rem] bg-navy p-7 text-white sm:p-10" data-wizard data-steps={JSON.stringify(steps)}>
         <div class="absolute inset-x-0 top-0 h-1 bg-white/10" aria-hidden="true">
-          <div class="h-full w-[16%] bg-sky transition-[width] duration-500 ease-out" data-progress></div>
+          <div class="h-full w-[16%] bg-accent-300 transition-[width] duration-500 ease-out" data-progress></div>
         </div>
         <div data-stage aria-live="polite" class="flex flex-1 flex-col">
           <noscript><p>Turn on JavaScript to use the route finder, or <a class="link" href="#form">go straight to the form</a>.</p></noscript>
@@ -94,7 +94,7 @@ const steps = {
         const s = steps[hist[hist.length - 1]];
         stage.replaceChildren();
         const wrap = el('div', 'wiz-step flex flex-1 flex-col');
-        wrap.append(el('p', `label ${s.r ? '!text-sky' : '!text-white/60'}`, s.tag ?? `Question ${hist.length}`));
+        wrap.append(el('p', `label ${s.r ? '!text-accent-300' : '!text-white/60'}`, s.tag ?? `Question ${hist.length}`));
         const h = el('h3', 'mt-4 max-w-[26ch] text-[clamp(1.375rem,2.6vw,1.875rem)] leading-tight font-light tracking-tight text-white', s.q);
         h.tabIndex = -1;
         wrap.append(h);

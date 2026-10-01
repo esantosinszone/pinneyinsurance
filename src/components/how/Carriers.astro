@@ -16,7 +16,7 @@ import { carriers, products } from '../../data/how';
     <ul class="mt-5 grid grid-cols-2 border-t border-l border-line md:grid-cols-3 lg:grid-cols-6" data-reveal>
       {products.map((p) => (
         <li class="flex flex-col gap-4 border-r border-b border-line bg-white p-5">
-          <Icon name={p.icon} class="size-7 text-blue-600" aria-hidden="true" />
+          <Icon name={p.icon} class="size-7 text-accent-600" aria-hidden="true" />
           <span class="text-[0.9375rem] leading-snug font-semibold text-navy">{p.label}</span>
         </li>
       ))}
@@ -36,7 +36,7 @@ import { carriers, products } from '../../data/how';
             type="search"
             placeholder="Find a carrier"
             autocomplete="off"
-            class="h-11 w-full rounded-full border border-line-strong bg-white pr-4 pl-10 text-[0.9375rem] text-navy transition-[border-color,box-shadow] placeholder:text-muted focus:border-blue-600 focus:shadow-[0_0_0_4px_rgb(0_140_221/0.15)] focus:outline-none"
+            class="h-11 w-full rounded-full border border-line-strong bg-white pr-4 pl-10 text-[0.9375rem] text-navy transition-[border-color,box-shadow] placeholder:text-muted focus:border-accent-600 focus:shadow-[0_0_0_4px_rgb(14_143_207/0.15)] focus:outline-none"
           />
         </div>
       </div>
@@ -48,7 +48,7 @@ import { carriers, products } from '../../data/how';
           return (
             <li class="flex break-inside-avoid items-baseline gap-2 border-b border-line/70 py-2 text-[0.9375rem] text-body" data-name={c.toLowerCase()}>
               {name}
-              {ny && <span class="rounded-full bg-sky-50 px-2 py-0.5 text-[0.6875rem] font-semibold text-blue-700">NY only</span>}
+              {ny && <span class="rounded-full bg-accent-50 px-2 py-0.5 text-[0.6875rem] font-semibold text-accent-700">NY only</span>}
             </li>
           );
         })}

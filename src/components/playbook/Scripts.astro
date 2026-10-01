@@ -25,14 +25,14 @@ import { personas } from '../../data/playbook';
             tabindex={i === 0 ? 0 : -1}
             class="group flex shrink-0 items-center gap-4 rounded-full border border-line px-4 py-2.5 text-left transition-colors duration-200 hover:border-navy aria-selected:border-navy aria-selected:bg-navy aria-selected:text-white lg:rounded-none lg:border-0 lg:border-b lg:border-line lg:px-3 lg:py-5 lg:hover:bg-mist lg:aria-selected:border-line lg:aria-selected:bg-mist lg:aria-selected:text-navy"
           >
-            <span class="hidden size-10 shrink-0 items-center justify-center rounded-full bg-white text-blue-600 transition-colors group-aria-selected:bg-blue-600 group-aria-selected:text-white lg:inline-flex">
+            <span class="hidden size-10 shrink-0 items-center justify-center rounded-full bg-white text-accent-600 transition-colors group-aria-selected:bg-accent-600 group-aria-selected:text-white lg:inline-flex">
               <Icon name={p.icon} class="size-5" aria-hidden="true" />
             </span>
             <span>
               <span class="block text-[0.9375rem] font-semibold whitespace-nowrap lg:text-[1.0625rem] lg:text-navy">{p.name}</span>
               <span class="hidden text-[0.8125rem] text-muted lg:block">{p.cue}</span>
             </span>
-            <Icon name="hugeicons:arrow-right-02" class="ml-auto hidden size-4 text-blue-600 opacity-0 transition-opacity group-aria-selected:opacity-100 lg:block" aria-hidden="true" />
+            <Icon name="hugeicons:arrow-right-02" class="ml-auto hidden size-4 text-accent-600 opacity-0 transition-opacity group-aria-selected:opacity-100 lg:block" aria-hidden="true" />
           </button>
         ))}
       </div>
@@ -42,7 +42,7 @@ import { personas } from '../../data/playbook';
           <article role="tabpanel" id={`panel-${p.id}`} aria-labelledby={`tab-${p.id}`} hidden={i !== 0} tabindex="0" class="rounded-[1.75rem] bg-mist p-7 sm:p-10">
             <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
               <h3 class="text-[1.75rem] font-light tracking-tight text-navy">{p.name}</h3>
-              <span class="rounded-full bg-white px-3 py-1 text-[0.75rem] font-semibold text-blue-700">{p.cue}</span>
+              <span class="rounded-full bg-white px-3 py-1 text-[0.75rem] font-semibold text-accent-700">{p.cue}</span>
             </div>
             <p class="mt-4 max-w-[60ch] text-muted">{p.tell}</p>
 
@@ -53,7 +53,7 @@ import { personas } from '../../data/playbook';
 
             <div class="mt-8 flex flex-wrap items-end justify-between gap-6 border-t border-line pt-6">
               <p class="max-w-[52ch] text-[0.9375rem]">
-                <span class="mr-2 inline-flex items-center gap-1.5 font-semibold text-blue-700"><Icon name="hugeicons:alert-02" class="size-4" aria-hidden="true" />Avoid</span>{p.avoid}
+                <span class="mr-2 inline-flex items-center gap-1.5 font-semibold text-accent-700"><Icon name="hugeicons:alert-02" class="size-4" aria-hidden="true" />Avoid</span>{p.avoid}
               </p>
               <button type="button" class="btn btn-outline btn-sm" data-copy>
                 <Icon name="hugeicons:copy-01" class="size-4" aria-hidden="true" />
@@ -72,7 +72,7 @@ import { personas } from '../../data/playbook';
       <p class="eyebrow lg:col-span-3">The one line you never skip</p>
       <div class="lg:col-span-9">
         <blockquote class="text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-light tracking-tight text-white">
-          “It'll come up as our life insurance division, <strong class="font-semibold text-sky">so pick up when you see it.</strong>”
+          “It'll come up as our life insurance division, <strong class="font-semibold text-accent-300">so pick up when you see it.</strong>”
         </blockquote>
         <p class="mt-6 max-w-[64ch]">
           This is the difference between a pickup and a voicemail, and it is the single biggest driver of how fast a referral becomes a placed policy.

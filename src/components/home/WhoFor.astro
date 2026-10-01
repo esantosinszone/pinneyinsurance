@@ -10,9 +10,11 @@ import { img } from '../../data/site';
     <figure class="relative lg:col-span-5 lg:-ml-[max(0px,calc((100vw-var(--container-site))/2+2.5rem))]" data-reveal>
       <img
         src={img.owner.src}
+        srcset={img.owner.srcset}
+        sizes={img.owner.sizes.main}
+        width={img.owner.width}
+        height={img.owner.height}
         alt={img.owner.alt}
-        width="1000"
-        height="1250"
         loading="lazy"
         class="aspect-[4/3] w-full rounded-[1.75rem] object-cover lg:sticky lg:top-28 lg:aspect-[4/5] lg:rounded-l-none"
       />
@@ -25,7 +27,7 @@ import { img } from '../../data/site';
         <p class="lead mt-6 max-w-[58ch]">
           P&amp;C agencies, mortgage companies, and financial services firms with clients who need life insurance — and no interest in building the department it takes to place it.
         </p>
-        <p class="mt-8 border-l-2 border-blue pl-5 text-[1.375rem] leading-snug font-light text-navy">
+        <p class="mt-8 border-l-2 border-accent-600 pl-5 text-[1.375rem] leading-snug font-light text-navy">
           You need customers who trust you. <strong class="font-semibold">We bring everything else.</strong>
         </p>
       </div>
@@ -33,11 +35,11 @@ import { img } from '../../data/site';
       <ul class="mt-14 border-t border-line">
         {lanes.map((l, i) => (
           <li class="grid gap-3 border-b border-line py-8 sm:grid-cols-[3rem_1fr] sm:gap-6" data-reveal style={`--reveal-delay:${i * 70}ms`}>
-            <span class="inline-flex size-11 items-center justify-center rounded-full bg-white text-blue-600 shadow-[0_1px_0_var(--color-line)]">
+            <span class="inline-flex size-11 items-center justify-center rounded-full bg-white text-accent-600 shadow-[0_1px_0_var(--color-line)]">
               <Icon name={l.icon} class="size-5" aria-hidden="true" />
             </span>
             <div>
-              <p class="label !text-blue-600">{l.kicker}</p>
+              <p class="label !text-accent-600">{l.kicker}</p>
               <h3 class="h3 mt-1.5">{l.title}</h3>
               <p class="mt-2 max-w-[58ch] text-[0.9375rem]">{l.body}</p>
             </div>
@@ -55,7 +57,7 @@ import { img } from '../../data/site';
   <!-- the thesis, set large -->
   <div class="container-site mt-[clamp(4.5rem,8vw,7rem)]" data-reveal>
     <blockquote class="mx-auto max-w-4xl text-center">
-      <Icon name="hugeicons:quote-down" class="mx-auto size-9 text-blue" aria-hidden="true" />
+      <Icon name="hugeicons:quote-down" class="mx-auto size-9 text-accent-600" aria-hidden="true" />
       <p class="mt-6 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-light tracking-tight text-navy">
         Our goal isn't to turn you into a life insurance agency. <strong class="font-semibold">It's to make life insurance a repeatable line of the business you already run.</strong>
       </p>

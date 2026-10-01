@@ -2,3 +2,7 @@ node_modules/
 dist/
 .astro/
 .env
+
+# licensed Adobe Stock originals (only the optimised WebP in public/images ships)
+assets/photos/*
+!assets/photos/README.txt

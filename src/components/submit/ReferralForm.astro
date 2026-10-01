@@ -18,18 +18,18 @@ const formSrc = `https://api.leadconnectorhq.com/widget/form/${links.formEmbedId
         <p class="eyebrow">Submit one right now</p>
         <h2 id="form-title" class="h2 mt-5">The referral form.</h2>
         <p class="mt-4 inline-flex items-center gap-2 text-[0.875rem] text-muted">
-          <Icon name="hugeicons:security-check" class="size-4 text-blue-600" aria-hidden="true" />Secure · about 2 minutes
+          <Icon name="hugeicons:security-check" class="size-4 text-accent-600" aria-hidden="true" />Secure · about 2 minutes
         </p>
 
         <h3 class="label mt-10">What we need</h3>
         <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[0.9375rem]">
-          {need.map((n) => <li class="flex gap-2.5"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-blue-600" aria-hidden="true" />{n}</li>)}
+          {need.map((n) => <li class="flex gap-2.5"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-accent-600" aria-hidden="true" />{n}</li>)}
         </ul>
 
         <h3 class="label mt-10">What happens next</h3>
         <ol class="mt-4 space-y-4 text-[0.9375rem]">
           {next.map((t, i) => (
-            <li class="flex gap-4"><span class="w-5 font-bold text-blue-600">{i + 1}</span><span>{t}</span></li>
+            <li class="flex gap-4"><span class="w-5 font-bold text-accent-600">{i + 1}</span><span>{t}</span></li>
           ))}
         </ol>
 
@@ -43,7 +43,7 @@ const formSrc = `https://api.leadconnectorhq.com/widget/form/${links.formEmbedId
       <div class="overflow-hidden rounded-[1.75rem] border border-line bg-paper" data-form-wrap>
         <div class="flex items-center justify-between gap-4 border-b border-line bg-white px-6 py-4">
           <span class="inline-flex items-center gap-2.5 text-[0.875rem] font-semibold text-navy">
-            <span class="size-2 rounded-full bg-blue" aria-hidden="true"></span>Referral form
+            <span class="size-2 rounded-full bg-accent-600" aria-hidden="true"></span>Referral form
           </span>
           <a href={links.directForm} target="_blank" rel="noopener" class="link text-[0.8125rem]">Open in a new tab<span class="sr-only"> (opens in a new tab)</span></a>
         </div>
@@ -70,7 +70,7 @@ const formSrc = `https://api.leadconnectorhq.com/widget/form/${links.formEmbedId
         ></iframe>
 
         <div class="hidden p-8 sm:p-12" data-form-fallback>
-          <Icon name="hugeicons:information-circle" class="size-8 text-blue-600" aria-hidden="true" />
+          <Icon name="hugeicons:information-circle" class="size-8 text-accent-600" aria-hidden="true" />
           <h3 class="h3 mt-4">The form didn't load here</h3>
           <p class="mt-2 max-w-[52ch] text-muted">Some browsers and preview environments block embedded forms. Open it directly, or email the client details over — either route reaches the same desk.</p>
           <div class="mt-6 flex flex-wrap gap-3">

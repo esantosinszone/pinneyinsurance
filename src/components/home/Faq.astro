@@ -26,9 +26,9 @@ import { contact, mail } from '../../data/site';
     <div class="border-t border-navy lg:col-span-8" data-faq>
       {faqs.map((f, i) => (
         <details name="faq" class="group border-b border-line" open={i === 0} data-reveal>
-          <summary class="flex cursor-pointer items-start group-open:cursor-default justify-between gap-6 py-6 text-[1.125rem] font-semibold text-navy transition-colors hover:text-blue-600 sm:text-[1.1875rem]">
+          <summary class="flex cursor-pointer items-start group-open:cursor-default justify-between gap-6 py-6 text-[1.125rem] font-semibold text-navy transition-colors hover:text-accent-600 sm:text-[1.1875rem]">
             {f.q}
-            <span class="acc-icon mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-blue-600 transition-colors group-hover:border-blue-600 group-open:border-navy group-open:bg-navy group-open:text-white">
+            <span class="acc-icon mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-accent-600 transition-colors group-hover:border-accent-600 group-open:border-navy group-open:bg-navy group-open:text-white">
               <Icon name="hugeicons:add-01" class="size-4" aria-hidden="true" />
             </span>
           </summary>

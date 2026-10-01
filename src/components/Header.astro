@@ -63,7 +63,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
               style={`--i:${i}`}
             >
               {item.label}
-              <Icon name="hugeicons:arrow-right-02" class="size-5 text-blue-600" aria-hidden="true" />
+              <Icon name="hugeicons:arrow-right-02" class="size-5 text-accent-600" aria-hidden="true" />
             </a>
           </li>
         ))}
@@ -89,13 +89,13 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     position: absolute;
     left: 1rem;
     right: 1rem;
-    bottom: 0.2rem;
+    bottom: 0; /* sits on the bottom edge of the hover pill */
     height: 2px;
     border-radius: 2px;
-    background: var(--color-sky);
+    background: var(--color-accent-300);
   }
   .header-cta { background: #fff; color: var(--color-navy); }
-  .header-cta:hover { background: var(--color-sky-50); }
+  .header-cta:hover { background: var(--color-accent-50); }
 
   .site-header[data-scrolled='true'] .header-bg,
   .site-header[data-menu-open='true'] .header-bg {
@@ -107,9 +107,9 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header:is([data-scrolled='true'], [data-menu-open='true']) :is(.nav-link, .nav-phone, .menu-toggle) { color: var(--color-body); }
   .site-header:is([data-scrolled='true'], [data-menu-open='true']) :is(.nav-link, .nav-phone, .menu-toggle):hover { color: var(--color-navy); background: var(--color-mist); }
   .site-header:is([data-scrolled='true'], [data-menu-open='true']) .nav-link[aria-current='page'] { color: var(--color-navy); }
-  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .nav-link[aria-current='page']::after { background: var(--color-blue); }
-  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .header-cta { background: var(--color-blue-600); color: #fff; }
-  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .header-cta:hover { background: var(--color-blue-700); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .nav-link[aria-current='page']::after { background: var(--color-accent-600); }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .header-cta { background: var(--color-accent-600); color: #fff; }
+  .site-header:is([data-scrolled='true'], [data-menu-open='true']) .header-cta:hover { background: var(--color-accent-700); }
   .site-header:is([data-scrolled='true'], [data-menu-open='true']) .logo-light { display: none; }
   .site-header:is([data-scrolled='true'], [data-menu-open='true']) .logo-dark { display: inline; }
 

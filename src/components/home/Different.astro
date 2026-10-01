@@ -10,7 +10,7 @@ const proof = [
 ];
 ---
 <section class="on-dark section relative isolate overflow-hidden bg-navy-950" id="why-pinney" aria-labelledby="diff-title">
-  <img src={img.office.src} alt="" loading="lazy" class="absolute inset-0 -z-20 size-full object-cover opacity-[0.14] mix-blend-luminosity" />
+  <img src={img.officeBg.src} srcset={img.officeBg.srcset} sizes={img.officeBg.sizes.main} width={img.officeBg.width} height={img.officeBg.height} alt="" loading="lazy" class="absolute inset-0 -z-20 size-full object-cover opacity-[0.14] mix-blend-luminosity" />
   <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,var(--color-navy-950)_0%,rgb(10_22_60/0.85)_45%,var(--color-navy-950)_100%)]" aria-hidden="true"></div>
 
   <div class="container-site">
@@ -27,8 +27,8 @@ const proof = [
     <ol class="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
       {differentiators.map((d, i) => (
         <li class="rule-top pt-7" data-reveal style={`--reveal-delay:${i * 90}ms`}>
-          <span class="numeral block text-[3.5rem] text-sky/70" aria-hidden="true">0{i + 1}</span>
-          <p class="label mt-6 !text-sky">{d.kicker}</p>
+          <span class="numeral block text-[3.5rem] text-accent-300/70" aria-hidden="true">0{i + 1}</span>
+          <p class="label mt-6 !text-accent-300">{d.kicker}</p>
           <h3 class="mt-2 text-[1.5rem] leading-tight font-semibold">{d.title}</h3>
           <p class="mt-4 text-[0.9375rem]">{d.body}</p>
         </li>

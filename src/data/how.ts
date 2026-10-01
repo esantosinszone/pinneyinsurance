@@ -94,7 +94,7 @@ export const cadenceTable = [
 export const statusStyle: Record<string, { label: string; dot: string; text: string }> = {
   hot: { label: 'Hot', dot: 'bg-hot', text: 'text-hot' },
   warm: { label: 'Warm', dot: 'bg-warm', text: 'text-warm-ink' },
-  cool: { label: 'Cool', dot: 'bg-blue', text: 'text-blue-600' },
+  cool: { label: 'Cool', dot: 'bg-accent-600', text: 'text-accent-600' },
   closed: { label: 'Closed', dot: 'bg-muted', text: 'text-muted' },
 };
 

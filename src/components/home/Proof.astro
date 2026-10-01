@@ -4,12 +4,14 @@ import { img } from '../../data/site';
 <section class="section-tight bg-paper" aria-labelledby="proof-title">
   <div class="container-site grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
     <figure class="relative lg:col-span-6" data-reveal>
-      <img src={img.home.src} alt={img.home.alt} width="1200" height="900" loading="lazy" class="aspect-[5/4] w-full rounded-[1.75rem] object-cover" />
+      <img src={img.home.src} srcset={img.home.srcset} sizes={img.home.sizes.main} width={img.home.width} height={img.home.height} alt={img.home.alt} loading="lazy" class="aspect-[5/4] w-full rounded-[1.75rem] object-cover" />
       <img
-        src={img.couple.src.replace('w=1600', 'w=700')}
+        src={img.couple.src}
+        srcset={img.couple.srcset}
+        sizes={img.couple.sizes.main}
+        width={img.couple.width}
+        height={img.couple.height}
         alt={img.couple.alt}
-        width="520"
-        height="520"
         loading="lazy"
         class="absolute -right-4 -bottom-10 hidden aspect-square w-[38%] rounded-2xl border-[6px] border-paper object-cover shadow-xl sm:block lg:-right-10"
       />
@@ -30,7 +32,7 @@ import { img } from '../../data/site';
         </div>
         <div class="grid gap-3 py-8 sm:grid-cols-[11rem_1fr] sm:gap-6" data-reveal>
           <dt class="sr-only">One firm's result</dt>
-          <dd class="numeral text-[3.25rem] text-navy">$100k<span class="text-blue">+</span></dd>
+          <dd class="numeral text-[3.25rem] text-navy">$100k<span class="text-accent-600">+</span></dd>
           <dd>
             <p class="h4">Added life commissions in under six months</p>
             <p class="mt-2 text-[0.9375rem]">

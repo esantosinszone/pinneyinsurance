@@ -8,7 +8,7 @@ import { img, stats } from '../../data/site';
     <div class="lg:col-span-7">
       <p class="eyebrow hero-in" style="--d:0ms">For P&amp;C agencies, mortgage &amp; financial firms</p>
       <h1 class="display hero-in mt-5" style="--d:90ms">
-        Your <strong class="text-sky">$0</strong> outsourced<br>life insurance <strong>call center</strong>
+        Your <strong class="text-accent-300">$0</strong> outsourced<br>life insurance <strong>call center</strong>
       </h1>
       <p class="lead hero-in mt-5 max-w-[52ch] !text-white/80" style="--d:190ms">
         You send a name. Our licensed team calls, quotes, sells, underwrites, and places the policy under your agency's name. You keep 50% of the commission and spend about two minutes on it.
@@ -20,26 +20,30 @@ import { img, stats } from '../../data/site';
     </div>
 
     <!-- photographic composition -->
-    <div class="relative mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-[26rem]">
+    <div class="relative mx-auto w-full max-w-sm lg:col-span-5 lg:mr-0 lg:ml-auto lg:max-w-[30rem]">
       <img
         src={img.advisor.src}
+        srcset={img.advisor.srcset}
+        sizes={img.advisor.sizes.hero}
+        width={img.advisor.width}
+        height={img.advisor.height}
         alt={img.advisor.alt}
-        width="900"
-        height="1125"
         fetchpriority="high"
         style="--d:160ms"
-        class="hero-media ml-auto aspect-[1/1] w-[84%] rounded-[1.75rem] object-cover object-top shadow-[0_50px_90px_-40px_rgb(0_0_0/0.75)]"
+        class="hero-media ml-auto aspect-[1/1] w-[92%] rounded-[1.75rem] object-cover object-top shadow-[0_50px_90px_-40px_rgb(0_0_0/0.75)]"
       />
       <img
-        src={img.family.src.replace('w=1600', 'w=700')}
+        src={img.family.src}
+        srcset={img.family.srcset}
+        sizes={img.family.sizes.hero}
+        width={img.family.width}
+        height={img.family.height}
         alt={img.family.alt}
-        width="560"
-        height="420"
         style="--d:380ms"
         class="hero-media-side absolute bottom-[8%] left-0 aspect-[4/3] w-[44%] rounded-2xl border-4 border-navy-950/60 object-cover shadow-2xl"
       />
       <p style="--d:560ms" class="hero-pop absolute top-[10%] left-[2%] flex items-center gap-3 rounded-full bg-white py-2 pr-5 pl-2 text-[0.8125rem] font-semibold text-navy shadow-xl">
-        <span class="inline-flex size-8 items-center justify-center rounded-full bg-sky-50 text-blue-600">
+        <span class="inline-flex size-8 items-center justify-center rounded-full bg-accent-50 text-accent-600">
           <Icon name="hugeicons:call-outgoing-01" class="size-4" aria-hidden="true" />
         </span>
         First call within 24 hours

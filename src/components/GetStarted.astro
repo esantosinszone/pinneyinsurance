@@ -42,14 +42,14 @@ const options = [
     {options.map((o) => (
       <li class="border-b border-line">
         <a href={o.href} class="group flex gap-5 px-6 py-6 transition-colors duration-200 hover:bg-mist focus-visible:bg-mist sm:px-10" data-dialog-dismiss>
-          <span class="mt-0.5 inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-sky-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+          <span class="mt-0.5 inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 transition-colors group-hover:bg-accent-600 group-hover:text-white">
             <Icon name={o.icon} class="size-5" aria-hidden="true" />
           </span>
           <span class="flex-1">
             <span class="h4 block text-navy">{o.title}</span>
             <span class="mt-1 block text-[0.9375rem] leading-relaxed text-muted">{o.body}</span>
           </span>
-          <Icon name="hugeicons:arrow-right-02" class="mt-3 size-5 shrink-0 text-blue-600 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+          <Icon name="hugeicons:arrow-right-02" class="mt-3 size-5 shrink-0 text-accent-600 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
         </a>
       </li>
     ))}

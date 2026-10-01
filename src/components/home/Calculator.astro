@@ -29,7 +29,7 @@ const rows = [
           <div>
             <div class="flex items-baseline justify-between gap-4">
               <label for={`r-${f.id}`} class="text-[0.9375rem] font-semibold text-navy">{f.label}</label>
-              <output for={`r-${f.id}`} id={`v-${f.id}`} class="numeral shrink-0 text-[1.5rem] text-blue-600"></output>
+              <output for={`r-${f.id}`} id={`v-${f.id}`} class="numeral shrink-0 text-[1.5rem] text-accent-600"></output>
             </div>
             <input class="mt-3" type="range" id={`r-${f.id}`} name={f.id} min={f.min} max={f.max} step={f.step} value={f.value} data-fmt={f.fmt} />
           </div>
@@ -38,14 +38,14 @@ const rows = [
       </form>
 
       <div class="on-dark flex flex-col bg-navy p-7 sm:p-10 lg:col-span-6" aria-live="polite">
-        <p class="label !text-sky">Your share, first twelve months</p>
+        <p class="label !text-accent-300">Your share, first twelve months</p>
         <p class="numeral mt-3 text-[clamp(3rem,7vw,4.75rem)] text-white" id="out-year">$15,120</p>
 
         <!-- cumulative month-by-month bars -->
         <div class="mt-8" aria-hidden="true">
           <div class="flex h-36 items-end gap-1.5" id="calc-bars">
             {Array.from({ length: 12 }, (_, i) => (
-              <span class="flex-1 rounded-t-[3px] bg-sky/35 transition-[height] duration-300 ease-out last:bg-sky" style={`height:${((i + 1) / 12) * 100}%`}></span>
+              <span class="flex-1 rounded-t-[3px] bg-accent-300/35 transition-[height] duration-300 ease-out last:bg-accent-300" style={`height:${((i + 1) / 12) * 100}%`}></span>
             ))}
           </div>
           <div class="mt-2 flex justify-between text-[0.6875rem] font-semibold tracking-[0.08em] text-white/45 uppercase">

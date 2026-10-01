@@ -1,3 +1,5 @@
+import manifest from './images.json';
+
 // Site-wide settings, contacts, and navigation.
 //
 // The referral inbox is configurable: set PUBLIC_REFERRAL_INBOX in .env to the
@@ -57,21 +59,26 @@ export const stats = [
   { value: '24 hrs', label: 'To the first call' },
 ];
 
-// Placeholder photography (Unsplash). Swap the `src` values for licensed brand imagery.
-const u = (id: string, w = 1600) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
+// Placeholder photography (Unsplash License), optimised to local WebP by
+// scripts/optimize-images.mjs. Each entry carries src, srcset, width and height;
+// components add the `sizes` that matches their layout. Replace with licensed
+// brand photography before launch.
+type Photo = (typeof manifest)[keyof typeof manifest] & { alt: string };
+const photo = (name: keyof typeof manifest, alt: string): Photo => ({ ...manifest[name], alt });
 
 export const img = {
-  advisor: { src: u('1573496359142-b8d87734a5a2', 1200), alt: 'A Pinney life insurance advisor in the office' },
-  family: { src: u('1609220136736-443140cffec6'), alt: 'A father outdoors with his two young children' },
-  owner: { src: u('1556740738-b6a63e27c4df'), alt: 'A small business owner working behind the counter of her shop' },
-  conversation: { src: u('1551836022-d5d88e9218df'), alt: 'Two colleagues reviewing coverage options at a desk' },
-  signing: { src: u('1450101499163-c8848c66ca85'), alt: 'A client signing an insurance application' },
-  home: { src: u('1600585154340-be6161a56a0c'), alt: 'A newly purchased family home at dusk' },
-  team: { src: u('1531545514256-b1400bc00f31'), alt: 'An agency team gathered around a laptop' },
-  meeting: { src: u('1542744173-8e7e53415bb0'), alt: 'Producers in a training session at an agency office' },
-  office: { src: u('1577962917302-cd874c4e31d2'), alt: 'A case manager presenting to colleagues in a bright office' },
-  producer: { src: u('1611095973763-414019e72400'), alt: 'An advisor on a call with a client from his laptop' },
-  paperwork: { src: u('1554224155-6726b3ff858f'), alt: 'Policy paperwork and a calculator on a desk' },
-  success: { src: u('1600880292203-757bb62b4baf'), alt: 'Two agency partners celebrating a placed case' },
-  couple: { src: u('1543269865-cbf427effbad'), alt: 'A couple reviewing their coverage together on a tablet' },
+  advisor: photo('advisor', 'An insurance advisor smiling in a bright office'),
+  family: photo('family', 'A father outdoors with his two young children'),
+  owner: photo('owner', 'A small business owner working behind the counter of her shop'),
+  conversation: photo('conversation', 'Two colleagues reviewing coverage options at a desk'),
+  signing: photo('signing', 'A client signing an insurance application'),
+  home: photo('home', 'A modern family home at dusk'),
+  team: photo('team', 'An agency team gathered around a laptop'),
+  meeting: photo('meeting', 'Colleagues in a training session in an office'),
+  officeBg: photo('officeBg', ''),
+  office: photo('office', 'A presenter speaking to colleagues in a bright office'),
+  producer: photo('producer', 'An advisor on a call from his laptop'),
+  paperwork: photo('paperwork', 'Policy paperwork and a calculator on a desk'),
+  success: photo('success', 'Two colleagues celebrating at work'),
+  couple: photo('couple', 'Friends looking at a tablet together'),
 };

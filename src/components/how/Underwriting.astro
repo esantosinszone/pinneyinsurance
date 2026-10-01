@@ -7,7 +7,7 @@ const cells = Array.from({ length: 100 }, (_, i) => {
   const k = (i * 37) % 100;
   return k < 60 ? 'base' : k < 80 ? 'lift' : 'none';
 });
-const tone = { base: 'bg-blue', lift: 'bg-sky', none: 'bg-white/10 ring-1 ring-inset ring-white/15' } as const;
+const tone = { base: 'bg-accent-600', lift: 'bg-accent-300', none: 'bg-white/10 ring-1 ring-inset ring-white/15' } as const;
 ---
 <section class="on-dark section bg-navy" id="underwriting" aria-labelledby="uw-title">
   <div class="container-site">
@@ -19,8 +19,8 @@ const tone = { base: 'bg-blue', lift: 'bg-sky', none: 'bg-white/10 ring-1 ring-i
           Impaired risk gets screened before submission and matched to the carrier whose underwriting actually writes it. That is where the average 20-point placement lift comes from.
         </p>
         <dl class="mt-10 grid grid-cols-3 gap-6 border-t border-white/15 pt-6">
-          <div class="flex flex-col"><dt class="text-[0.8125rem]">Place anyway</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-blue">60</dd></div>
-          <div class="flex flex-col"><dt class="text-[0.8125rem]">Placed because an underwriter saw them first</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-sky">+20</dd></div>
+          <div class="flex flex-col"><dt class="text-[0.8125rem]">Place anyway</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-accent-600">60</dd></div>
+          <div class="flex flex-col"><dt class="text-[0.8125rem]">Placed because an underwriter saw them first</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-accent-300">+20</dd></div>
           <div class="flex flex-col"><dt class="text-[0.8125rem]">Out of 100 placed</dt><dd class="numeral order-first mb-2 text-[2.5rem] text-white">80</dd></div>
         </dl>
       </div>
@@ -30,8 +30,8 @@ const tone = { base: 'bg-blue', lift: 'bg-sky', none: 'bg-white/10 ring-1 ring-i
           {cells.map((c) => <span class:list={['aspect-square rounded-[4px]', tone[c]]}></span>)}
         </div>
         <figcaption class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[0.8125rem]">
-          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-blue"></span>Would place anyway</span>
-          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-sky"></span>Placed because of pre-screening and carrier matching</span>
+          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-accent-600"></span>Would place anyway</span>
+          <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-accent-300"></span>Placed because of pre-screening and carrier matching</span>
           <span class="inline-flex items-center gap-2"><span class="size-3 rounded-[3px] bg-white/10 ring-1 ring-white/25"></span>Does not place</span>
         </figcaption>
       </figure>

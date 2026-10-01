@@ -14,12 +14,20 @@
   --color-navy-900: #0e1f47;
   --color-navy: #123159;
   --color-navy-700: #1d4170;
-  --color-blue: #008cdd;
-  --color-blue-600: #0072bc;
-  --color-blue-700: #005a96;
-  --color-sky: #94d3f9;
-  --color-sky-200: #c6e3f3;
-  --color-sky-50: #eef7fd;
+
+  /* Official Pinney accent (celeste). accent-600 is the brand colour (logo). */
+  --color-accent-50: #f1f9fe;
+  --color-accent-100: #e2f2fc;
+  --color-accent-200: #bee5f9;
+  --color-accent-300: #84d1f5;
+  --color-accent-400: #42bbee;
+  --color-accent-500: #1aa2dd;
+  --color-accent-600: #0e8fcf;
+  --color-accent-700: #0c6898;
+  --color-accent-800: #0e587e;
+  --color-accent-900: #114969;
+  --color-accent-950: #0c2f45;
+
   --color-mist: #f4f8fb;
   --color-paper: #fafbfc;
   --color-line: #dde5ec;
@@ -64,14 +72,14 @@
   }
   h1, h2, h3, h4 { color: var(--color-navy); text-wrap: balance; }
   p { text-wrap: pretty; }
-  ::selection { background: var(--color-sky-200); color: var(--color-navy); }
+  ::selection { background: var(--color-accent-200); color: var(--color-navy); }
 
   :focus-visible {
-    outline: 2px solid var(--color-blue);
+    outline: 2px solid var(--color-accent-600);
     outline-offset: 3px;
     border-radius: 4px;
   }
-  .on-dark :focus-visible { outline-color: var(--color-sky); }
+  .on-dark :focus-visible { outline-color: var(--color-accent-300); }
 }
 
 @layer components {
@@ -94,7 +102,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--color-blue-600);
+    color: var(--color-accent-600);
     line-height: 1.2;
   }
   .eyebrow::before {
@@ -104,7 +112,7 @@
     background: currentColor;
     opacity: 0.6;
   }
-  .on-dark .eyebrow { color: var(--color-sky); }
+  .on-dark .eyebrow { color: var(--color-accent-300); }
 
   .display {
     font-size: clamp(2.125rem, 4.2vw, 3.5rem);
@@ -158,7 +166,7 @@
   .on-dark :is(h1, h2, h3, h4) { color: #fff; }
 
   .link {
-    color: var(--color-blue-600);
+    color: var(--color-accent-600);
     font-weight: 600;
     text-decoration: underline;
     text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
@@ -166,8 +174,8 @@
     text-decoration-thickness: 1px;
     transition: text-decoration-color 160ms var(--ease-out), color 160ms var(--ease-out);
   }
-  .link:hover { color: var(--color-blue-700); text-decoration-color: currentColor; }
-  .on-dark .link { color: var(--color-sky); }
+  .link:hover { color: var(--color-accent-700); text-decoration-color: currentColor; }
+  .on-dark .link { color: var(--color-accent-300); }
   .on-dark .link:hover { color: #fff; }
 
   /* ---------- buttons ---------- */
@@ -196,14 +204,14 @@
   .btn:hover svg[data-arrow] { transform: translateX(3px); }
 
   .btn-primary {
-    background: var(--color-blue-600);
+    background: var(--color-accent-600);
     color: #fff;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 0.15) inset, 0 6px 18px -8px rgb(0 90 150 / 0.7);
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.15) inset, 0 6px 18px -8px rgb(14 143 207 / 0.7);
   }
-  .btn-primary:hover { background: var(--color-blue-700); }
+  .btn-primary:hover { background: var(--color-accent-700); }
 
   .btn-light { background: #fff; color: var(--color-navy); }
-  .btn-light:hover { background: var(--color-sky-50); }
+  .btn-light:hover { background: var(--color-accent-50); }
 
   .btn-outline {
     border: 1px solid var(--color-line-strong);
@@ -256,7 +264,7 @@
   .say {
     position: relative;
     padding-left: 1.25rem;
-    border-left: 2px solid var(--color-blue);
+    border-left: 2px solid var(--color-accent-600);
     color: var(--color-navy);
     font-style: italic;
   }
@@ -266,8 +274,8 @@
     font-style: normal;
     font-weight: 600;
     font-size: 0.9em;
-    color: var(--color-blue-700);
-    background: var(--color-sky-50);
+    color: var(--color-accent-700);
+    background: var(--color-accent-50);
     border-radius: 4px;
     padding: 0.05em 0.35em;
     white-space: nowrap;
@@ -313,10 +321,10 @@ input[type='range'] {
 input[type='range']::-webkit-slider-runnable-track {
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(to right, var(--color-blue-600) var(--fill), var(--color-line) var(--fill));
+  background: linear-gradient(to right, var(--color-accent-600) var(--fill), var(--color-line) var(--fill));
 }
 input[type='range']::-moz-range-track { height: 4px; border-radius: 999px; background: var(--color-line); }
-input[type='range']::-moz-range-progress { height: 4px; border-radius: 999px; background: var(--color-blue-600); }
+input[type='range']::-moz-range-progress { height: 4px; border-radius: 999px; background: var(--color-accent-600); }
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 1.25rem;
@@ -324,7 +332,7 @@ input[type='range']::-webkit-slider-thumb {
   margin-top: -0.5rem;
   border-radius: 50%;
   background: #fff;
-  border: 2px solid var(--color-blue-600);
+  border: 2px solid var(--color-accent-600);
   box-shadow: 0 2px 6px rgb(18 49 89 / 0.2);
   transition: transform 150ms var(--ease-out);
 }
@@ -333,12 +341,12 @@ input[type='range']::-moz-range-thumb {
   height: 1.25rem;
   border-radius: 50%;
   background: #fff;
-  border: 2px solid var(--color-blue-600);
+  border: 2px solid var(--color-accent-600);
 }
 input[type='range']:active::-webkit-slider-thumb { transform: scale(1.12); }
 input[type='range']:focus-visible { outline: none; }
-input[type='range']:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--color-blue); outline-offset: 3px; }
-input[type='range']:focus-visible::-moz-range-thumb { outline: 2px solid var(--color-blue); outline-offset: 3px; }
+input[type='range']:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--color-accent-600); outline-offset: 3px; }
+input[type='range']:focus-visible::-moz-range-thumb { outline: 2px solid var(--color-accent-600); outline-offset: 3px; }
 
 /* ---------- dialog ---------- */
 dialog::backdrop { background: rgb(10 22 60 / 0.55); backdrop-filter: blur(3px); }

@@ -42,7 +42,7 @@ const ways = [
           <h3 class="mt-6 text-[1.75rem] leading-tight font-semibold text-navy">{w.title}</h3>
           <p class="mt-3 max-w-[48ch]">{w.body}</p>
           <ul class="mt-6 space-y-2.5 text-[0.9375rem]">
-            {w.items.map((t) => <li class="flex gap-3"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-blue-600" aria-hidden="true" />{t}</li>)}
+            {w.items.map((t) => <li class="flex gap-3"><Icon name="hugeicons:tick-02" class="mt-1 size-4 shrink-0 text-accent-600" aria-hidden="true" />{t}</li>)}
           </ul>
           <div class="mt-8">
             <Button href={w.cta.href} variant={w.cta.variant} arrow={w.cta.arrow ?? true}>{w.cta.label}</Button>

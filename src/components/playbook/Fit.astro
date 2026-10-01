@@ -10,7 +10,7 @@ import { img } from '../../data/site';
         <p class="eyebrow">Good fit and bad fit</p>
         <h2 id="fit-title" class="h2 mt-5 max-w-[18ch]">Send the left column. <strong>Hold the right for now.</strong></h2>
       </div>
-      <blockquote class="border-l-2 border-blue pl-5 lg:col-span-5" data-reveal>
+      <blockquote class="border-l-2 border-accent-600 pl-5 lg:col-span-5" data-reveal>
         <p class="text-[1.125rem] leading-snug text-navy">
           Rule of thumb: if you wouldn't want to explain to the family why there was no coverage, <strong class="font-semibold">refer it.</strong>
         </p>
@@ -19,8 +19,8 @@ import { img } from '../../data/site';
 
     <div class="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-0">
       <div class="lg:border-r lg:border-line-strong lg:pr-12" data-reveal>
-        <h3 class="flex items-center gap-3 border-b-2 border-blue-600 pb-4 text-[1.25rem] font-semibold text-navy">
-          <span class="inline-flex size-8 items-center justify-center rounded-full bg-blue-600 text-white"><Icon name="hugeicons:add-01" class="size-4" aria-hidden="true" /></span>
+        <h3 class="flex items-center gap-3 border-b-2 border-accent-600 pb-4 text-[1.25rem] font-semibold text-navy">
+          <span class="inline-flex size-8 items-center justify-center rounded-full bg-accent-600 text-white"><Icon name="hugeicons:add-01" class="size-4" aria-hidden="true" /></span>
           Refer these
         </h3>
         <ul class="divide-y divide-line">
@@ -48,7 +48,7 @@ import { img } from '../../data/site';
         </ul>
 
         <figure class="mt-10 grid grid-cols-[7rem_1fr] items-center gap-5 rounded-2xl bg-white p-4 sm:grid-cols-[9rem_1fr]">
-          <img src={img.conversation.src.replace('w=1600', 'w=400')} alt="" width="300" height="300" loading="lazy" class="aspect-square w-full rounded-xl object-cover" />
+          <img src={img.conversation.src} srcset={img.conversation.srcset} sizes={img.conversation.sizes.thumb} width={img.conversation.width} height={img.conversation.height} alt="" loading="lazy" class="aspect-square w-full rounded-xl object-cover" />
           <figcaption>
             <p class="font-semibold text-navy">Not sure? Send it.</p>
             <p class="mt-1 text-[0.9375rem] text-muted">A five-minute conversation on our side costs your client nothing and costs you nothing. We would rather sort the fit than have you sort it for us.</p>
