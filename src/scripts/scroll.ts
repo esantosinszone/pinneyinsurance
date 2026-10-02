@@ -15,6 +15,7 @@
 // is persisted across pages.
 
 import Lenis from 'lenis';
+import { closeDialog } from './dialog';
 
 const root = document.documentElement;
 const finePointer = window.matchMedia('(pointer: fine)');
@@ -260,19 +261,31 @@ const setupAreas = (signal: AbortSignal) => {
 document.addEventListener(
   'click',
   (e) => {
-    if (!lenis || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
     const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href*="#"]');
     if (!a || a.origin !== location.origin || a.pathname !== location.pathname || !a.hash) return;
     const target = document.getElementById(decodeURIComponent(a.hash.slice(1)));
     if (!target) return;
+    const dialog = a.closest('dialog');
+    if (!lenis && !dialog) return; // native smooth anchors (CSS) handle it
+
     e.preventDefault();
     e.stopPropagation();
-    // Lenis already honours html's scroll-padding-top (header + subnav)
-    lenis.scrollTo(target, { duration: 1.1 });
-    history.replaceState(history.state, '', a.hash);
-    // move focus for keyboard and screen-reader users without a second jump
-    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
-    target.focus({ preventScroll: true });
+    const go = () => {
+      if (lenis) {
+        lenis.start();
+        // Lenis already honours html's scroll-padding-top (header + subnav)
+        lenis.scrollTo(target, { duration: 1.1 });
+      } else {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      history.replaceState(history.state, '', a.hash);
+      // move focus for keyboard and screen-reader users without a second jump
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    };
+    // a link inside the open dialog: close it (animated), then scroll the page
+    dialog ? closeDialog(dialog).then(go) : go();
   },
   true,
 );

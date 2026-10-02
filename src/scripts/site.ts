@@ -8,6 +8,7 @@
 
 import { onPage } from './lifecycle';
 import { startScroll, stopScroll } from './scroll';
+import { closeDialog } from './dialog';
 
 /* ---------- Get started dialog: delegated once, works on every page ---------- */
 document.addEventListener('click', (e) => {
@@ -62,9 +63,21 @@ onPage((signal) => {
   /* ---------- Get started dialog: close controls ---------- */
   const dialog = document.getElementById('get-started') as HTMLDialogElement | null;
   if (dialog) {
-    dialog.querySelectorAll('[data-dialog-close]').forEach((b) => b.addEventListener('click', () => dialog.close(), opts));
-    dialog.querySelectorAll('[data-dialog-dismiss]').forEach((a) => a.addEventListener('click', () => setTimeout(() => dialog.close(), 120), opts));
-    dialog.addEventListener('click', (e) => e.target === dialog && dialog.close(), opts);
+    // every close is animated (scripts/dialog.ts)
+    dialog.querySelectorAll('[data-dialog-close]').forEach((b) => b.addEventListener('click', () => closeDialog(dialog), opts));
+    // links: mailto opens the mail app, other pages navigate; same-page anchors
+    // (e.g. /submit#form while on /submit) are closed-then-scrolled by scripts/scroll.ts
+    dialog.querySelectorAll('[data-dialog-dismiss]').forEach((a) => a.addEventListener('click', () => closeDialog(dialog), opts));
+    dialog.addEventListener('click', (e) => e.target === dialog && closeDialog(dialog), opts);
+    // Esc: replace the instant native close with the animated one
+    dialog.addEventListener(
+      'cancel',
+      (e) => {
+        e.preventDefault();
+        closeDialog(dialog);
+      },
+      opts,
+    );
     // pause smooth scrolling while the dialog is open, however it gets closed (button, Esc, backdrop)
     const mo = new MutationObserver(() => (dialog.open ? stopScroll() : startScroll()));
     mo.observe(dialog, { attributes: true, attributeFilter: ['open'] });
